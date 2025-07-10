@@ -7,8 +7,6 @@ on:
     # Run at 8:00 PM IST (2:30 PM UTC)
     - cron: '30 14 * * *'
   workflow_dispatch: # Allow manual trigger
-  push:
-    branches: [main]
 
 jobs:
   update-feeds:
