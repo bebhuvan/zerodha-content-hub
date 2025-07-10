@@ -1,0 +1,323 @@
+---
+// Static component - JavaScript will be added inline
+---
+
+<div id="search-filter-container">
+  <!-- This component handles the search and filter logic -->
+</div>
+
+<script is:inline>
+  // Use inline script to avoid module issues
+  document.addEventListener('DOMContentLoaded', function() {
+    let contentData = [];
+    let currentFilter = 'all';
+    let currentSearch = '';
+  
+  // Initialize search
+  async function initializeSearch() {
+    try {
+      const response = await fetch(`/content.json?t=${Date.now()}`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      contentData = await response.json();
+      console.log('Loaded content items:', contentData.length);
+      
+      console.log('Content loaded successfully');
+      
+      // Hide loading state and render initial content
+      const loadingState = document.getElementById('loading-state');
+      if (loadingState) {
+        loadingState.style.display = 'none';
+      }
+      
+      renderContent(contentData);
+    } catch (error) {
+      console.error('Error loading content:', error);
+      
+      // Show error message to user
+      const container = document.getElementById('content-container');
+      if (container) {
+        container.innerHTML = `
+          <div class="text-center py-12">
+            <p class="text-gray-500">Error loading content. Please refresh the page.</p>
+          </div>
+        `;
+      }
+    }
+  }
+  
+  // Group content by date
+  function groupByDate(items) {
+    const now = new Date();
+    const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const twoWeeksAgo = new Date(now.getTime() - 14 * 24 * 60 * 60 * 1000);
+    const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+    
+    const groups = {
+      'This Week': [],
+      'Last Week': [],
+      'Last Month': [],
+      'Older': []
+    };
+    
+    items.forEach(item => {
+      const date = new Date(item.publishDate);
+      
+      if (date > oneWeekAgo) {
+        groups['This Week'].push(item);
+      } else if (date > twoWeeksAgo) {
+        groups['Last Week'].push(item);
+      } else if (date > oneMonthAgo) {
+        groups['Last Month'].push(item);
+      } else {
+        groups['Older'].push(item);
+      }
+    });
+    
+    return groups;
+  }
+  
+  // Render content
+  function renderContent(items) {
+    const container = document.getElementById('content-container');
+    const noResults = document.getElementById('no-results');
+    
+    if (!container) return;
+    
+    if (items.length === 0) {
+      container.innerHTML = '';
+      noResults?.classList.remove('hidden');
+      return;
+    }
+    
+    noResults?.classList.add('hidden');
+    
+    const grouped = groupByDate(items);
+    
+    // Clear container first
+    container.innerHTML = '';
+    
+    Object.entries(grouped).forEach(([label, groupItems]) => {
+      if (groupItems.length === 0) return;
+      
+      // Create section element
+      const sectionElement = document.createElement('section');
+      sectionElement.className = 'date-group';
+      sectionElement.setAttribute('data-label', label);
+      
+      // Create header
+      const headerElement = document.createElement('h2');
+      headerElement.className = 'text-sm font-medium text-gray-500 mb-4 sticky top-0 bg-white py-2 z-10';
+      headerElement.textContent = label;
+      sectionElement.appendChild(headerElement);
+      
+      // Create items container
+      const itemsContainer = document.createElement('div');
+      itemsContainer.className = 'space-y-6';
+      
+      // Add each item
+      groupItems.forEach(item => {
+        const cardElement = createContentCard(item);
+        itemsContainer.appendChild(cardElement);
+      });
+      
+      sectionElement.appendChild(itemsContainer);
+      container.appendChild(sectionElement);
+    });
+  }
+  
+  // Create individual content card using pure DOM manipulation
+  function createContentCard(item) {
+    const typeStyles = {
+      video: { bg: 'bg-blue-50', text: 'text-blue-700' },
+      podcast: { bg: 'bg-purple-50', text: 'text-purple-700' },
+      newsletter: { bg: 'bg-gray-50', text: 'text-gray-700' }
+    };
+    
+    const style = typeStyles[item.type];
+    const typeIcon = item.type === 'video' ? '▶' : '';
+    
+    // Create article container (no link wrapper)
+    const articleElement = document.createElement('article');
+    articleElement.className = 'content-card border-b border-gray-100 pb-6 last:border-0 rounded-lg p-4';
+    articleElement.style.cssText = 'position: relative;';
+    
+    // Create main content container
+    const containerDiv = document.createElement('div');
+    containerDiv.className = 'space-y-4';
+    
+    // Meta information section
+    const metaDiv = document.createElement('div');
+    metaDiv.className = 'flex items-center gap-3 text-sm';
+    
+    // Type badge
+    const typeSpan = document.createElement('span');
+    typeSpan.className = 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ' + style.bg + ' ' + style.text;
+    const typeText = item.type.charAt(0).toUpperCase() + item.type.slice(1);
+    typeSpan.textContent = typeIcon + ' ' + (item.isShort ? 'Short' : typeText);
+    metaDiv.appendChild(typeSpan);
+    
+    // New badge if applicable
+    if (item.isNew) {
+      const newSpan = document.createElement('span');
+      newSpan.className = 'inline-flex items-center px-2 py-0.5 rounded bg-black text-white text-xs font-medium';
+      newSpan.textContent = 'New';
+      metaDiv.appendChild(newSpan);
+    }
+    
+    // Source
+    const sourceSpan = document.createElement('span');
+    sourceSpan.className = 'text-gray-500';
+    sourceSpan.textContent = item.source;
+    metaDiv.appendChild(sourceSpan);
+    
+    // Duration/reading time
+    if (item.duration || item.readingTime) {
+      const dotSpan = document.createElement('span');
+      dotSpan.className = 'text-gray-300';
+      dotSpan.textContent = '•';
+      metaDiv.appendChild(dotSpan);
+      
+      const durationSpan = document.createElement('span');
+      durationSpan.className = 'text-gray-500';
+      durationSpan.textContent = item.duration || item.readingTime;
+      metaDiv.appendChild(durationSpan);
+    }
+    
+    containerDiv.appendChild(metaDiv);
+    
+    // Title
+    const titleH3 = document.createElement('h3');
+    titleH3.className = 'text-xl font-semibold text-gray-900 group-hover:text-black transition-colors leading-tight';
+    titleH3.textContent = item.title;
+    containerDiv.appendChild(titleH3);
+    
+    // Description
+    const descP = document.createElement('p');
+    descP.className = 'text-gray-700 leading-relaxed text-base line-clamp-3 group-hover:text-gray-900 transition-colors';
+    descP.textContent = item.description;
+    containerDiv.appendChild(descP);
+    
+    // Video thumbnail if applicable
+    if (item.type === 'video' && item.embedId) {
+      const videoDiv = document.createElement('div');
+      videoDiv.className = 'aspect-video rounded-lg overflow-hidden bg-gray-100 mb-4 relative';
+      
+      const img = document.createElement('img');
+      img.src = 'https://img.youtube.com/vi/' + item.embedId + '/maxresdefault.jpg';
+      img.alt = item.title;
+      img.className = 'w-full h-full object-cover';
+      img.loading = 'lazy';
+      
+      const overlayDiv = document.createElement('div');
+      overlayDiv.className = 'absolute inset-0 flex items-center justify-center';
+      
+      const playButton = document.createElement('div');
+      playButton.className = 'bg-black bg-opacity-70 rounded-full p-3';
+      playButton.innerHTML = '<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+      
+      overlayDiv.appendChild(playButton);
+      videoDiv.appendChild(img);
+      videoDiv.appendChild(overlayDiv);
+      containerDiv.appendChild(videoDiv);
+    }
+    
+    // Action section
+    const actionsDiv = document.createElement('div');
+    actionsDiv.className = 'flex items-center justify-between pt-2';
+    
+    // Create external link to original source
+    const actionLink = document.createElement('a');
+    actionLink.href = item.url;
+    actionLink.target = '_blank';
+    actionLink.rel = 'noopener noreferrer';
+    actionLink.className = 'text-sm font-medium text-blue-600 hover:text-blue-800 inline-flex items-center gap-1 transition-colors';
+    const actionText = item.isShort ? 'Watch Short' : item.type === 'video' ? 'Watch Video' : item.type === 'podcast' ? 'Listen to Podcast' : 'Read Article';
+    actionLink.innerHTML = actionText + ' <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>';
+    
+    const dateSpan = document.createElement('span');
+    dateSpan.className = 'text-xs text-gray-400';
+    dateSpan.textContent = new Date(item.publishDate).toLocaleDateString();
+    
+    actionsDiv.appendChild(actionLink);
+    actionsDiv.appendChild(dateSpan);
+    containerDiv.appendChild(actionsDiv);
+    
+    // Assemble everything
+    articleElement.appendChild(containerDiv);
+    
+    return articleElement;
+  }
+  
+  // Filter and search
+  function filterAndSearch() {
+    let filtered = contentData;
+    
+    // Apply type filter
+    if (currentFilter !== 'all') {
+      filtered = filtered.filter(item => item.type === currentFilter);
+    }
+    
+    // Apply search - simple text matching for now
+    if (currentSearch.trim()) {
+      const searchTerm = currentSearch.toLowerCase();
+      filtered = filtered.filter(item => 
+        item.title.toLowerCase().includes(searchTerm) ||
+        item.description.toLowerCase().includes(searchTerm) ||
+        item.source.toLowerCase().includes(searchTerm) ||
+        (item.keywords && item.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm)))
+      );
+    }
+    
+    renderContent(filtered);
+    
+    // Update filter counts
+    updateFilterCounts();
+  }
+  
+  // Update filter counts
+  function updateFilterCounts() {
+    const counts = {
+      all: contentData.length,
+      video: contentData.filter(item => item.type === 'video').length,
+      podcast: contentData.filter(item => item.type === 'podcast').length,
+      newsletter: contentData.filter(item => item.type === 'newsletter').length
+    };
+    
+    document.querySelectorAll('[data-filter]').forEach(button => {
+      const filter = button.dataset.filter;
+      // Find the count element using the data-count attribute
+      const countElement = button.querySelector(`[data-count="${filter}"]`);
+      if (countElement && filter && counts[filter] !== undefined) {
+        countElement.textContent = counts[filter].toString();
+      }
+    });
+  }
+  
+  // Initialize on DOM ready
+  initializeSearch();
+  
+  // Search input
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) {
+    let debounceTimer;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(debounceTimer);
+      debounceTimer = window.setTimeout(() => {
+        currentSearch = e.target.value;
+        filterAndSearch();
+      }, 300);
+    });
+  }
+  
+  // Filter change
+  window.addEventListener('filter-change', (e) => {
+    currentFilter = e.detail.filter;
+    filterAndSearch();
+  });
+  
+  }); // Close DOMContentLoaded function
+</script>

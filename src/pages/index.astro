@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SearchBar from '../components/SearchBar.astro';
+import FilterTabs from '../components/FilterTabs.astro';
+import ContentList from '../components/ContentList.astro';
+import HeroSection from '../components/HeroSection.astro';
+import SearchAndFilter from '../components/SearchAndFilter.astro';
+---
+
+<Layout title="Zerodha Content Hub">
+  <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+    <!-- Enhanced Header with Hero Section -->
+    <header class="pt-8 pb-12 border-b border-gray-100">
+      <HeroSection />
+      
+      <!-- Search and Filter Section -->
+      <div class="mt-8 space-y-4">
+        <SearchBar />
+        <FilterTabs />
+      </div>
+    </header>
+    
+    <!-- Main Content Area -->
+    <main class="py-8">
+      <!-- Content List with Date Groups -->
+      <ContentList />
+      <!-- Search and Filter Logic -->
+      <SearchAndFilter />
+    </main>
+    
+    <!-- Floating Action Button for PWA Install -->
+    <button 
+      id="install-button" 
+      class="fixed bottom-6 right-6 bg-black text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-200 hidden items-center gap-2"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+      </svg>
+      Install App
+    </button>
+  </div>
+  
+  <script>
+    // PWA Install Handler
+    let deferredPrompt: any;
+    const installButton = document.getElementById('install-button');
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installButton?.classList.remove('hidden');
+      installButton?.classList.add('flex');
+    });
+    
+    installButton?.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      
+      if (outcome === 'accepted') {
+        installButton.classList.add('hidden');
+      }
+      
+      deferredPrompt = null;
+    });
+  </script>
+</Layout>

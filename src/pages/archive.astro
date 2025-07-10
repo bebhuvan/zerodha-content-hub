@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Content Archive - Zerodha Content Hub">
+  <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+    <!-- Simple Header -->
+    <header class="pt-6 pb-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <a 
+            href="/" 
+            class="text-gray-500 hover:text-black transition-colors"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </a>
+          <h1 class="text-lg font-medium text-gray-900">Archive</h1>
+        </div>
+        <p class="text-sm text-gray-500">
+          <span id="results-count">0</span> / <span id="total-count">0</span>
+        </p>
+      </div>
+    </header>
+
+    <!-- Search and Filters -->
+    <div class="pb-6 border-b border-gray-100">
+      <div class="space-y-3">
+        <div class="relative">
+          <input 
+            type="text" 
+            id="archive-search" 
+            placeholder="Search..." 
+            class="w-full px-4 py-2.5 text-base border border-gray-200 rounded-md focus:border-gray-400 focus:outline-none transition-colors"
+          />
+          <svg class="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        
+        <!-- Filter buttons -->
+        <div class="flex gap-2">
+          <button data-filter="all" class="archive-filter active px-3 py-1.5 text-sm rounded transition-colors">
+            All (<span class="count">0</span>)
+          </button>
+          <button data-filter="video" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors">
+            Videos (<span class="count">0</span>)
+          </button>
+          <button data-filter="podcast" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors">
+            Podcasts (<span class="count">0</span>)
+          </button>
+          <button data-filter="newsletter" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors">
+            Newsletters (<span class="count">0</span>)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <main class="py-4">
+      <!-- Loading State -->
+      <div id="archive-loading" class="text-center py-8">
+        <div class="animate-spin inline-block w-5 h-5 border-2 border-gray-300 border-t-black rounded-full"></div>
+        <p class="text-gray-500 mt-2 text-sm">Loading...</p>
+      </div>
+
+      <!-- Content List -->
+      <div id="archive-results" class="hidden">
+        <div class="space-y-1" id="archive-content"></div>
+      </div>
+
+      <!-- No Results -->
+      <div id="no-archive-results" class="hidden text-center py-12">
+        <p class="text-gray-500 text-base">No content found</p>
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  let allContent = [];
+  let filteredContent = [];
+  let currentFilter = 'all';
+  let currentSearch = '';
+
+  // Load content
+  async function loadContent() {
+    try {
+      const response = await fetch(`/content.json?t=${Date.now()}`);
+      if (!response.ok) throw new Error('Failed to load content');
+      
+      allContent = await response.json();
+      filteredContent = allContent;
+      
+      updateCounts();
+      renderResults();
+      
+      document.getElementById('archive-loading').classList.add('hidden');
+      document.getElementById('archive-results').classList.remove('hidden');
+    } catch (error) {
+      console.error('Error loading content:', error);
+      document.getElementById('archive-loading').innerHTML = 
+        '<p class="text-red-500">Failed to load content. Please refresh the page.</p>';
+    }
+  }
+
+  // Filter and search content
+  function filterContent() {
+    filteredContent = allContent.filter(item => {
+      // Apply type filter
+      const typeMatch = currentFilter === 'all' || item.type === currentFilter;
+      
+      // Apply search filter
+      const searchMatch = !currentSearch || 
+        item.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+        item.description.toLowerCase().includes(currentSearch.toLowerCase()) ||
+        item.source.toLowerCase().includes(currentSearch.toLowerCase()) ||
+        (item.keywords && item.keywords.some(keyword => 
+          keyword.toLowerCase().includes(currentSearch.toLowerCase())
+        ));
+      
+      return typeMatch && searchMatch;
+    });
+    
+    renderResults();
+    updateResultsCount();
+  }
+
+  // Render results
+  function renderResults() {
+    const container = document.getElementById('archive-content');
+    const noResults = document.getElementById('no-archive-results');
+    const results = document.getElementById('archive-results');
+    
+    if (filteredContent.length === 0) {
+      results.classList.add('hidden');
+      noResults.classList.remove('hidden');
+      return;
+    }
+    
+    noResults.classList.add('hidden');
+    results.classList.remove('hidden');
+    
+    // Sort by date (newest first)
+    const sortedContent = [...filteredContent].sort((a, b) => 
+      new Date(b.publishDate) - new Date(a.publishDate)
+    );
+    
+    container.innerHTML = sortedContent.map(item => createArchiveItem(item)).join('');
+  }
+
+  // Create archive item
+  function createArchiveItem(item) {
+    const typeIcons = {
+      video: '▶',
+      podcast: '🎙',
+      newsletter: '📄'
+    };
+    
+    const typeText = item.isShort ? 'Short' : item.type.charAt(0).toUpperCase() + item.type.slice(1);
+    const icon = typeIcons[item.type] || '';
+    
+    return `
+      <div class="py-3 px-3 hover:bg-gray-50 rounded transition-colors">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-sm text-gray-500">${icon} ${typeText}</span>
+              ${item.isNew ? '<span class="text-xs bg-black text-white px-1.5 py-0.5 rounded">New</span>' : ''}
+              <span class="text-sm text-gray-400">• ${item.source}</span>
+            </div>
+            <h3 class="text-base font-medium text-gray-900 leading-snug mb-1">${item.title}</h3>
+            <div class="flex items-center gap-2 text-sm text-gray-400">
+              <span>${new Date(item.publishDate).toLocaleDateString()}</span>
+              ${item.duration || item.readingTime ? `<span>• ${item.duration || item.readingTime}</span>` : ''}
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <a 
+              href="${item.url}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              Open
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Update counts
+  function updateCounts() {
+    const counts = {
+      all: allContent.length,
+      video: allContent.filter(item => item.type === 'video').length,
+      podcast: allContent.filter(item => item.type === 'podcast').length,
+      newsletter: allContent.filter(item => item.type === 'newsletter').length
+    };
+    
+    document.querySelectorAll('.archive-filter').forEach(button => {
+      const filter = button.dataset.filter;
+      const countElement = button.querySelector('.count');
+      if (countElement && counts[filter] !== undefined) {
+        countElement.textContent = counts[filter];
+      }
+    });
+    
+    document.getElementById('total-count').textContent = allContent.length;
+  }
+
+  function updateResultsCount() {
+    document.getElementById('results-count').textContent = filteredContent.length;
+  }
+
+  // Event listeners
+  document.getElementById('archive-search').addEventListener('input', (e) => {
+    currentSearch = e.target.value;
+    filterContent();
+  });
+
+  document.querySelectorAll('.archive-filter').forEach(button => {
+    button.addEventListener('click', () => {
+      // Update active state
+      document.querySelectorAll('.archive-filter').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      button.classList.add('active');
+      
+      currentFilter = button.dataset.filter;
+      filterContent();
+    });
+  });
+
+  // Initialize
+  loadContent();
+});
+</script>
+
+<style>
+.archive-filter {
+  @apply bg-gray-100 text-gray-600 hover:bg-gray-200;
+}
+
+.archive-filter.active {
+  @apply bg-black text-white;
+}
+</style>

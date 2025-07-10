@@ -1,0 +1,99 @@
+---
+const filters = [
+  { id: 'all', label: 'All', count: 342 },
+  { id: 'video', label: 'Videos', count: 156 },
+  { id: 'podcast', label: 'Podcasts', count: 89 },
+  { id: 'newsletter', label: 'Newsletters', count: 97 }
+];
+---
+
+<div class="border-b border-gray-100">
+  <nav class="flex justify-center" role="tablist">
+    {filters.map((filter) => (
+      <button
+        role="tab"
+        aria-selected={filter.id === 'all'}
+        data-filter={filter.id}
+        class={`
+          relative px-6 py-3 text-sm font-medium transition-all duration-200
+          hover:text-black focus:outline-none focus:text-black
+          ${filter.id === 'all' ? 'text-black' : 'text-gray-500'}
+        `}
+      >
+        <span class="flex items-center gap-1.5">
+          {filter.label}
+          <span class={`
+            text-xs
+            ${filter.id === 'all' ? 'text-gray-600' : 'text-gray-400'}
+          `} data-count={filter.id}>
+            ({filter.count})
+          </span>
+        </span>
+        
+        <!-- Active indicator -->
+        {filter.id === 'all' && (
+          <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-black animate-slide-in"></div>
+        )}
+      </button>
+    ))}
+    
+    <!-- Archive Link -->
+    <a
+      href="/archive"
+      class="relative px-6 py-3 text-sm font-medium transition-all duration-200 hover:text-black focus:outline-none focus:text-black text-gray-500"
+    >
+      Archive
+    </a>
+  </nav>
+</div>
+
+<style>
+  @keyframes slide-in {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+    transform-origin: left;
+  }
+</style>
+
+<script>
+  const filterButtons = document.querySelectorAll('[data-filter]');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement;
+      const filter = target.dataset.filter;
+      
+      // Update active states
+      filterButtons.forEach(btn => {
+        btn.setAttribute('aria-selected', 'false');
+        btn.classList.remove('text-black');
+        btn.classList.add('text-gray-500');
+        
+        // Remove active indicator
+        const indicator = btn.querySelector('.absolute');
+        if (indicator) indicator.remove();
+      });
+      
+      // Set active state
+      target.setAttribute('aria-selected', 'true');
+      target.classList.remove('text-gray-500');
+      target.classList.add('text-black');
+      
+      // Add active indicator
+      const indicator = document.createElement('div');
+      indicator.className = 'absolute bottom-0 left-0 right-0 h-0.5 bg-black animate-slide-in';
+      target.appendChild(indicator);
+      
+      // Trigger filter update
+      window.dispatchEvent(new CustomEvent('filter-change', { detail: { filter } }));
+    });
+  });
+</script>

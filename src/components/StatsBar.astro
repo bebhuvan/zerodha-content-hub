@@ -1,0 +1,53 @@
+---
+interface Props {
+  stats: {
+    totalContent: number;
+    thisWeek: number;
+    contentTypes: {
+      videos: number;
+      podcasts: number;
+      newsletters: number;
+    };
+  };
+}
+
+const { stats } = Astro.props;
+---
+
+<div class="flex flex-wrap justify-center gap-6 mt-8 text-sm">
+  <!-- Total Content -->
+  <div class="flex items-center gap-2">
+    <span class="text-gray-500">Total</span>
+    <span class="font-medium text-black">{stats.totalContent}</span>
+  </div>
+  
+  <!-- Divider -->
+  <div class="w-px h-5 bg-gray-200"></div>
+  
+  <!-- This Week -->
+  <div class="flex items-center gap-2">
+    <span class="text-gray-500">This week</span>
+    <span class="font-medium text-black bg-black text-white px-2 py-0.5 rounded text-xs">
+      {stats.thisWeek} new
+    </span>
+  </div>
+  
+  <!-- Divider -->
+  <div class="w-px h-5 bg-gray-200"></div>
+  
+  <!-- Content Type Breakdown -->
+  <div class="flex items-center gap-4">
+    <div class="flex items-center gap-1.5">
+      <div class="w-2 h-2 rounded-full bg-blue-100"></div>
+      <span class="text-gray-500">{stats.contentTypes.videos} videos</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <div class="w-2 h-2 rounded-full bg-purple-100"></div>
+      <span class="text-gray-500">{stats.contentTypes.podcasts} podcasts</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <div class="w-2 h-2 rounded-full bg-gray-200"></div>
+      <span class="text-gray-500">{stats.contentTypes.newsletters} newsletters</span>
+    </div>
+  </div>
+</div>
