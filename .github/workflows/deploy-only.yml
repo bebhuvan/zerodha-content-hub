@@ -1,10 +1,12 @@
-name: Test Build
+name: Deploy to Cloudflare Pages
 
 on:
-  workflow_dispatch: # Manual trigger only
+  workflow_dispatch: # Manual trigger
+  push:
+    branches: [main]
 
 jobs:
-  test-build:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -28,10 +30,12 @@ jobs:
       - name: Build Astro site
         run: npm run build
       
-      - name: Test build success
-        run: |
-          echo "✅ Build completed successfully!"
-          echo "📁 Built files:"
-          ls -la dist/
-          echo "📄 Content JSON:"
-          head -n 20 dist/content.json || echo "No content.json found"
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: zerodha-content-hub
+          directory: dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '3'
