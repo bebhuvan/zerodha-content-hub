@@ -45,7 +45,7 @@ const feedConfigs = [
     category: 'YouTube'
   },
   {
-    name: 'The Daily Brief',
+    name: 'The Daily Brief Podcast',
     url: 'https://feeds.simplecast.com/1H1JSMd0',
     type: 'podcast',
     category: 'Podcast'

@@ -42,17 +42,7 @@ export const feedConfigs: FeedConfig[] = [
     }
   },
   {
-    name: 'Podcast 1',
-    url: 'https://feeds.simplecast.com/ehRdcitH',
-    type: 'podcast',
-    category: 'Podcast',
-    color: {
-      bg: '#faf9ff',
-      text: '#6b7280'
-    }
-  },
-  {
-    name: 'Podcast 2',
+    name: 'The Daily Brief Podcast',
     url: 'https://feeds.simplecast.com/1H1JSMd0',
     type: 'podcast',
     category: 'Podcast',
