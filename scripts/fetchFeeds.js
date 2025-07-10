@@ -51,6 +51,12 @@ const feedConfigs = [
     category: 'Podcast'
   },
   {
+    name: 'Side Notes by Zerodha Varsity',
+    url: 'https://feeds.simplecast.com/HusrooqN',
+    type: 'podcast',
+    category: 'Podcast'
+  },
+  {
     name: 'Varsity Newsletter',
     url: 'https://zerodhavarsity.substack.com/feed',
     type: 'newsletter',
