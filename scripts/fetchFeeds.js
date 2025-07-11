@@ -20,7 +20,9 @@ const parser = new Parser({
   headers: {
     'Cache-Control': 'no-cache, no-store, must-revalidate',
     'Pragma': 'no-cache',
-    'Expires': '0'
+    'Expires': '0',
+    'User-Agent': 'Mozilla/5.0 (compatible; ZerodhaContentHub/1.0; +https://zerodha.com)',
+    'Accept': 'application/rss+xml, application/xml, text/xml'
   }
 });
 
@@ -172,8 +174,10 @@ async function fetchAllFeeds() {
   for (const config of feedConfigs) {
     try {
       console.log(`Fetching ${config.name}...`);
-      // Add cache-busting parameter for better freshness
-      const urlWithCacheBust = config.url + (config.url.includes('?') ? '&' : '?') + `v=${Date.now()}`;
+      // Add multiple cache-busting parameters for better freshness
+      const timestamp = Date.now();
+      const random = Math.random().toString(36).substring(7);
+      const urlWithCacheBust = config.url + (config.url.includes('?') ? '&' : '?') + `v=${timestamp}&r=${random}&bust=${Math.floor(timestamp/1000)}`;
       const feed = await parser.parseURL(urlWithCacheBust);
       
       console.log(`  📊 Feed contains ${feed.items.length} total items`);
@@ -210,6 +214,9 @@ async function fetchAllFeeds() {
     } catch (error) {
       console.error(`✗ Error fetching ${config.name}:`, error.message);
     }
+    
+    // Add delay between requests to avoid rate limiting
+    await new Promise(resolve => setTimeout(resolve, 1000));
   }
   
   // Sort by publish date (newest first)

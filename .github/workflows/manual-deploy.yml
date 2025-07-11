@@ -29,7 +29,15 @@ jobs:
         run: npm ci
       
       - name: Fetch RSS feeds
-        run: npm run fetch-feeds
+        run: |
+          npm run fetch-feeds
+          # Verify we have newsletters
+          NEWSLETTER_COUNT=$(cat src/data/content.json | jq '[.[] | select(.type == "newsletter")] | length')
+          echo "📧 Newsletter count: $NEWSLETTER_COUNT"
+          if [ "$NEWSLETTER_COUNT" -lt 50 ]; then
+            echo "❌ ERROR: Expected at least 50 newsletters, got $NEWSLETTER_COUNT"
+            echo "⚠️  Proceeding with deployment anyway for manual trigger"
+          fi
       
       - name: Verify all newsletters are present
         run: |
