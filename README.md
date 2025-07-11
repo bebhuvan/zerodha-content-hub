@@ -11,8 +11,9 @@ The Zerodha Content Hub aggregates content from multiple sources including YouTu
 ### Content Aggregation
 - **14 Content Sources**: Aggregates from YouTube channels, podcasts, newsletters, and blogs
 - **311+ Content Items**: Videos, podcasts, newsletters, and blog posts
-- **Real-time Updates**: RSS feed integration with cache-busting for fresh content
+- **Real-time Updates**: RSS feed integration with advanced cache-busting for fresh content
 - **Smart Categorization**: Content organized by type, source, and publication date
+- **Intelligent Fallback**: Preserves content when feeds are temporarily unavailable
 
 ### User Experience
 - **Advanced Search**: Full-text search across titles, descriptions, and keywords
@@ -20,13 +21,22 @@ The Zerodha Content Hub aggregates content from multiple sources including YouTu
 - **Date Grouping**: Content organized by Today, Yesterday, This Week, etc.
 - **Responsive Design**: Optimized for mobile, tablet, and desktop
 - **Progressive Web App**: Installable with offline capabilities
+- **Resilient Content**: Maintains newsletter diversity even during feed outages
 
 ### Performance & SEO
 - **Paginated API**: Reduces initial load from 344KB to ~20KB per request
 - **Lazy Loading**: Images and content loaded on demand
 - **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, structured data
-- **Cache Strategy**: Multi-layer caching for optimal performance
+- **Multi-layer Caching**: Optimized cache strategy for different content types
 - **Font Optimization**: Preloaded fonts with display swap
+- **Modern User-Agents**: Updated browser identities for better compatibility
+
+### Reliability & Robustness
+- **Retry Mechanism**: Multi-attempt fetching with exponential backoff
+- **Anti-Bot Evasion**: Multiple User-Agent rotation to bypass blocking
+- **Content Preservation**: 30-day fallback system for failed feeds
+- **Error Handling**: Graceful degradation with detailed logging
+- **Automated Recovery**: Self-healing when feeds come back online
 
 ### Accessibility
 - **Keyboard Navigation**: Full keyboard accessibility
@@ -63,9 +73,11 @@ The Zerodha Content Hub aggregates content from multiple sources including YouTu
 - **Framework**: Astro v4.16.18 (Static Site Generator)
 - **Styling**: Tailwind CSS
 - **Language**: TypeScript
-- **RSS Parsing**: rss-parser
+- **RSS Parsing**: rss-parser with advanced retry mechanisms
 - **Deployment**: Cloudflare Pages
-- **CI/CD**: GitHub Actions
+- **CI/CD**: GitHub Actions with automated content updates
+- **Anti-Bot**: Multi-User-Agent rotation system
+- **Fallback**: 30-day content preservation system
 
 ## 🚀 Quick Start
 
@@ -203,12 +215,22 @@ lsof -i :4321
 pkill -f "astro dev"
 ```
 
-**Missing content**
+**Missing newsletters/content**
 ```bash
+# Check if feeds are being blocked
+npm run fetch-feeds
+# Look for 403 errors or fallback messages
+
 # Clear cache and refetch
 rm -rf .astro dist node_modules/.cache
 npm run fetch-feeds
 ```
+
+**Newsletter feeds returning 403 errors**
+This is typically caused by anti-bot protection from Substack. The system automatically:
+- Retries with different User-Agent strings
+- Falls back to cached content (last 30 days)
+- Maintains content diversity even during outages
 
 **Build errors**
 ```bash
@@ -216,6 +238,11 @@ npm run fetch-feeds
 rm -rf node_modules package-lock.json
 npm install
 ```
+
+**GitHub Actions deployment failures**
+- Check if newsletter count validation is failing
+- Review logs for 403 errors from Substack feeds
+- Fallback system should prevent total failures
 
 ## 📱 Mobile Experience
 

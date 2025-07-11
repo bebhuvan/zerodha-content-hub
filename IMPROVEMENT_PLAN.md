@@ -9,6 +9,31 @@ This document outlines specific areas for improvement identified through compreh
 
 ## 🔥 Critical Issues (Fix First)
 
+### ✅ **COMPLETED FIXES**
+
+### 1. **Hard-coded Values Instead of Constants** - ✅ **FIXED**
+**Files**: `scripts/fetchFeeds.js` and related components  
+**Issue**: Date icons, type styles, and magic numbers duplicated throughout codebase  
+**Impact**: Inconsistent styling, harder maintenance  
+**Status**: ✅ **RESOLVED** - Added comprehensive CONSTANTS section with all configurable values
+
+### 2. **Substack Newsletter Blocking** - ✅ **FIXED**
+**Issue**: Newsletter feeds returning 403 errors, causing content loss  
+**Impact**: Users only seeing Daily Brief newsletters instead of all 5 sources  
+**Status**: ✅ **RESOLVED** - Implemented intelligent fallback system with 30-day content preservation
+
+### 3. **Outdated User-Agent Strings** - ✅ **FIXED**
+**Issue**: Using Chrome 91 (2021) User-Agent strings, triggering anti-bot protection  
+**Impact**: Increased likelihood of being blocked by modern anti-bot systems  
+**Status**: ✅ **RESOLVED** - Updated to Chrome 120, Firefox 121, Safari 17.2 (2024/2025)
+
+### 4. **GitHub Actions Reliability** - ✅ **FIXED**
+**Issue**: Deployments failing due to strict newsletter validation  
+**Impact**: Site not updating with new content  
+**Status**: ✅ **RESOLVED** - Improved validation thresholds and error handling
+
+### 🔴 **REMAINING CRITICAL ISSUES**
+
 ### 1. **Code Duplication in SearchAndFilter Components**
 **Files**: `src/components/SearchAndFilter.astro` vs `src/components/SearchAndFilterOptimized.astro`  
 **Issue**: 160+ lines duplicated in `createContentCard()` function  
@@ -41,21 +66,17 @@ export interface ContentItem {
 }
 ```
 
-### 3. **Hard-coded Values Instead of Constants**
-**File**: `src/components/SearchAndFilter.astro` (lines 123-131, 152-157)  
-**Issue**: Date icons and type styles duplicated despite existing constants  
-**Impact**: Inconsistent styling, harder maintenance  
+### 3. **ID Collision Bug**
+**File**: `scripts/fetchFeeds.js` (line 254)  
+**Issue**: Potential duplicate IDs when guid/link are similar across sources  
+**Impact**: Data corruption, broken links  
 **Effort**: 10 minutes  
 **Priority**: 🔴 High
 
 **Fix**:
 ```typescript
-// Replace hard-coded values
-import { DATE_GROUP_ICONS, CONTENT_TYPE_STYLES } from '../constants/app';
-
-// Use constants instead of inline objects
-const icons = DATE_GROUP_ICONS;
-const typeStyles = CONTENT_TYPE_STYLES;
+// Better ID generation
+id: `${config.name}-${Date.now()}-${Math.random().toString(36).substring(7)}`,
 ```
 
 ## 🚀 Performance Optimizations

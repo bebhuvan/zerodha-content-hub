@@ -54,12 +54,17 @@ This document outlines the architectural decisions and design rationale for the 
   - Algolia: Requires external service
   - Simple filter: No fuzzy matching
 
-### RSS Parser
-**Why rss-parser?**
+### RSS Parser with Enhanced Reliability
+**Why rss-parser with custom enhancements?**
 - Handles various RSS/Atom formats
-- Good error handling
+- Good error handling foundation
 - Active maintenance
 - Supports custom fields (YouTube metadata)
+- **Our enhancements**:
+  - Multi-User-Agent rotation for anti-bot evasion
+  - Intelligent retry mechanism with exponential backoff
+  - 30-day content fallback system
+  - Modern browser identity spoofing
 
 ## Architecture Patterns
 
@@ -82,17 +87,20 @@ components/
 - Clear separation between UI and logic
 - Astro components for static parts, script tags for interactivity
 
-### 2. Data Flow
+### 2. Enhanced Data Flow
 ```
-RSS Feeds → fetchFeeds.js → content.json → Astro Build → Static HTML
-                                              ↓
-                                    Client-side Hydration → Interactive Search
+RSS Feeds → Multi-Agent Retry → Fallback Check → content.json → Astro Build → Static HTML
+     ↓              ↓               ↓                              ↓
+  User-Agent    Exponential     30-day Cache        Client-side Hydration → Interactive Search
+  Rotation      Backoff         Preservation
 ```
 
 **Design Decisions**:
 - **Build-time data fetching**: Eliminates runtime API calls
 - **JSON intermediate format**: Allows data validation and transformation
 - **Client-side search on static data**: Best of both worlds
+- **Intelligent fallback system**: Ensures content availability during outages
+- **Anti-bot evasion**: Multi-User-Agent rotation to bypass blocking
 
 ### 3. PWA Architecture
 **Key Decisions**:
