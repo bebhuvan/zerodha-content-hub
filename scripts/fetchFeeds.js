@@ -7,13 +7,35 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Array of different user agents to try
-const userAgents = [
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15'
+// Configuration constants
+const CONSTANTS = {
+  // Feed processing limits
+  MAX_ITEMS_PER_FEED: 50,
+  YOUTUBE_ITEMS_LIMIT: 15, // YouTube feeds typically have 15 items
+  
+  // Retry and timing
+  MAX_RETRY_ATTEMPTS: 3,
+  RETRY_DELAY_BASE_MS: 2000,
+  RATE_LIMIT_DELAY_MS: 1000,
+  REQUEST_TIMEOUT_MS: 30000,
+  
+  // Content freshness
+  FALLBACK_DAYS: 30,
+  NEW_CONTENT_DAYS: 7,
+  
+  // Reading time calculation
+  READING_WPM: 200,
+  MAX_KEYWORDS: 10,
+  MIN_KEYWORD_LENGTH: 3
+};
+
+// Modern User-Agent strings (updated for 2025)
+const USER_AGENTS = [
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15'
 ];
 
 function createParser(userAgent) {
@@ -151,16 +173,15 @@ function parseDuration(duration) {
 }
 
 function estimateReadingTime(content) {
-  const wordsPerMinute = 200;
   const wordCount = content.split(/\s+/).length;
-  const minutes = Math.ceil(wordCount / wordsPerMinute);
+  const minutes = Math.ceil(wordCount / CONSTANTS.READING_WPM);
   return `${minutes} min read`;
 }
 
 function isNewContent(date) {
-  const oneWeekAgo = new Date();
-  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-  return new Date(date) > oneWeekAgo;
+  const cutoffDate = new Date();
+  cutoffDate.setDate(cutoffDate.getDate() - CONSTANTS.NEW_CONTENT_DAYS);
+  return new Date(date) > cutoffDate;
 }
 
 function extractKeywords(title, description) {
@@ -169,18 +190,18 @@ function extractKeywords(title, description) {
   
   const words = text.match(/\b\w+\b/g) || [];
   const keywords = words
-    .filter(word => word.length > 3 && !commonWords.has(word))
-    .slice(0, 10);
+    .filter(word => word.length > CONSTANTS.MIN_KEYWORD_LENGTH && !commonWords.has(word))
+    .slice(0, CONSTANTS.MAX_KEYWORDS);
   
   return [...new Set(keywords)];
 }
 
-async function fetchFeedWithRetry(config, maxRetries = 3) {
+async function fetchFeedWithRetry(config, maxRetries = CONSTANTS.MAX_RETRY_ATTEMPTS) {
   let lastError;
   
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     try {
-      const userAgent = userAgents[attempt % userAgents.length];
+      const userAgent = USER_AGENTS[attempt % USER_AGENTS.length];
       const parser = createParser(userAgent);
       
       console.log(`Fetching ${config.name}... (attempt ${attempt + 1}/${maxRetries})`);
@@ -199,8 +220,8 @@ async function fetchFeedWithRetry(config, maxRetries = 3) {
       lastError = error;
       if (attempt < maxRetries - 1) {
         console.log(`  ⚠️  Attempt ${attempt + 1} failed: ${error.message}`);
-        // Wait before retrying
-        await new Promise(resolve => setTimeout(resolve, 2000 * (attempt + 1)));
+        // Wait before retrying with exponential backoff
+        await new Promise(resolve => setTimeout(resolve, CONSTANTS.RETRY_DELAY_BASE_MS * (attempt + 1)));
       }
     }
   }
@@ -226,7 +247,7 @@ async function fetchAllFeeds() {
       const feed = await fetchFeedWithRetry(config);
       
       console.log(`  📊 Feed contains ${feed.items.length} total items`);
-      const items = feed.items.slice(0, 50).map(item => {
+      const items = feed.items.slice(0, CONSTANTS.MAX_ITEMS_PER_FEED).map(item => {
         const publishDate = new Date(item.pubDate || item.isoDate);
         
         return {
@@ -263,10 +284,10 @@ async function fetchAllFeeds() {
       const existingItems = existingContent.filter(item => {
         if (item.source !== config.name) return false;
         
-        // Only use items from the last 30 days as fallback
+        // Only use items from the last X days as fallback
         const itemDate = new Date(item.publishDate);
-        const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-        return itemDate > thirtyDaysAgo;
+        const cutoffDate = new Date(Date.now() - CONSTANTS.FALLBACK_DAYS * 24 * 60 * 60 * 1000);
+        return itemDate > cutoffDate;
       });
       
       if (existingItems.length > 0) {
@@ -278,7 +299,7 @@ async function fetchAllFeeds() {
     }
     
     // Add delay between requests to avoid rate limiting
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, CONSTANTS.RATE_LIMIT_DELAY_MS));
   }
   
   // Sort by publish date (newest first)
