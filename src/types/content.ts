@@ -1,4 +1,4 @@
-export type ContentType = 'video' | 'podcast' | 'newsletter';
+export type ContentType = 'video' | 'podcast' | 'newsletter' | 'blog';
 
 export interface ContentItem {
   id: string;
@@ -13,6 +13,7 @@ export interface ContentItem {
   readingTime?: string;
   thumbnail?: string;
   keywords: string[];
+  categories: string[];
   isNew: boolean;
   embedId?: string;
   viewCount?: string;

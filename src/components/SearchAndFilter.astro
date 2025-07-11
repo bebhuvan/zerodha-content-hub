@@ -23,9 +23,7 @@
       }
       
       contentData = await response.json();
-      console.log('Loaded content items:', contentData.length);
-      
-      console.log('Content loaded successfully');
+      // Content loaded successfully
       
       // Hide loading state and render initial content
       const loadingState = document.getElementById('loading-state');
@@ -35,7 +33,7 @@
       
       renderContent(contentData);
     } catch (error) {
-      console.error('Error loading content:', error);
+      // Error loading content
       
       // Show error message to user
       const container = document.getElementById('content-container');
@@ -49,29 +47,38 @@
     }
   }
   
-  // Group content by date
+  // Group content by date with more granular grouping
   function groupByDate(items) {
     const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const yesterday = new Date(today.getTime() - 24 * 60 * 60 * 1000);
     const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
     const twoWeeksAgo = new Date(now.getTime() - 14 * 24 * 60 * 60 * 1000);
     const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
     
     const groups = {
+      'Today': [],
+      'Yesterday': [],
       'This Week': [],
       'Last Week': [],
-      'Last Month': [],
+      'This Month': [],
       'Older': []
     };
     
     items.forEach(item => {
       const date = new Date(item.publishDate);
+      const itemDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
       
-      if (date > oneWeekAgo) {
+      if (itemDate.getTime() === today.getTime()) {
+        groups['Today'].push(item);
+      } else if (itemDate.getTime() === yesterday.getTime()) {
+        groups['Yesterday'].push(item);
+      } else if (date > oneWeekAgo) {
         groups['This Week'].push(item);
       } else if (date > twoWeeksAgo) {
         groups['Last Week'].push(item);
       } else if (date > oneMonthAgo) {
-        groups['Last Month'].push(item);
+        groups['This Month'].push(item);
       } else {
         groups['Older'].push(item);
       }
@@ -105,13 +112,24 @@
       
       // Create section element
       const sectionElement = document.createElement('section');
-      sectionElement.className = 'date-group';
+      sectionElement.className = 'date-group mb-8';
       sectionElement.setAttribute('data-label', label);
       
-      // Create header
+      // Create header with enhanced styling
       const headerElement = document.createElement('h2');
-      headerElement.className = 'text-sm font-medium text-gray-500 mb-4 sticky top-0 bg-white py-2 z-10';
-      headerElement.textContent = label;
+      headerElement.className = 'text-lg font-semibold text-gray-900 mb-6 sticky top-0 bg-white py-3 z-10 border-b border-gray-100 flex items-center gap-2';
+      
+      // Add icon based on time period
+      const icons = {
+        'Today': '📰',
+        'Yesterday': '⏰',
+        'This Week': '📋',
+        'Last Week': '📊', 
+        'This Month': '📈',
+        'Older': '📚'
+      }; // TODO: Use constants
+      
+      headerElement.innerHTML = `<span class="text-xl">${icons[label] || '📄'}</span> ${label} <span class="text-sm font-normal text-gray-500 ml-2">(${groupItems.length})</span>`;
       sectionElement.appendChild(headerElement);
       
       // Create items container
@@ -134,7 +152,8 @@
     const typeStyles = {
       video: { bg: 'bg-blue-50', text: 'text-blue-700' },
       podcast: { bg: 'bg-purple-50', text: 'text-purple-700' },
-      newsletter: { bg: 'bg-gray-50', text: 'text-gray-700' }
+      newsletter: { bg: 'bg-gray-50', text: 'text-gray-700' },
+      blog: { bg: 'bg-green-50', text: 'text-green-700' }
     };
     
     const style = typeStyles[item.type];
@@ -151,26 +170,33 @@
     
     // Meta information section
     const metaDiv = document.createElement('div');
-    metaDiv.className = 'flex items-center gap-3 text-sm';
+    metaDiv.className = 'flex flex-wrap items-center gap-2 text-sm';
     
     // Type badge
     const typeSpan = document.createElement('span');
     typeSpan.className = 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ' + style.bg + ' ' + style.text;
     const typeText = item.type.charAt(0).toUpperCase() + item.type.slice(1);
-    typeSpan.textContent = typeIcon + ' ' + (item.isShort ? 'Short' : typeText);
+    
+    // Add category information for blog posts
+    let displayText = typeIcon + ' ' + (item.isShort ? 'Short' : typeText);
+    if (item.type === 'blog' && item.categories && item.categories.length > 0) {
+      displayText += ' • ' + item.categories[0]; // Show first category
+    }
+    
+    typeSpan.textContent = displayText;
     metaDiv.appendChild(typeSpan);
     
     // New badge if applicable
     if (item.isNew) {
       const newSpan = document.createElement('span');
-      newSpan.className = 'inline-flex items-center px-2 py-0.5 rounded bg-black text-white text-xs font-medium';
+      newSpan.className = 'inline-flex items-center px-2.5 py-0.5 rounded bg-black text-white text-xs font-medium';
       newSpan.textContent = 'New';
       metaDiv.appendChild(newSpan);
     }
     
     // Source
     const sourceSpan = document.createElement('span');
-    sourceSpan.className = 'text-gray-500';
+    sourceSpan.className = 'text-gray-500 text-xs';
     sourceSpan.textContent = item.source;
     metaDiv.appendChild(sourceSpan);
     
@@ -191,13 +217,21 @@
     
     // Title
     const titleH3 = document.createElement('h3');
-    titleH3.className = 'text-xl font-semibold text-gray-900 group-hover:text-black transition-colors leading-tight';
-    titleH3.textContent = item.title;
+    titleH3.className = 'text-xl font-semibold leading-tight break-words';
+    
+    const titleLink = document.createElement('a');
+    titleLink.href = item.url;
+    titleLink.target = '_blank';
+    titleLink.rel = 'noopener noreferrer';
+    titleLink.className = 'text-gray-900 hover:text-black transition-colors hover:underline';
+    titleLink.textContent = item.title;
+    
+    titleH3.appendChild(titleLink);
     containerDiv.appendChild(titleH3);
     
     // Description
     const descP = document.createElement('p');
-    descP.className = 'text-gray-700 leading-relaxed text-base line-clamp-3 group-hover:text-gray-900 transition-colors';
+    descP.className = 'text-gray-700 leading-relaxed text-base line-clamp-3 group-hover:text-gray-900 transition-colors break-words';
     descP.textContent = item.description;
     containerDiv.appendChild(descP);
     
@@ -211,6 +245,15 @@
       img.alt = item.title;
       img.className = 'w-full h-full object-cover';
       img.loading = 'lazy';
+      
+      // Add error handling for failed thumbnail loads
+      img.onerror = () => {
+        img.src = 'https://img.youtube.com/vi/' + item.embedId + '/hqdefault.jpg';
+        img.onerror = () => {
+          // Final fallback - hide the image container
+          videoDiv.style.display = 'none';
+        };
+      };
       
       const overlayDiv = document.createElement('div');
       overlayDiv.className = 'absolute inset-0 flex items-center justify-center';
@@ -236,7 +279,14 @@
     actionLink.rel = 'noopener noreferrer';
     actionLink.className = 'text-sm font-medium text-blue-600 hover:text-blue-800 inline-flex items-center gap-1 transition-colors';
     const actionText = item.isShort ? 'Watch Short' : item.type === 'video' ? 'Watch Video' : item.type === 'podcast' ? 'Listen to Podcast' : 'Read Article';
-    actionLink.innerHTML = actionText + ' <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>';
+    actionLink.textContent = actionText + ' ';
+    const svgElement = document.createElement('svg');
+    svgElement.className = 'w-4 h-4';
+    svgElement.setAttribute('fill', 'none');
+    svgElement.setAttribute('stroke', 'currentColor');
+    svgElement.setAttribute('viewBox', '0 0 24 24');
+    svgElement.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>';
+    actionLink.appendChild(svgElement);
     
     const dateSpan = document.createElement('span');
     dateSpan.className = 'text-xs text-gray-400';
@@ -284,7 +334,8 @@
       all: contentData.length,
       video: contentData.filter(item => item.type === 'video').length,
       podcast: contentData.filter(item => item.type === 'podcast').length,
-      newsletter: contentData.filter(item => item.type === 'newsletter').length
+      newsletter: contentData.filter(item => item.type === 'newsletter').length,
+      blog: contentData.filter(item => item.type === 'blog').length
     };
     
     document.querySelectorAll('[data-filter]').forEach(button => {
@@ -292,7 +343,7 @@
       // Find the count element using the data-count attribute
       const countElement = button.querySelector(`[data-count="${filter}"]`);
       if (countElement && filter && counts[filter] !== undefined) {
-        countElement.textContent = counts[filter].toString();
+        countElement.textContent = `(${counts[filter]})`;
       }
     });
   }
@@ -302,6 +353,7 @@
   
   // Search input
   const searchInput = document.getElementById('search-input');
+  const clearButton = document.getElementById('clear-search');
   if (searchInput) {
     let debounceTimer;
     searchInput.addEventListener('input', (e) => {
@@ -310,6 +362,13 @@
         currentSearch = e.target.value;
         filterAndSearch();
       }, 300);
+      
+      // Show/hide clear button
+      if (e.target.value.length > 0) {
+        clearButton?.classList.remove('hidden');
+      } else {
+        clearButton?.classList.add('hidden');
+      }
     });
   }
   

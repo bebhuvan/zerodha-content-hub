@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Content Archive - Zerodha Content Hub">
+<Layout title="Content Archive - Market Insights by Zerodha">
   <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
     <!-- Simple Header -->
     <header class="pt-6 pb-6">
@@ -32,6 +32,7 @@ import Layout from '../layouts/Layout.astro';
             type="text" 
             id="archive-search" 
             placeholder="Search..." 
+            aria-label="Search archive content"
             class="w-full px-4 py-2.5 text-base border border-gray-200 rounded-md focus:border-gray-400 focus:outline-none transition-colors"
           />
           <svg class="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,17 +42,20 @@ import Layout from '../layouts/Layout.astro';
         
         <!-- Filter buttons -->
         <div class="flex gap-2">
-          <button data-filter="all" class="archive-filter active px-3 py-1.5 text-sm rounded transition-colors">
+          <button data-filter="all" class="archive-filter active px-3 py-1.5 text-sm rounded transition-colors" aria-label="Filter by all content types">
             All (<span class="count">0</span>)
           </button>
-          <button data-filter="video" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors">
+          <button data-filter="video" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors" aria-label="Filter by videos only">
             Videos (<span class="count">0</span>)
           </button>
-          <button data-filter="podcast" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors">
+          <button data-filter="podcast" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors" aria-label="Filter by podcasts only">
             Podcasts (<span class="count">0</span>)
           </button>
-          <button data-filter="newsletter" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors">
+          <button data-filter="newsletter" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors" aria-label="Filter by newsletters only">
             Newsletters (<span class="count">0</span>)
+          </button>
+          <button data-filter="blog" class="archive-filter px-3 py-1.5 text-sm rounded transition-colors" aria-label="Filter by blogs only">
+            Blogs (<span class="count">0</span>)
           </button>
         </div>
       </div>
@@ -63,6 +67,7 @@ import Layout from '../layouts/Layout.astro';
       <div id="archive-loading" class="text-center py-8">
         <div class="animate-spin inline-block w-5 h-5 border-2 border-gray-300 border-t-black rounded-full"></div>
         <p class="text-gray-500 mt-2 text-sm">Loading...</p>
+        <div id="debug-info" class="mt-4 text-xs text-gray-400"></div>
       </div>
 
       <!-- Content List -->
@@ -80,6 +85,10 @@ import Layout from '../layouts/Layout.astro';
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('Archive page script loaded');
+  const debugInfo = document.getElementById('debug-info');
+  if (debugInfo) debugInfo.textContent = 'Script loaded, initializing...';
+  
   let allContent = [];
   let filteredContent = [];
   let currentFilter = 'all';
@@ -87,22 +96,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Load content
   async function loadContent() {
+    console.log('Loading content...');
+    const debugInfo = document.getElementById('debug-info');
+    if (debugInfo) debugInfo.textContent = 'Fetching content...';
+    
     try {
-      const response = await fetch(`/content.json?t=${Date.now()}`);
+      const response = await fetch(`/content.json?t=${Date.now()}`); // TODO: Use constants
+      console.log('Response status:', response.status);
+      if (debugInfo) debugInfo.textContent = `Response: ${response.status}`;
       if (!response.ok) throw new Error('Failed to load content');
       
       allContent = await response.json();
       filteredContent = allContent;
+      console.log('Loaded', allContent.length, 'items');
       
       updateCounts();
       renderResults();
       
-      document.getElementById('archive-loading').classList.add('hidden');
-      document.getElementById('archive-results').classList.remove('hidden');
+      document.getElementById('archive-loading')?.classList.add('hidden');
+      document.getElementById('archive-results')?.classList.remove('hidden');
+      console.log('Archive page loaded successfully');
     } catch (error) {
       console.error('Error loading content:', error);
-      document.getElementById('archive-loading').innerHTML = 
-        '<p class="text-red-500">Failed to load content. Please refresh the page.</p>';
+      const loadingElement = document.getElementById('archive-loading');
+      if (loadingElement) {
+        loadingElement.innerHTML = `<div class="text-red-500">
+          <p>Failed to load content:</p>
+          <p class="text-sm">${error.message}</p>
+          <p class="text-sm">Please refresh the page.</p>
+        </div>`;
+      }
     }
   }
 
@@ -134,6 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const noResults = document.getElementById('no-archive-results');
     const results = document.getElementById('archive-results');
     
+    if (!container || !noResults || !results) return;
+    
     if (filteredContent.length === 0) {
       results.classList.add('hidden');
       noResults.classList.remove('hidden');
@@ -148,48 +173,113 @@ document.addEventListener('DOMContentLoaded', function() {
       new Date(b.publishDate) - new Date(a.publishDate)
     );
     
-    container.innerHTML = sortedContent.map(item => createArchiveItem(item)).join('');
+    container.innerHTML = '';
+    sortedContent.forEach(item => {
+      container.appendChild(createArchiveItem(item));
+    });
   }
 
   // Create archive item
   function createArchiveItem(item) {
-    const typeIcons = {
-      video: '▶',
-      podcast: '🎙',
-      newsletter: '📄'
-    };
+    const typeStyles = {
+      video: { bg: 'bg-blue-50', text: 'text-blue-700' },
+      podcast: { bg: 'bg-purple-50', text: 'text-purple-700' },
+      newsletter: { bg: 'bg-gray-50', text: 'text-gray-700' },
+      blog: { bg: 'bg-green-50', text: 'text-green-700' }
+    }; // TODO: Use constants
     
+    const style = typeStyles[item.type] || { bg: 'bg-gray-50', text: 'text-gray-700' };
     const typeText = item.isShort ? 'Short' : item.type.charAt(0).toUpperCase() + item.type.slice(1);
-    const icon = typeIcons[item.type] || '';
+    const typeIcon = item.type === 'video' ? '▶' : '';
     
-    return `
-      <div class="py-3 px-3 hover:bg-gray-50 rounded transition-colors">
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2 mb-1">
-              <span class="text-sm text-gray-500">${icon} ${typeText}</span>
-              ${item.isNew ? '<span class="text-xs bg-black text-white px-1.5 py-0.5 rounded">New</span>' : ''}
-              <span class="text-sm text-gray-400">• ${item.source}</span>
-            </div>
-            <h3 class="text-base font-medium text-gray-900 leading-snug mb-1">${item.title}</h3>
-            <div class="flex items-center gap-2 text-sm text-gray-400">
-              <span>${new Date(item.publishDate).toLocaleDateString()}</span>
-              ${item.duration || item.readingTime ? `<span>• ${item.duration || item.readingTime}</span>` : ''}
-            </div>
-          </div>
-          <div class="flex-shrink-0">
-            <a 
-              href="${item.url}" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="text-sm text-blue-600 hover:text-blue-800 hover:underline"
-            >
-              Open
-            </a>
-          </div>
-        </div>
-      </div>
-    `;
+    // Create main container
+    const containerDiv = document.createElement('div');
+    containerDiv.className = 'py-4 px-4 hover:bg-gray-50 rounded-lg transition-colors border-b border-gray-100 last:border-0';
+    
+    // Create flex container
+    const flexDiv = document.createElement('div');
+    flexDiv.className = 'flex items-start justify-between gap-4';
+    
+    // Create content section
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'flex-1 min-w-0';
+    
+    // Create meta section
+    const metaDiv = document.createElement('div');
+    metaDiv.className = 'flex items-center gap-3 mb-2';
+    
+    // Create type badge
+    const typeSpan = document.createElement('span');
+    typeSpan.className = `inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${style.bg} ${style.text}`;
+    typeSpan.textContent = `${typeIcon}${typeIcon ? ' ' : ''}${typeText}`;
+    metaDiv.appendChild(typeSpan);
+    
+    // Create "New" badge if needed
+    if (item.isNew) {
+      const newSpan = document.createElement('span');
+      newSpan.className = 'inline-flex items-center px-2 py-0.5 rounded bg-black text-white text-xs font-medium';
+      newSpan.textContent = 'New';
+      metaDiv.appendChild(newSpan);
+    }
+    
+    // Create source
+    const sourceSpan = document.createElement('span');
+    sourceSpan.className = 'text-sm text-gray-500';
+    sourceSpan.textContent = item.source;
+    metaDiv.appendChild(sourceSpan);
+    
+    // Create duration/reading time
+    if (item.duration || item.readingTime) {
+      const durationSpan = document.createElement('span');
+      durationSpan.className = 'text-sm text-gray-400';
+      durationSpan.textContent = `• ${item.duration || item.readingTime}`;
+      metaDiv.appendChild(durationSpan);
+    }
+    
+    contentDiv.appendChild(metaDiv);
+    
+    // Create title
+    const titleH3 = document.createElement('h3');
+    titleH3.className = 'text-lg font-semibold leading-snug mb-1';
+    
+    const titleLink = document.createElement('a');
+    titleLink.href = item.url;
+    titleLink.target = '_blank';
+    titleLink.rel = 'noopener noreferrer';
+    titleLink.className = 'text-gray-900 hover:text-black transition-colors hover:underline';
+    titleLink.textContent = item.title;
+    
+    titleH3.appendChild(titleLink);
+    contentDiv.appendChild(titleH3);
+    
+    // Create date
+    const dateDiv = document.createElement('div');
+    dateDiv.className = 'flex items-center gap-2 text-sm text-gray-400';
+    
+    const dateSpan = document.createElement('span');
+    dateSpan.textContent = new Date(item.publishDate).toLocaleDateString();
+    dateDiv.appendChild(dateSpan);
+    
+    contentDiv.appendChild(dateDiv);
+    flexDiv.appendChild(contentDiv);
+    
+    // Create action section
+    const actionDiv = document.createElement('div');
+    actionDiv.className = 'flex-shrink-0';
+    
+    const actionLink = document.createElement('a');
+    actionLink.href = item.url;
+    actionLink.target = '_blank';
+    actionLink.rel = 'noopener noreferrer';
+    actionLink.className = 'inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors';
+    actionLink.textContent = 'Open';
+    
+    actionDiv.appendChild(actionLink);
+    flexDiv.appendChild(actionDiv);
+    
+    containerDiv.appendChild(flexDiv);
+    
+    return containerDiv;
   }
 
   // Update counts
@@ -209,15 +299,22 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    document.getElementById('total-count').textContent = allContent.length;
+    const totalCountElement = document.getElementById('total-count');
+    if (totalCountElement) {
+      totalCountElement.textContent = allContent.length;
+    }
   }
 
   function updateResultsCount() {
-    document.getElementById('results-count').textContent = filteredContent.length;
+    const resultsCountElement = document.getElementById('results-count');
+    if (resultsCountElement) {
+      resultsCountElement.textContent = filteredContent.length;
+    }
   }
 
   // Event listeners
-  document.getElementById('archive-search').addEventListener('input', (e) => {
+  const archiveSearchElement = document.getElementById('archive-search');
+  archiveSearchElement?.addEventListener('input', (e) => {
     currentSearch = e.target.value;
     filterContent();
   });
@@ -237,6 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Initialize
+  console.log('About to call loadContent');
   loadContent();
 });
 </script>

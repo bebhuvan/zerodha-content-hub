@@ -7,8 +7,8 @@ import HeroSection from '../components/HeroSection.astro';
 import SearchAndFilter from '../components/SearchAndFilter.astro';
 ---
 
-<Layout title="Zerodha Content Hub">
-  <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+<Layout title="Market Insights by Zerodha">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
     <!-- Enhanced Header with Hero Section -->
     <header class="pt-8 pb-12 border-b border-gray-100">
       <HeroSection />
@@ -42,7 +42,7 @@ import SearchAndFilter from '../components/SearchAndFilter.astro';
   
   <script>
     // PWA Install Handler
-    let deferredPrompt: any;
+    let deferredPrompt: any = null;
     const installButton = document.getElementById('install-button');
     
     window.addEventListener('beforeinstallprompt', (e) => {

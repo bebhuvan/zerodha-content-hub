@@ -6,6 +6,7 @@
     type="text"
     id="search-input"
     placeholder="Search videos, podcasts, and newsletters..."
+    aria-label="Search videos, podcasts, and newsletters"
     class="w-full px-6 py-4 text-lg border-2 border-gray-200 rounded-lg focus:border-black focus:ring-2 focus:ring-black focus:ring-opacity-10 transition-all duration-200 bg-white placeholder-gray-500 focus:outline-none shadow-sm"
   />
   
@@ -19,6 +20,7 @@
   <!-- Clear Button (hidden by default) -->
   <button
     id="clear-search"
+    aria-label="Clear search"
     class="absolute right-12 top-1/2 -translate-y-1/2 hidden hover:bg-gray-100 p-1 rounded"
   >
     <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -30,16 +32,6 @@
 <script>
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const clearButton = document.getElementById('clear-search');
-  
-  // Show/hide clear button based on input
-  searchInput?.addEventListener('input', (e) => {
-    const target = e.target as HTMLInputElement;
-    if (target.value.length > 0) {
-      clearButton?.classList.remove('hidden');
-    } else {
-      clearButton?.classList.add('hidden');
-    }
-  });
   
   // Clear search functionality
   clearButton?.addEventListener('click', () => {

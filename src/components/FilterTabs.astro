@@ -1,9 +1,12 @@
 ---
+import stats from '../data/stats.json';
+
 const filters = [
-  { id: 'all', label: 'All', count: 155 },
-  { id: 'video', label: 'Videos', count: 60 },
-  { id: 'podcast', label: 'Podcasts', count: 40 },
-  { id: 'newsletter', label: 'Newsletters', count: 55 }
+  { id: 'all', label: 'All', count: stats.totalContent },
+  { id: 'video', label: 'Videos', count: stats.contentTypes.videos },
+  { id: 'podcast', label: 'Podcasts', count: stats.contentTypes.podcasts },
+  { id: 'newsletter', label: 'Newsletters', count: stats.contentTypes.newsletters },
+  { id: 'blog', label: 'Blogs', count: stats.contentTypes.blogs }
 ];
 ---
 

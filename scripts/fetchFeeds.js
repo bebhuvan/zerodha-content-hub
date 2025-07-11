@@ -16,6 +16,11 @@ const parser = new Parser({
       ['itunes:duration', 'itunesDuration'],
       ['enclosure', 'enclosure']
     ]
+  },
+  headers: {
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    'Pragma': 'no-cache',
+    'Expires': '0'
   }
 });
 
@@ -73,6 +78,30 @@ const feedConfigs = [
     url: 'https://thedailybrief.zerodha.com/feed',
     type: 'newsletter',
     category: 'Newsletter'
+  },
+  {
+    name: 'After Market Report',
+    url: 'https://aftermarketreport.substack.com/feed',
+    type: 'newsletter',
+    category: 'Newsletter'
+  },
+  {
+    name: 'What The Hell Is Happening',
+    url: 'https://whatthehellishappening.substack.com/feed',
+    type: 'newsletter',
+    category: 'Newsletter'
+  },
+  {
+    name: 'Z-Connect Blog',
+    url: 'https://zerodha.com/z-connect/feed',
+    type: 'blog',
+    category: 'Blog'
+  },
+  {
+    name: 'Varsity Blog',
+    url: 'https://zerodha.com/varsity/feed/',
+    type: 'blog',
+    category: 'Blog'
   }
 ];
 
@@ -137,9 +166,12 @@ async function fetchAllFeeds() {
   for (const config of feedConfigs) {
     try {
       console.log(`Fetching ${config.name}...`);
-      const feed = await parser.parseURL(config.url);
+      // Add cache-busting parameter for better freshness
+      const urlWithCacheBust = config.url + (config.url.includes('?') ? '&' : '?') + `v=${Date.now()}`;
+      const feed = await parser.parseURL(urlWithCacheBust);
       
-      const items = feed.items.slice(0, 20).map(item => {
+      console.log(`  📊 Feed contains ${feed.items.length} total items`);
+      const items = feed.items.slice(0, 50).map(item => {
         const publishDate = new Date(item.pubDate || item.isoDate);
         
         return {
@@ -159,6 +191,7 @@ async function fetchAllFeeds() {
             : null,
           thumbnail: item['media:thumbnail']?.url || item.enclosure?.url || null,
           keywords: extractKeywords(item.title, item.description || ''),
+          categories: item.categories || [],
           isNew: isNewContent(publishDate),
           isShort: config.type === 'video' ? isYouTubeShort(item.link) : false,
           embedId: config.type === 'video' ? extractYouTubeId(item) : null,
@@ -180,8 +213,13 @@ async function fetchAllFeeds() {
   const outputPath = join(__dirname, '..', 'src', 'data', 'content.json');
   writeFileSync(outputPath, JSON.stringify(allContent, null, 2));
   
+  // Also save to public folder for archive page
+  const publicPath = join(__dirname, '..', 'public', 'content.json');
+  writeFileSync(publicPath, JSON.stringify(allContent, null, 2));
+  
   console.log(`\n✓ Total content items: ${allContent.length}`);
   console.log(`✓ Saved to: ${outputPath}`);
+  console.log(`✓ Also saved to: ${publicPath}`);
   
   // Generate stats
   const stats = {
@@ -190,7 +228,8 @@ async function fetchAllFeeds() {
     contentTypes: {
       videos: allContent.filter(item => item.type === 'video').length,
       podcasts: allContent.filter(item => item.type === 'podcast').length,
-      newsletters: allContent.filter(item => item.type === 'newsletter').length
+      newsletters: allContent.filter(item => item.type === 'newsletter').length,
+      blogs: allContent.filter(item => item.type === 'blog').length
     },
     lastUpdated: new Date().toISOString()
   };
