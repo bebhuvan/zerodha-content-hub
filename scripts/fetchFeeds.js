@@ -7,20 +7,31 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const parser = new Parser({
-  customFields: {
-    item: [
-      ['media:content', 'media:content', { keepArray: true }],
-      ['media:thumbnail', 'media:thumbnail'],
-      ['yt:videoId', 'videoId'],
-      ['itunes:duration', 'itunesDuration'],
-      ['enclosure', 'enclosure']
-    ]
-  },
-  headers: {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-  }
-});
+// Array of different user agents to try
+const userAgents = [
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15'
+];
+
+function createParser(userAgent) {
+  return new Parser({
+    customFields: {
+      item: [
+        ['media:content', 'media:content', { keepArray: true }],
+        ['media:thumbnail', 'media:thumbnail'],
+        ['yt:videoId', 'videoId'],
+        ['itunes:duration', 'itunesDuration'],
+        ['enclosure', 'enclosure']
+      ]
+    },
+    headers: {
+      'User-Agent': userAgent
+    }
+  });
+}
 
 const feedConfigs = [
   {
@@ -164,17 +175,45 @@ function extractKeywords(title, description) {
   return [...new Set(keywords)];
 }
 
+async function fetchFeedWithRetry(config, maxRetries = 3) {
+  let lastError;
+  
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      const userAgent = userAgents[attempt % userAgents.length];
+      const parser = createParser(userAgent);
+      
+      console.log(`Fetching ${config.name}... (attempt ${attempt + 1}/${maxRetries})`);
+      if (attempt > 0) {
+        console.log(`  Using User-Agent: ${userAgent.substring(0, 50)}...`);
+      }
+      
+      // Add multiple cache-busting parameters for better freshness
+      const timestamp = Date.now();
+      const random = Math.random().toString(36).substring(7);
+      const urlWithCacheBust = config.url + (config.url.includes('?') ? '&' : '?') + `v=${timestamp}&r=${random}&bust=${Math.floor(timestamp/1000)}`;
+      
+      const feed = await parser.parseURL(urlWithCacheBust);
+      return feed;
+    } catch (error) {
+      lastError = error;
+      if (attempt < maxRetries - 1) {
+        console.log(`  ⚠️  Attempt ${attempt + 1} failed: ${error.message}`);
+        // Wait before retrying
+        await new Promise(resolve => setTimeout(resolve, 2000 * (attempt + 1)));
+      }
+    }
+  }
+  
+  throw lastError;
+}
+
 async function fetchAllFeeds() {
   const allContent = [];
   
   for (const config of feedConfigs) {
     try {
-      console.log(`Fetching ${config.name}...`);
-      // Add multiple cache-busting parameters for better freshness
-      const timestamp = Date.now();
-      const random = Math.random().toString(36).substring(7);
-      const urlWithCacheBust = config.url + (config.url.includes('?') ? '&' : '?') + `v=${timestamp}&r=${random}&bust=${Math.floor(timestamp/1000)}`;
-      const feed = await parser.parseURL(urlWithCacheBust);
+      const feed = await fetchFeedWithRetry(config);
       
       console.log(`  📊 Feed contains ${feed.items.length} total items`);
       const items = feed.items.slice(0, 50).map(item => {

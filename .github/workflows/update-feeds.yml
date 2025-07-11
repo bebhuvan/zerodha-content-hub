@@ -46,9 +46,12 @@ jobs:
           # Verify we have newsletters
           NEWSLETTER_COUNT=$(cat src/data/content.json | jq '[.[] | select(.type == "newsletter")] | length')
           echo "📧 Newsletter count: $NEWSLETTER_COUNT"
-          if [ "$NEWSLETTER_COUNT" -lt 50 ]; then
-            echo "❌ ERROR: Expected at least 50 newsletters, got $NEWSLETTER_COUNT"
+          if [ "$NEWSLETTER_COUNT" -lt 15 ]; then
+            echo "❌ ERROR: Expected at least 15 newsletters, got $NEWSLETTER_COUNT"
             exit 1
+          elif [ "$NEWSLETTER_COUNT" -lt 50 ]; then
+            echo "⚠️  WARNING: Only $NEWSLETTER_COUNT newsletters fetched (expected 50+)"
+            echo "This may be due to Substack blocking GitHub Actions IPs"
           fi
       
       - name: Check for changes
