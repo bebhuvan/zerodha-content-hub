@@ -1,10 +1,58 @@
 [
   {
-    "id": "Markets-https---www-youtube-com-shorts-IWoEMW7mHuw",
-    "title": "Capgemini Bets on AI and Ops",
+    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-can-india-build-iphones-without-china",
+    "title": "Can India build iPhones without China?",
+    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
+    "url": "https://thedailybrief.zerodha.com/p/can-india-build-iphones-without-china",
+    "publishDate": "2025-07-11T02:17:12.000Z",
+    "type": "newsletter",
+    "source": "Daily Brief",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": "1 min read",
+    "thumbnail": "https://substackcdn.com/image/fetch/$s_!9SIt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F52dacb03-0654-4086-b25b-e03d9f0e2779_1536x1024.png",
+    "keywords": [
+      "india",
+      "build",
+      "iphones",
+      "without",
+      "china"
+    ],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "The-Daily-Brief-Podcast-196bc881-f427-4f65-a73f-3e7baa06aa5f",
+    "title": "Can India build iPhones without China?",
+    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets:\n00:04    Intro\n00:39    The Foxconn stress test\n09:16    The dark side of global trade\n20:13    Tidbits\nWe also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/\nNote: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
+    "url": "https://markets-by-zerodha.simplecast.com/episodes/can-india-build-iphones-without-china-rh87KIPb",
+    "publishDate": "2025-07-11T02:08:58.000Z",
+    "type": "podcast",
+    "source": "The Daily Brief Podcast",
+    "author": "social@zerodha.com (Zerodha)",
+    "duration": "00:22:12",
+    "readingTime": null,
+    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/ed3d34ea-296c-48f0-850c-d5b07847fd58/audio/b443d584-eefe-4f7b-a185-0f51f27d803e/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
+    "keywords": [
+      "india",
+      "build",
+      "iphones",
+      "without",
+      "china"
+    ],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-watch-v-FWGSwMv0y80",
+    "title": "Is India’s phone factory Dream in danger? | The Daily Brief #266",
     "description": "",
-    "url": "https://www.youtube.com/shorts/IWoEMW7mHuw",
-    "publishDate": "2025-07-10T14:25:26.000Z",
+    "url": "https://www.youtube.com/watch?v=FWGSwMv0y80",
+    "publishDate": "2025-07-11T01:30:20.000Z",
     "type": "video",
     "source": "Markets",
     "author": "Markets",
@@ -12,12 +60,17 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "capgemini",
-      "bets"
+      "india",
+      "phone",
+      "factory",
+      "dream",
+      "danger",
+      "daily",
+      "brief"
     ],
     "isNew": true,
-    "isShort": true,
-    "embedId": "IWoEMW7mHuw",
+    "isShort": false,
+    "embedId": "FWGSwMv0y80",
     "viewCount": null
   },
   {
@@ -25,7 +78,7 @@
     "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 11 July 2025, Friday",
     "description": "",
     "url": "https://www.youtube.com/watch?v=QbWnML-208I",
-    "publishDate": "2025-07-10T14:14:34.000Z",
+    "publishDate": "2025-07-10T15:54:14.000Z",
     "type": "video",
     "source": "Zerodha",
     "author": "Zerodha",
@@ -46,6 +99,27 @@
     "isNew": true,
     "isShort": false,
     "embedId": "QbWnML-208I",
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-shorts-IWoEMW7mHuw",
+    "title": "Capgemini Bets on AI and Ops",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/IWoEMW7mHuw",
+    "publishDate": "2025-07-10T14:25:26.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "capgemini",
+      "bets"
+    ],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "IWoEMW7mHuw",
     "viewCount": null
   },
   {
@@ -951,7 +1025,7 @@
       "access",
       "revoked"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -973,7 +1047,7 @@
       "access",
       "revoked"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -998,7 +1072,7 @@
       "daily",
       "brief"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "__qjMKPK6WA",
     "viewCount": null
@@ -1026,7 +1100,7 @@
       "july",
       "2025"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "-7kbN0D6aSA",
     "viewCount": null
@@ -1627,31 +1701,6 @@
     "viewCount": null
   },
   {
-    "id": "Markets-https---www-youtube-com-watch-v-6tHmRrIu-sM",
-    "title": "Why India’s Garbage keeps Piling up | The Daily Brief #257",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=6tHmRrIu-sM",
-    "publishDate": "2025-06-30T01:30:05.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "india",
-      "garbage",
-      "keeps",
-      "piling",
-      "daily",
-      "brief"
-    ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "6tHmRrIu-sM",
-    "viewCount": null
-  },
-  {
     "id": "Zero1-https---www-youtube-com-shorts-CmVqZEVg9oI",
     "title": "TECH INDUSTRY Doesn't Want You to Know This About iPhone Costs⚡️",
     "description": "",
@@ -1681,7 +1730,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-nsNunbQ7z7g",
-    "title": "WHY Indigo is #1 Airline in India!⚡️",
+    "title": "Indigo vs Air India Airplanes⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/nsNunbQ7z7g",
     "publishDate": "2025-06-28T14:01:24.000Z",
@@ -1693,8 +1742,8 @@
     "thumbnail": null,
     "keywords": [
       "indigo",
-      "airline",
-      "india"
+      "india",
+      "airplanes"
     ],
     "isNew": false,
     "isShort": true,
@@ -1727,7 +1776,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-epT-oCCpPQA",
-    "title": "WHY Parle-G Sold For Rs 4 in INDIA!⚡️",
+    "title": "Parle-G Secret Strategy Exposed!⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/epT_oCCpPQA",
     "publishDate": "2025-06-27T13:30:42.000Z",
@@ -1739,8 +1788,9 @@
     "thumbnail": null,
     "keywords": [
       "parle",
-      "sold",
-      "india"
+      "secret",
+      "strategy",
+      "exposed"
     ],
     "isNew": false,
     "isShort": true,
@@ -2287,28 +2337,6 @@
     "viewCount": null
   },
   {
-    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-the-game-of-influencing-doctors",
-    "title": "The Game of Influencing Doctors",
-    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
-    "url": "https://thedailybrief.zerodha.com/p/the-game-of-influencing-doctors",
-    "publishDate": "2025-06-17T02:05:12.000Z",
-    "type": "newsletter",
-    "source": "Daily Brief",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!nDsV!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0b23662e-85e6-49b8-b946-d5b77c07a86b_1536x1024.png",
-    "keywords": [
-      "game",
-      "influencing",
-      "doctors"
-    ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
     "id": "The-Daily-Brief-Podcast-dbb99e1d-108a-4c9f-af5e-7fa6f3fe87d8",
     "title": "The Game of Influencing Doctors",
     "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets:\n00:04    Intro\n00:44    Behind the Pharma Rep Ban Saga\n13:18   Tyre Giants at a Crossroads\n21:47   Tidbits\nWe also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/\nNote: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
@@ -2399,30 +2427,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": "xJKpI88SQVM",
-    "viewCount": null
-  },
-  {
-    "id": "The-Daily-Brief-Podcast-c387a960-642f-41e0-9b4f-9b491939081f",
-    "title": "How Chinese magnets are crushing Indian motors",
-    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets:\n00:04    Intro\n00:27    China Chokes Auto Supply Chains\n13:01    New Rules for Building Rights\n23:49    Tidbits\nWe also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/\nNote: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
-    "url": "https://markets-by-zerodha.simplecast.com/episodes/how-chinese-magnets-are-crushing-indian-motors-qN3juJUm",
-    "publishDate": "2025-06-13T02:16:38.000Z",
-    "type": "podcast",
-    "source": "The Daily Brief Podcast",
-    "author": "social@zerodha.com (Zerodha)",
-    "duration": "00:26:19",
-    "readingTime": null,
-    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/178366fa-79f2-479b-b8f1-737b5ea7b8cf/audio/599e2e0f-31c4-45d3-9449-1577d5f4f470/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
-    "keywords": [
-      "chinese",
-      "magnets",
-      "crushing",
-      "indian",
-      "motors"
-    ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
     "viewCount": null
   },
   {
