@@ -1,51 +1,79 @@
 # Zerodha Content Hub
 
-A comprehensive content aggregation platform for Zerodha's videos, podcasts, and newsletters. Built with Astro, featuring automated RSS feed updates and clean, responsive design.
+A comprehensive content aggregation platform that brings together all of Zerodha's educational and market insights content in one place. Built with Astro for optimal performance and user experience.
 
 ## 🎯 Overview
 
-The Zerodha Content Hub aggregates content from **9 RSS feeds** across **3 content types**, providing a unified discovery platform for Zerodha's educational and market content.
-
-### 📊 Content Sources (155 total items)
-
-**📺 YouTube Channels (60 videos)**
-- **Zero1** - Investment and trading education (15 items)
-- **Varsity** - Market education and analysis (15 items)  
-- **Markets** - Market news and updates (15 items)
-- **Zerodha** - Company updates and insights (15 items)
-
-**🎙️ Podcasts (40 episodes)**
-- **The Daily Brief Podcast** - Daily market commentary (20 items)
-- **Side Notes by Zerodha Varsity** - Investment insights (20 items)
-
-**📄 Newsletters (55 articles)**
-- **Varsity Newsletter** (Mind Over Markets) - Investment strategy (20 items)
-- **The Chatter** - Market analysis and insights (15 items)
-- **Daily Brief** - Daily market newsletter (20 items)
+The Zerodha Content Hub aggregates content from multiple sources including YouTube channels, podcasts, newsletters, and blogs to provide users with a unified platform to discover and consume financial education and market analysis content.
 
 ## ✨ Features
 
-- **🔍 Smart Search**: Real-time search across titles, descriptions, and keywords
-- **🏷️ Content Filtering**: Filter by Videos, Podcasts, Newsletters, or view All
-- **📱 Responsive Design**: Optimized for desktop, tablet, and mobile
-- **⚡ Fast Performance**: Static site generation with Astro
-- **📋 Archive Page**: Complete searchable list of all content
-- **🔄 Auto-Updates**: Automated RSS feed refresh twice daily
-- **📱 PWA Support**: Installable progressive web app
-- **🎨 Clean UI**: Minimal design with Inter font and Tailwind CSS
+### Content Aggregation
+- **14 Content Sources**: Aggregates from YouTube channels, podcasts, newsletters, and blogs
+- **311+ Content Items**: Videos, podcasts, newsletters, and blog posts
+- **Real-time Updates**: RSS feed integration with cache-busting for fresh content
+- **Smart Categorization**: Content organized by type, source, and publication date
 
-## 🛠️ Tech Stack
+### User Experience
+- **Advanced Search**: Full-text search across titles, descriptions, and keywords
+- **Smart Filtering**: Filter by content type (Videos, Podcasts, Newsletters, Blogs)
+- **Date Grouping**: Content organized by Today, Yesterday, This Week, etc.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop
+- **Progressive Web App**: Installable with offline capabilities
 
-- **Framework**: Astro v4.11.0 (Static Site Generator)
-- **Styling**: Tailwind CSS v3.4.0
-- **RSS Parsing**: rss-parser v3.13.0
-- **TypeScript**: v5.5.0
+### Performance & SEO
+- **Paginated API**: Reduces initial load from 344KB to ~20KB per request
+- **Lazy Loading**: Images and content loaded on demand
+- **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, structured data
+- **Cache Strategy**: Multi-layer caching for optimal performance
+- **Font Optimization**: Preloaded fonts with display swap
+
+### Accessibility
+- **Keyboard Navigation**: Full keyboard accessibility
+- **Screen Reader Support**: Proper ARIA labels and semantic HTML
+- **Focus Management**: Clean focus indicators without visual clutter
+- **Mobile Responsive**: Horizontal scrolling filter tabs on mobile
+
+## 📊 Content Sources
+
+### Newsletters (5 sources)
+- **The Daily Brief**: Daily market wrap-up and analysis
+- **After Market Report**: Quick daily market summary
+- **The Chatter**: Weekly insights on markets and technology
+- **Varsity Newsletter**: Educational content on personal finance
+- **What The Hell Is Happening**: Unconventional takes on current events
+
+### Podcasts (3 sources)
+- **The Daily Brief Podcast**: Audio discussions on market trends
+- **Side Notes by Zerodha Varsity**: Educational finance content
+- **Investing in India**: Insights into India's investment landscape
+
+### YouTube Channels (4 sources)
+- **Markets**: Educational videos on market analysis and trading
+- **Zerodha**: Daily market outlook and technical analysis
+- **Zero1**: Quick market updates and financial literacy
+- **Varsity**: Personal finance and investment education
+
+### Blogs (2 sources)
+- **Z-Connect Blog**: Market insights, IPO analysis, investment guides
+- **Varsity Blog**: Educational articles on trading and financial markets
+
+## 🛠 Tech Stack
+
+- **Framework**: Astro v4.16.18 (Static Site Generator)
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **RSS Parsing**: rss-parser
 - **Deployment**: Cloudflare Pages
 - **CI/CD**: GitHub Actions
-- **Build Tool**: Vite (integrated with Astro)
 
 ## 🚀 Quick Start
 
+### Prerequisites
+- Node.js 20+
+- npm
+
+### Installation
 ```bash
 # Clone the repository
 git clone https://github.com/bebhuvan/zerodha-content-hub.git
@@ -54,200 +82,191 @@ cd zerodha-content-hub
 # Install dependencies
 npm install
 
-# Fetch latest RSS feeds
+# Fetch latest content
 npm run fetch-feeds
 
 # Start development server
 npm run dev
-# → http://localhost:4321
+```
 
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+### Available Scripts
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run fetch-feeds  # Update RSS feed content
+npm run astro        # Astro CLI commands
 ```
 
 ## 📁 Project Structure
 
 ```
-zerodha-content-hub/
-├── .github/workflows/           # GitHub Actions
-│   ├── update-feeds.yml        # Main scheduled workflow
-│   └── manual-deploy.yml       # Manual testing workflow
-├── public/                     # Static assets
-│   ├── favicon.svg
-│   ├── manifest.json          # PWA manifest
-│   └── sw.js                  # Service worker
-├── scripts/
-│   └── fetchFeeds.js          # RSS feed fetching logic
-├── src/
-│   ├── components/            # Reusable UI components
-│   │   ├── ContentList.astro  # Main content display
-│   │   ├── FilterTabs.astro   # Content type filters
-│   │   ├── HeroSection.astro  # Page header
-│   │   ├── SearchAndFilter.astro # Search logic
-│   │   └── SearchBar.astro    # Search input
-│   ├── data/                  # Generated content
-│   │   ├── content.json       # All RSS feed items
-│   │   └── stats.json         # Content statistics
-│   ├── layouts/
-│   │   └── Layout.astro       # Base page layout
-│   ├── pages/
-│   │   ├── archive.astro      # Archive page
-│   │   ├── content.json.ts    # API endpoint
-│   │   └── index.astro        # Homepage
-│   └── types/
-│       └── content.ts         # TypeScript definitions
-├── astro.config.mjs           # Astro configuration
-├── tailwind.config.mjs        # Tailwind configuration
-├── tsconfig.json              # TypeScript configuration
-└── package.json               # Dependencies and scripts
+src/
+├── components/
+│   ├── SearchBar.astro          # Search input component
+│   ├── FilterTabs.astro         # Content type filter tabs
+│   ├── SearchAndFilter.astro    # Main content display logic
+│   ├── HeroSection.astro        # Homepage hero section
+│   └── ContentList.astro        # Content list container
+├── layouts/
+│   └── Layout.astro             # Base layout with SEO
+├── pages/
+│   ├── index.astro              # Homepage
+│   ├── archive.astro            # Archive page
+│   ├── sources.astro            # Sources directory
+│   ├── feed.xml.ts              # RSS feed endpoint
+│   ├── sitemap.xml.ts           # SEO sitemap
+│   ├── robots.txt.ts            # SEO robots file
+│   └── api/
+│       └── content.ts           # Paginated content API
+├── data/
+│   ├── content.json             # Aggregated content data
+│   └── stats.json               # Content statistics
+└── constants/
+    └── app.ts                   # Application constants
 ```
 
-## 🔧 Development Commands
+## 🔄 Content Updates
 
+### Automated Updates
+Content is automatically updated twice daily via GitHub Actions:
+- **9:00 AM IST**: Morning update before market hours
+- **8:00 PM IST**: Evening update after market close
+
+### Manual Updates
 ```bash
-# Development
-npm run dev              # Start dev server with hot reload
-npm run build            # Build for production
-npm run preview          # Preview production build
-npm run fetch-feeds      # Manually fetch RSS feeds
+# Update content manually
+npm run fetch-feeds
 
-# Type checking
-npx astro check         # Check TypeScript and Astro files
+# Deploy to production
+git add . && git commit -m "Update content" && git push
 ```
 
-## 🚀 Deployment
+## 🎨 Customization
 
-### Automated Deployment (GitHub Actions)
-
-**Main Workflow** (`update-feeds.yml`):
-- **Schedule**: Runs automatically at 9 AM & 8 PM IST daily
-- **Trigger**: Manual trigger also available
-- **Process**: Fetches RSS feeds → Builds site → Deploys to Cloudflare Pages
-- **Commits**: Updates `src/data/` with `[skip ci]` tag
-
-**Manual Testing** (`manual-deploy.yml`):
-- **Purpose**: Testing newsletter fixes and verifying content
-- **Trigger**: Manual only
-- **Features**: Shows content statistics and newsletter verification
-
-### Setup Instructions
-
-1. **Cloudflare Pages Setup**:
-   - Connect GitHub repository to Cloudflare Pages
-   - Build command: `npm run build`
-   - Build output directory: `dist`
-
-2. **GitHub Secrets Configuration**:
-   - `CLOUDFLARE_API_TOKEN`: API token with Cloudflare Pages:Edit permission
-   - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
-
-3. **Manual Deployment**:
-   - Go to Actions tab → "Manual Deploy with All Newsletters" → Run workflow
-
-## 🔍 Content Management
-
-### RSS Feed Configuration
-
-RSS feeds are configured in `scripts/fetchFeeds.js`:
-
+### Adding New Content Sources
+1. Add feed configuration to `scripts/fetchFeeds.js`:
 ```javascript
-const feedConfigs = [
-  {
-    name: 'Source Name',
-    url: 'https://example.com/feed',
-    type: 'video|podcast|newsletter',
-    category: 'Category'
-  }
-  // ... more feeds
-];
-```
-
-### Data Structure
-
-**Content Item**:
-```typescript
 {
-  id: string;
-  title: string;
-  description: string;
-  url: string;
-  publishDate: string;
-  source: string;
-  type: 'video' | 'podcast' | 'newsletter';
-  isNew: boolean;
-  isShort?: boolean;  // YouTube Shorts
-  duration?: string;  // Videos/Podcasts
-  readingTime?: string; // Newsletters
-  embedId?: string;   // YouTube video ID
-  keywords?: string[];
+  name: 'Source Name',
+  url: 'https://example.com/feed.xml',
+  type: 'newsletter', // or 'podcast', 'video', 'blog'
+  category: 'Newsletter'
 }
 ```
+
+2. Update the sources directory in `src/pages/sources.astro`
+3. Run `npm run fetch-feeds` to test
+
+### Styling Customization
+- Global styles: `src/layouts/Layout.astro`
+- Component styles: Individual `.astro` files
+- Tailwind config: `tailwind.config.js`
+
+## 📈 Performance
+
+### Core Web Vitals
+- **LCP**: < 2.5s (Fast loading with image optimization)
+- **FID**: < 100ms (Responsive with efficient JavaScript)
+- **CLS**: < 0.1 (Stable layout with proper sizing)
+
+### Optimization Features
+- **API Pagination**: 20 items per request vs 311 items
+- **Image Lazy Loading**: YouTube thumbnails loaded on demand
+- **Font Optimization**: Preconnected Google Fonts with swap
+- **Cache Headers**: Appropriate caching for different content types
+- **Bundle Optimization**: Tree-shaking and code splitting
+
+## 🔧 Configuration
+
+### Environment Variables
+```bash
+# Not currently required - all feeds are public RSS
+# Future: Add API keys for enhanced features
+```
+
+### Cache Configuration
+- **RSS Feeds**: No caching (always fresh)
+- **API Responses**: 5-minute cache
+- **Static Assets**: 1-hour cache
+- **Feed Endpoint**: 1-hour cache
 
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
-**1. Newsletters not showing**:
-- Check GitHub Actions logs for RSS fetch errors
-- Verify all newsletter feeds are accessible
-- Run manual deployment workflow for debugging
-
-**2. Build failures**:
-- Ensure `content.json` exists (run `npm run fetch-feeds`)
-- Check TypeScript errors with `npx astro check`
-- Verify dependencies are installed
-
-**3. Deployment issues**:
-- Check Cloudflare API token permissions
-- Verify account ID is correct
-- Check GitHub Actions secrets configuration
-
-### Debug Commands
-
+**Server won't start**
 ```bash
-# Check content generation
-npm run fetch-feeds
-cat src/data/stats.json
-
-# Verify newsletter content
-cat src/data/content.json | jq '[.[] | select(.type == "newsletter") | .source] | unique'
-
-# Test build locally
-npm run build
-ls -la dist/
-
-# Check RSS feed accessibility
-curl -I https://zerodhavarsity.substack.com/feed
+# Check if port is in use
+lsof -i :4321
+# Kill existing processes
+pkill -f "astro dev"
 ```
 
-## 🎨 Design System
+**Missing content**
+```bash
+# Clear cache and refetch
+rm -rf .astro dist node_modules/.cache
+npm run fetch-feeds
+```
 
-### Typography
-- **Font**: Inter (Google Fonts)
-- **Headings**: Semibold to Bold weights
-- **Body**: Regular to Medium weights
+**Build errors**
+```bash
+# Clean install
+rm -rf node_modules package-lock.json
+npm install
+```
 
-### Color Palette
-- **Background**: White (`#ffffff`)
-- **Text**: Gray-900 (`#111827`)
-- **Accent**: Black (`#000000`)
-- **Muted**: Gray-500 to Gray-600
+## 📱 Mobile Experience
 
-## 📈 Performance
+- **Responsive Design**: Optimized for all screen sizes
+- **Touch Friendly**: Large tap targets and smooth scrolling
+- **PWA Support**: Add to home screen functionality
+- **Offline Capability**: Service worker caching
+- **Performance**: Lazy loading and efficient rendering
 
-- **Lighthouse Score**: 95+ across all metrics
-- **Bundle Size**: <100KB gzipped
-- **Load Time**: <2s on 3G networks
-- **Caching**: Aggressive caching via Cloudflare CDN
+## 🔒 Security & Privacy
+
+- **No User Data Collection**: Content-only platform
+- **XSS Prevention**: Safe DOM manipulation
+- **Content Security**: Sanitized RSS content
+- **HTTPS**: Secure content delivery
+- **Privacy Focused**: No tracking or analytics
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Make your changes
+4. Add tests if applicable
+5. Commit with descriptive messages
+6. Push to your fork: `git push origin feature-name`
+7. Create a Pull Request
+
+### Development Guidelines
+- Follow existing code style
+- Add TypeScript types for new features
+- Test on mobile and desktop
+- Ensure accessibility compliance
+- Update documentation for new features
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🔗 Links
+## 🆘 Support
 
-- **Repository**: https://github.com/bebhuvan/zerodha-content-hub
-- **Issues**: https://github.com/bebhuvan/zerodha-content-hub/issues
+For issues and questions:
+- **Issues**: [GitHub Issues](https://github.com/bebhuvan/zerodha-content-hub/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/bebhuvan/zerodha-content-hub/discussions)
+
+## 🙏 Acknowledgments
+
+- **Zerodha**: For providing quality financial education content
+- **Astro**: For the excellent static site generator
+- **Tailwind CSS**: For utility-first styling
+- **Community**: For feedback and contributions
+
+---
+
+Built with ❤️ for the Zerodha community
