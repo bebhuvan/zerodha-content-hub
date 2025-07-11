@@ -1,5 +1,5 @@
 import Parser from 'rss-parser';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -211,6 +211,16 @@ async function fetchFeedWithRetry(config, maxRetries = 3) {
 async function fetchAllFeeds() {
   const allContent = [];
   
+  // Try to load existing content for fallback
+  let existingContent = [];
+  try {
+    const existingData = JSON.parse(readFileSync(join(__dirname, '..', 'src', 'data', 'content.json'), 'utf8'));
+    existingContent = existingData;
+    console.log(`📁 Loaded ${existingContent.length} existing content items for fallback`);
+  } catch (error) {
+    console.log('📁 No existing content found for fallback');
+  }
+  
   for (const config of feedConfigs) {
     try {
       const feed = await fetchFeedWithRetry(config);
@@ -248,6 +258,23 @@ async function fetchAllFeeds() {
       console.log(`✓ Fetched ${items.length} items from ${config.name}`);
     } catch (error) {
       console.error(`✗ Error fetching ${config.name}:`, error.message);
+      
+      // Try to use existing content as fallback (only recent items)
+      const existingItems = existingContent.filter(item => {
+        if (item.source !== config.name) return false;
+        
+        // Only use items from the last 30 days as fallback
+        const itemDate = new Date(item.publishDate);
+        const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+        return itemDate > thirtyDaysAgo;
+      });
+      
+      if (existingItems.length > 0) {
+        console.log(`  📄 Using ${existingItems.length} recent existing items from ${config.name} as fallback`);
+        allContent.push(...existingItems);
+      } else {
+        console.log(`  📄 No recent existing content found for ${config.name}`);
+      }
     }
     
     // Add delay between requests to avoid rate limiting
