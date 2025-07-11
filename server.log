@@ -66,3 +66,7 @@
 15:14:32 [200] /sources 6ms
 15:14:34 [200] /sources 2ms
 15:14:43 [200] / 2ms
+15:19:38 [watch] src/data/content.json
+15:19:38 [watch] src/data/stats.json
+15:19:55 Configuration file removed. Restarting...
+15:19:55 [types] Generated 1ms

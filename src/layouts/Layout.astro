@@ -170,10 +170,22 @@ const { title, description = 'Understand what\'s happening in the markets with e
     background: #9ca3af;
   }
   
-  /* Focus styles */
-  :focus {
+  /* Focus styles - only for keyboard navigation */
+  :focus-visible {
     outline: 2px solid #000;
     outline-offset: 2px;
+  }
+  
+  /* Remove focus outline on mouse click */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  /* Specifically for buttons and tabs */
+  button:focus, [role="tab"]:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
   }
   
   /* Selection styles */
