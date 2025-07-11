@@ -18,11 +18,7 @@ const parser = new Parser({
     ]
   },
   headers: {
-    'Cache-Control': 'no-cache, no-store, must-revalidate',
-    'Pragma': 'no-cache',
-    'Expires': '0',
-    'User-Agent': 'Mozilla/5.0 (compatible; ZerodhaContentHub/1.0; +https://zerodha.com)',
-    'Accept': 'application/rss+xml, application/xml, text/xml'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
   }
 });
 
