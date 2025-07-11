@@ -1,11 +1,11 @@
 {
-  "totalContent": 311,
-  "thisWeek": 53,
+  "totalContent": 250,
+  "thisWeek": 45,
   "contentTypes": {
     "videos": 60,
     "podcasts": 105,
-    "newsletters": 81,
+    "newsletters": 20,
     "blogs": 65
   },
-  "lastUpdated": "2025-07-11T14:00:58.269Z"
+  "lastUpdated": "2025-07-11T14:02:24.257Z"
 }
