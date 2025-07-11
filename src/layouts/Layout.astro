@@ -4,7 +4,7 @@ export interface Props {
   description?: string;
 }
 
-const { title, description = 'Videos, podcasts, and newsletters from Zerodha' } = Astro.props;
+const { title, description = 'Understand what\'s happening in the markets with expert analysis, market updates, and educational content that breaks down complex financial topics for everyday investors' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ const { title, description = 'Videos, podcasts, and newsletters from Zerodha' } 
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icon-192.svg" />
     
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Market Insights by Zerodha" href="/feed.xml" />
@@ -32,6 +32,42 @@ const { title, description = 'Videos, podcasts, and newsletters from Zerodha' } 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content="Market Insights by Zerodha" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url} />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Market Insights by Zerodha",
+        "description": "Understand what's happening in the markets with expert analysis, market updates, and educational content that breaks down complex financial topics for everyday investors",
+        "url": "https://zerodha-market-insights.pages.dev",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Zerodha",
+          "url": "https://zerodha.com"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://zerodha-market-insights.pages.dev/?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
     
     <title>{title}</title>
     
@@ -144,5 +180,15 @@ const { title, description = 'Videos, podcasts, and newsletters from Zerodha' } 
   ::selection {
     background: #000;
     color: #fff;
+  }
+  
+  /* Hide scrollbar utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 </style>

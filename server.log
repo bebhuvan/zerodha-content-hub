@@ -1,0 +1,68 @@
+
+> zerodha-content-hub@0.0.1 dev
+> astro dev
+
+14:18:11 [types] Generated 1ms
+
+ astro  v4.16.18 ready in 550 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+14:18:11 watching for file changes...
+14:18:22 [200] / 40ms
+14:18:22 [200] / 44ms
+14:18:25 [200] /archive 9ms
+14:18:28 [200] /archive 5ms
+14:20:00 [200] /archive 12ms
+14:20:01 [404] /icon-192.png 2ms
+14:20:01 [200] / 9ms
+14:20:07 [200] /archive 7ms
+14:20:13 [200] /feed.xml 5ms
+14:21:25 [200] / 5ms
+14:21:25 [404] /icon-192.png 1ms
+14:22:59 [watch] src/data/content.json
+14:22:59 [watch] src/data/stats.json
+14:23:23 [200] / 4ms
+14:23:23 [404] /icon-192.png 0ms
+14:30:07 [watch] src/data/content.json
+14:30:07 [watch] src/data/stats.json
+14:30:08 [404] /icon-192.png 1ms
+14:35:02 [watch] src/data/content.json
+14:35:02 [watch] src/data/stats.json
+14:35:15 [watch] src/data/stats.json
+14:35:24 [watch] src/data/content.json
+14:39:34 [watch] src/layouts/Layout.astro
+14:43:21 [watch] src/layouts/Layout.astro
+14:43:53 [watch] src/layouts/Layout.astro
+14:45:16 [200] / 4ms
+14:45:23 [200] /api/content 1ms
+14:52:11 [watch] src/layouts/Layout.astro
+14:52:18 [watch] src/layouts/Layout.astro
+14:56:01 [watch] src/components/FilterTabs.astro
+14:56:10 [watch] src/components/FilterTabs.astro
+14:56:17 [watch] src/components/FilterTabs.astro
+14:56:26 [watch] src/layouts/Layout.astro
+14:56:34 [watch] src/components/SearchBar.astro
+14:56:49 [watch] src/pages/index.astro
+14:57:04 [watch] src/pages/index.astro
+14:57:12 [200] /api/content 1ms
+14:58:17 [watch] src/components/FilterTabs.astro
+14:58:44 [200] / 7ms
+15:01:08 [watch] src/pages/sources.astro
+15:01:19 [watch] src/pages/sources.astro
+15:01:29 [WARN] Unsupported file type /home/bhuvanesh/zerodha-content-hub/src/pages/sources.astro.tmp.19008.1752226289919 found. Prefix filename with an underscore (`_`) to ignore.
+15:01:29 [watch] src/pages/sources.astro
+15:01:46 [watch] src/data/content.json
+15:01:46 [watch] src/data/stats.json
+15:04:44 [watch] src/pages/sources.astro
+15:05:02 [watch] src/data/content.json
+15:05:02 [watch] src/data/stats.json
+15:07:53 [WARN] Unsupported file type /home/bhuvanesh/zerodha-content-hub/src/pages/sources.astro.tmp.19008.1752226673662 found. Prefix filename with an underscore (`_`) to ignore.
+15:07:53 [watch] src/pages/sources.astro
+15:08:10 [watch] src/data/content.json
+15:08:10 [watch] src/data/stats.json
+15:14:31 [200] / 3ms
+15:14:32 [200] /sources 6ms
+15:14:34 [200] /sources 2ms
+15:14:43 [200] / 2ms

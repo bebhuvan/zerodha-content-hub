@@ -62,6 +62,12 @@ const feedConfigs = [
     category: 'Podcast'
   },
   {
+    name: 'Investing in India',
+    url: 'https://feeds.simplecast.com/1ANGOSmm',
+    type: 'podcast',
+    category: 'Podcast'
+  },
+  {
     name: 'Varsity Newsletter',
     url: 'https://zerodhavarsity.substack.com/feed',
     type: 'newsletter',

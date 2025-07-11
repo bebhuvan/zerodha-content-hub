@@ -1,0 +1,123 @@
+
+> zerodha-content-hub@0.0.1 dev
+> astro dev
+
+12:40:29 [types] Generated 0ms
+
+ astro  v4.16.18 ready in 229 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+12:40:29 watching for file changes...
+12:40:47 [200] / 9ms
+12:40:47 [200] /content.json 2ms
+12:40:49 [200] / 3ms
+12:40:50 [200] /content.json 1ms
+12:40:55 [200] / 8ms
+12:40:56 [200] /content.json 1ms
+12:40:56 [200] / 4ms
+12:41:24 [200] /archive 4ms
+12:41:30 [200] /archive 3ms
+12:41:35 [200] /archive 2ms
+12:41:41 [200] /archive 2ms
+12:41:54 [200] /content.json 1ms
+12:42:07 [200] /archive 2ms
+12:42:07 [200] /content.json 1ms
+12:42:27 [200] /content.json 1ms
+12:43:05 [watch] src/components/SearchAndFilter.astro
+12:43:05 [200] /content.json 1ms
+12:43:21 [200] / 3ms
+12:43:21 [200] /content.json 1ms
+12:44:16 [200] /content.json 2ms
+12:44:19 [200] /content.json 1ms
+12:45:34 [watch] src/components/HeroSection.astro
+12:45:34 [200] /content.json 1ms
+12:45:44 [ERROR] [UnhandledRejection] Astro detected an unhandled rejection. Here's the stack trace:
+Error: ENOENT: no such file or directory, stat '/home/bhuvanesh/zerodha-content-hub/src/pages/index.astro.tmp.8446.1752218144056'
+    at Object.statSync (node:fs:1739:25)
+    at walk (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/core/routing/manifest/create.js:87:24)
+    at createFileBasedRoutes (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/core/routing/manifest/create.js:181:5)
+    at createRouteManifest (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/core/routing/manifest/create.js:325:27)
+    at rebuildManifest (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/vite-plugin-astro-server/plugin.js:38:56)
+    at FSWatcher.emit (node:events:530:35)
+    at FSWatcher.emitWithAll (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:44374:8)
+    at FSWatcher._emit (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:44466:8)
+    at NodeFsHandler._handleFile (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:43051:14)
+    at NodeFsHandler._addToNodeFs (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:43288:21)
+  Hint:
+    Make sure your promises all have an `await` or a `.catch()` handler.
+  Error reference:
+    https://docs.astro.build/en/reference/errors/unhandled-rejection/
+  Stack trace:
+    at Object.statSync (node:fs:1739:25)
+    [...] See full stack trace in the browser, or rerun with --verbose.
+12:45:44 [watch] src/pages/index.astro
+12:45:44 [200] /content.json 1ms
+12:45:49 [watch] src/pages/archive.astro
+12:45:49 [200] /content.json 1ms
+12:45:52 [200] / 6ms
+12:45:52 [200] /content.json 1ms
+12:52:23 [watch] src/components/HeroSection.astro
+12:52:23 [200] /content.json 2ms
+12:52:28 [ERROR] [UnhandledRejection] Astro detected an unhandled rejection. Here's the stack trace:
+Error: ENOENT: no such file or directory, stat '/home/bhuvanesh/zerodha-content-hub/src/pages/index.astro.tmp.8446.1752218548590'
+    at Object.statSync (node:fs:1739:25)
+    at walk (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/core/routing/manifest/create.js:87:24)
+    at createFileBasedRoutes (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/core/routing/manifest/create.js:181:5)
+    at createRouteManifest (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/core/routing/manifest/create.js:325:27)
+    at rebuildManifest (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/vite-plugin-astro-server/plugin.js:38:56)
+    at FSWatcher.emit (node:events:530:35)
+    at FSWatcher.emitWithAll (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:44374:8)
+    at FSWatcher._emit (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:44466:8)
+    at NodeFsHandler._handleFile (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:43051:14)
+    at NodeFsHandler._addToNodeFs (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:43288:21)
+  Hint:
+    Make sure your promises all have an `await` or a `.catch()` handler.
+  Error reference:
+    https://docs.astro.build/en/reference/errors/unhandled-rejection/
+  Stack trace:
+    at Object.statSync (node:fs:1739:25)
+    [...] See full stack trace in the browser, or rerun with --verbose.
+12:52:28 [watch] src/pages/index.astro
+12:52:28 [200] /content.json 1ms
+12:52:44 [WARN] Unsupported file type /home/bhuvanesh/zerodha-content-hub/src/pages/feed.xml.ts.tmp.8446.1752218564484 found. Prefix filename with an underscore (`_`) to ignore.
+12:52:44 [200] /content.json 1ms
+12:52:55 [watch] src/layouts/Layout.astro
+12:52:56 [200] /content.json 1ms
+12:53:01 [ERROR] [UnhandledRejection] Astro detected an unhandled rejection. Here's the stack trace:
+Error: ENOENT: no such file or directory, stat '/home/bhuvanesh/zerodha-content-hub/src/pages/archive.astro.tmp.8446.1752218581743'
+    at Object.statSync (node:fs:1739:25)
+    at walk (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/core/routing/manifest/create.js:87:24)
+    at createFileBasedRoutes (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/core/routing/manifest/create.js:181:5)
+    at createRouteManifest (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/core/routing/manifest/create.js:325:27)
+    at rebuildManifest (file:///home/bhuvanesh/zerodha-content-hub/node_modules/astro/dist/vite-plugin-astro-server/plugin.js:38:56)
+    at FSWatcher.emit (node:events:530:35)
+    at FSWatcher.emitWithAll (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:44374:8)
+    at FSWatcher._emit (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:44466:8)
+    at NodeFsHandler._handleFile (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:43051:14)
+    at NodeFsHandler._addToNodeFs (file:///home/bhuvanesh/zerodha-content-hub/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:43288:21)
+  Hint:
+    Make sure your promises all have an `await` or a `.catch()` handler.
+  Error reference:
+    https://docs.astro.build/en/reference/errors/unhandled-rejection/
+  Stack trace:
+    at Object.statSync (node:fs:1739:25)
+    [...] See full stack trace in the browser, or rerun with --verbose.
+12:53:01 [watch] src/pages/archive.astro
+12:53:01 [200] /content.json 1ms
+12:53:07 [200] /content.json 1ms
+12:53:16 [200] / 4ms
+12:53:16 [200] /content.json 1ms
+12:53:16 [200] / 4ms
+12:54:18 [watch] src/components/FilterTabs.astro
+12:54:18 [200] /content.json 2ms
+12:54:25 [watch] src/components/SearchAndFilter.astro
+12:54:25 [200] /content.json 1ms
+12:54:32 [watch] src/components/SearchAndFilter.astro
+12:54:32 [200] /content.json 2ms
+12:54:40 [WARN] Unsupported file type /home/bhuvanesh/zerodha-content-hub/src/pages/archive.astro.tmp.8446.1752218680887 found. Prefix filename with an underscore (`_`) to ignore.
+12:54:40 [watch] src/pages/archive.astro
+12:54:40 [200] /content.json 1ms
+12:54:48 [watch] src/pages/archive.astro
+12:54:48 [200] /content.json 2ms

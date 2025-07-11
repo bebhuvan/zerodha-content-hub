@@ -1,0 +1,399 @@
+---
+// Optimized component with pagination and lazy loading
+---
+
+<div id="search-filter-container">
+  <!-- Search and filter controls will be rendered here -->
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentPage = 1;
+    let currentFilter = 'all';
+    let currentSearch = '';
+    let isLoading = false;
+    let hasMore = true;
+    let allLoadedContent = [];
+
+    // Initialize search with pagination
+    async function loadContent(page = 1, append = false) {
+      if (isLoading) return;
+      
+      isLoading = true;
+      const loadingElement = document.getElementById('loading-state');
+      if (loadingElement && !append) {
+        loadingElement.style.display = 'block';
+      }
+
+      try {
+        const params = new URLSearchParams({
+          page: page.toString(),
+          limit: '20',
+          ...(currentSearch && { search: currentSearch }),
+          ...(currentFilter !== 'all' && { source: currentFilter === 'blog' ? 'Blog' : currentFilter })
+        });
+
+        const response = await fetch(`/api/content?${params}`);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (append) {
+          allLoadedContent = [...allLoadedContent, ...data.content];
+        } else {
+          allLoadedContent = data.content;
+        }
+        
+        hasMore = data.pagination.hasNext;
+        currentPage = page;
+        
+        // Hide loading state
+        if (loadingElement) {
+          loadingElement.style.display = 'none';
+        }
+        
+        renderContent(allLoadedContent, !append);
+        
+      } catch (error) {
+        console.error('Error loading content:', error);
+        
+        // Show error message
+        const container = document.getElementById('content-container');
+        if (container && !append) {
+          container.innerHTML = `
+            <div class="text-center py-12">
+              <p class="text-gray-500">Error loading content. Please refresh the page.</p>
+            </div>
+          `;
+        }
+      } finally {
+        isLoading = false;
+      }
+    }
+
+    // Group content by date
+    function groupByDate(items) {
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const yesterday = new Date(today.getTime() - 24 * 60 * 60 * 1000);
+      const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+      const twoWeeksAgo = new Date(now.getTime() - 14 * 24 * 60 * 60 * 1000);
+      const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+      
+      const groups = {
+        'Today': [],
+        'Yesterday': [],
+        'This Week': [],
+        'Last Week': [],
+        'This Month': [],
+        'Older': []
+      };
+      
+      items.forEach(item => {
+        const date = new Date(item.publishDate);
+        const itemDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        
+        if (itemDate.getTime() === today.getTime()) {
+          groups['Today'].push(item);
+        } else if (itemDate.getTime() === yesterday.getTime()) {
+          groups['Yesterday'].push(item);
+        } else if (date > oneWeekAgo) {
+          groups['This Week'].push(item);
+        } else if (date > twoWeeksAgo) {
+          groups['Last Week'].push(item);
+        } else if (date > oneMonthAgo) {
+          groups['This Month'].push(item);
+        } else {
+          groups['Older'].push(item);
+        }
+      });
+      
+      return groups;
+    }
+
+    // Render content (reuse existing createContentCard function)
+    function renderContent(items, clearFirst = true) {
+      const container = document.getElementById('content-container');
+      const noResults = document.getElementById('no-results');
+      
+      if (!container) return;
+      
+      if (items.length === 0) {
+        if (clearFirst) container.innerHTML = '';
+        noResults?.classList.remove('hidden');
+        return;
+      }
+      
+      noResults?.classList.add('hidden');
+      
+      const grouped = groupByDate(items);
+      
+      // Clear container if needed
+      if (clearFirst) container.innerHTML = '';
+      
+      Object.entries(grouped).forEach(([label, groupItems]) => {
+        if (groupItems.length === 0) return;
+        
+        // Check if section already exists
+        let sectionElement = container.querySelector(`[data-label="${label}"]`);
+        
+        if (!sectionElement) {
+          // Create new section
+          sectionElement = document.createElement('section');
+          sectionElement.className = 'date-group mb-8';
+          sectionElement.setAttribute('data-label', label);
+          
+          // Create header
+          const headerElement = document.createElement('h2');
+          headerElement.className = 'text-lg font-semibold text-gray-900 mb-6 sticky top-0 bg-white py-3 z-10 border-b border-gray-100 flex items-center gap-2';
+          
+          const icons = {
+            'Today': '📰',
+            'Yesterday': '⏰',
+            'This Week': '📋',
+            'Last Week': '📊', 
+            'This Month': '📈',
+            'Older': '📚'
+          };
+          
+          headerElement.innerHTML = `<span class="text-xl">${icons[label] || '📄'}</span> ${label} <span class="text-sm font-normal text-gray-500 ml-2">(${groupItems.length})</span>`;
+          sectionElement.appendChild(headerElement);
+          
+          // Create items container
+          const itemsContainer = document.createElement('div');
+          itemsContainer.className = 'space-y-6';
+          sectionElement.appendChild(itemsContainer);
+          
+          container.appendChild(sectionElement);
+        }
+        
+        // Add items to existing section
+        const itemsContainer = sectionElement.querySelector('.space-y-6');
+        groupItems.forEach(item => {
+          const cardElement = createContentCard(item);
+          itemsContainer.appendChild(cardElement);
+        });
+        
+        // Update count
+        const countElement = sectionElement.querySelector('.text-gray-500');
+        if (countElement) {
+          const totalItems = sectionElement.querySelectorAll('.content-card').length;
+          countElement.textContent = `(${totalItems})`;
+        }
+      });
+      
+      // Setup intersection observer for infinite scroll
+      if (hasMore) {
+        setupInfiniteScroll();
+      }
+    }
+
+    // Infinite scroll setup
+    function setupInfiniteScroll() {
+      const container = document.getElementById('content-container');
+      if (!container) return;
+      
+      // Remove existing sentinel
+      const existingSentinel = document.getElementById('scroll-sentinel');
+      if (existingSentinel) {
+        existingSentinel.remove();
+      }
+      
+      // Create sentinel element
+      const sentinel = document.createElement('div');
+      sentinel.id = 'scroll-sentinel';
+      sentinel.className = 'h-20 flex items-center justify-center';
+      sentinel.innerHTML = '<div class="text-gray-400">Loading more...</div>';
+      container.appendChild(sentinel);
+      
+      // Setup observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && hasMore && !isLoading) {
+            loadContent(currentPage + 1, true);
+          }
+        });
+      }, { rootMargin: '100px' });
+      
+      observer.observe(sentinel);
+    }
+
+    // Reuse existing createContentCard function from original component
+    function createContentCard(item) {
+      const typeStyles = {
+        video: { bg: 'bg-blue-50', text: 'text-blue-700' },
+        podcast: { bg: 'bg-purple-50', text: 'text-purple-700' },
+        newsletter: { bg: 'bg-gray-50', text: 'text-gray-700' },
+        blog: { bg: 'bg-green-50', text: 'text-green-700' }
+      };
+      
+      const style = typeStyles[item.type];
+      const typeIcon = item.type === 'video' ? '▶' : '';
+      
+      const articleElement = document.createElement('article');
+      articleElement.className = 'content-card border-b border-gray-100 pb-6 last:border-0 rounded-lg p-4';
+      
+      const containerDiv = document.createElement('div');
+      containerDiv.className = 'space-y-4';
+      
+      // Meta information
+      const metaDiv = document.createElement('div');
+      metaDiv.className = 'flex flex-wrap items-center gap-2 text-sm';
+      
+      const typeSpan = document.createElement('span');
+      typeSpan.className = 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ' + style.bg + ' ' + style.text;
+      let displayText = typeIcon + ' ' + (item.isShort ? 'Short' : item.type.charAt(0).toUpperCase() + item.type.slice(1));
+      if (item.type === 'blog' && item.categories && item.categories.length > 0) {
+        displayText += ' • ' + item.categories[0];
+      }
+      typeSpan.textContent = displayText;
+      metaDiv.appendChild(typeSpan);
+      
+      if (item.isNew) {
+        const newSpan = document.createElement('span');
+        newSpan.className = 'inline-flex items-center px-2.5 py-0.5 rounded bg-black text-white text-xs font-medium';
+        newSpan.textContent = 'New';
+        metaDiv.appendChild(newSpan);
+      }
+      
+      const sourceSpan = document.createElement('span');
+      sourceSpan.className = 'text-gray-500 text-xs';
+      sourceSpan.textContent = item.source;
+      metaDiv.appendChild(sourceSpan);
+      
+      if (item.duration || item.readingTime) {
+        const dotSpan = document.createElement('span');
+        dotSpan.className = 'text-gray-300';
+        dotSpan.textContent = '•';
+        metaDiv.appendChild(dotSpan);
+        
+        const durationSpan = document.createElement('span');
+        durationSpan.className = 'text-gray-500';
+        durationSpan.textContent = item.duration || item.readingTime;
+        metaDiv.appendChild(durationSpan);
+      }
+      
+      containerDiv.appendChild(metaDiv);
+      
+      // Title
+      const titleH3 = document.createElement('h3');
+      titleH3.className = 'text-xl font-semibold leading-tight break-words';
+      
+      const titleLink = document.createElement('a');
+      titleLink.href = item.url;
+      titleLink.target = '_blank';
+      titleLink.rel = 'noopener noreferrer';
+      titleLink.className = 'text-gray-900 hover:text-black transition-colors hover:underline';
+      titleLink.textContent = item.title;
+      
+      titleH3.appendChild(titleLink);
+      containerDiv.appendChild(titleH3);
+      
+      // Description
+      const descP = document.createElement('p');
+      descP.className = 'text-gray-700 leading-relaxed text-base line-clamp-3 break-words';
+      descP.textContent = item.description;
+      containerDiv.appendChild(descP);
+      
+      // Video thumbnail
+      if (item.type === 'video' && item.embedId) {
+        const videoDiv = document.createElement('div');
+        videoDiv.className = 'aspect-video rounded-lg overflow-hidden bg-gray-100 mb-4 relative';
+        
+        const img = document.createElement('img');
+        img.src = 'https://img.youtube.com/vi/' + item.embedId + '/maxresdefault.jpg';
+        img.alt = item.title;
+        img.className = 'w-full h-full object-cover';
+        img.loading = 'lazy';
+        
+        img.onerror = () => {
+          img.src = 'https://img.youtube.com/vi/' + item.embedId + '/hqdefault.jpg';
+          img.onerror = () => videoDiv.style.display = 'none';
+        };
+        
+        const overlayDiv = document.createElement('div');
+        overlayDiv.className = 'absolute inset-0 flex items-center justify-center';
+        
+        const playButton = document.createElement('div');
+        playButton.className = 'bg-black bg-opacity-70 rounded-full p-3';
+        playButton.innerHTML = '<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+        
+        overlayDiv.appendChild(playButton);
+        videoDiv.appendChild(img);
+        videoDiv.appendChild(overlayDiv);
+        containerDiv.appendChild(videoDiv);
+      }
+      
+      // Actions
+      const actionsDiv = document.createElement('div');
+      actionsDiv.className = 'flex items-center justify-between pt-2';
+      
+      const actionLink = document.createElement('a');
+      actionLink.href = item.url;
+      actionLink.target = '_blank';
+      actionLink.rel = 'noopener noreferrer';
+      actionLink.className = 'text-sm font-medium text-blue-600 hover:text-blue-800 inline-flex items-center gap-1 transition-colors';
+      const actionText = item.isShort ? 'Watch Short' : item.type === 'video' ? 'Watch Video' : item.type === 'podcast' ? 'Listen to Podcast' : 'Read Article';
+      actionLink.textContent = actionText + ' ';
+      
+      const svgElement = document.createElement('svg');
+      svgElement.className = 'w-4 h-4';
+      svgElement.setAttribute('fill', 'none');
+      svgElement.setAttribute('stroke', 'currentColor');
+      svgElement.setAttribute('viewBox', '0 0 24 24');
+      svgElement.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>';
+      actionLink.appendChild(svgElement);
+      
+      const dateSpan = document.createElement('span');
+      dateSpan.className = 'text-xs text-gray-400';
+      dateSpan.textContent = new Date(item.publishDate).toLocaleDateString();
+      
+      actionsDiv.appendChild(actionLink);
+      actionsDiv.appendChild(dateSpan);
+      containerDiv.appendChild(actionsDiv);
+      
+      articleElement.appendChild(containerDiv);
+      return articleElement;
+    }
+
+    // Search and filter functionality
+    function performSearch() {
+      allLoadedContent = [];
+      currentPage = 1;
+      hasMore = true;
+      loadContent(1, false);
+    }
+
+    // Initialize
+    loadContent();
+
+    // Search input
+    const searchInput = document.getElementById('search-input');
+    const clearButton = document.getElementById('clear-search');
+    if (searchInput) {
+      let debounceTimer;
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          currentSearch = e.target.value;
+          performSearch();
+        }, 300);
+        
+        if (e.target.value.length > 0) {
+          clearButton?.classList.remove('hidden');
+        } else {
+          clearButton?.classList.add('hidden');
+        }
+      });
+    }
+
+    // Filter change
+    window.addEventListener('filter-change', (e) => {
+      currentFilter = e.detail.filter;
+      performSearch();
+    });
+  });
+</script>

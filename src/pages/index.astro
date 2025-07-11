@@ -29,27 +29,57 @@ import SearchAndFilter from '../components/SearchAndFilter.astro';
     </main>
     
     <!-- Floating Action Button for PWA Install -->
-    <button 
-      id="install-button" 
-      class="fixed bottom-6 right-6 bg-black text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-200 hidden items-center gap-2"
+    <div 
+      id="install-banner" 
+      class="fixed bottom-6 right-6 bg-black text-white rounded-lg shadow-lg transition-all duration-200 hidden max-w-sm"
     >
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-      </svg>
-      Install App
-    </button>
+      <div class="p-4 pr-8">
+        <div class="flex items-center gap-3">
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+          </svg>
+          <div>
+            <p class="text-sm font-medium">Install App</p>
+            <p class="text-xs text-gray-300">Add to home screen for quick access</p>
+          </div>
+        </div>
+        <div class="flex gap-2 mt-3">
+          <button id="install-button" class="bg-white text-black px-3 py-1 rounded text-sm font-medium hover:bg-gray-200 transition-colors">
+            Install
+          </button>
+          <button id="dismiss-install" class="text-gray-300 px-3 py-1 rounded text-sm hover:bg-gray-800 transition-colors">
+            Not now
+          </button>
+        </div>
+      </div>
+      <button id="close-install" class="absolute top-2 right-2 text-gray-400 hover:text-white p-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
   </div>
   
   <script>
     // PWA Install Handler
     let deferredPrompt: any = null;
+    const installBanner = document.getElementById('install-banner');
     const installButton = document.getElementById('install-button');
+    const dismissButton = document.getElementById('dismiss-install');
+    const closeButton = document.getElementById('close-install');
+    
+    // Check if user has previously dismissed
+    const hasDissmissed = localStorage.getItem('pwa-install-dismissed');
     
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      installButton?.classList.remove('hidden');
-      installButton?.classList.add('flex');
+      
+      // Only show if not previously dismissed
+      if (!hasDissmissed) {
+        installBanner?.classList.remove('hidden');
+        installBanner?.classList.add('block');
+      }
     });
     
     installButton?.addEventListener('click', async () => {
@@ -58,11 +88,16 @@ import SearchAndFilter from '../components/SearchAndFilter.astro';
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
       
-      if (outcome === 'accepted') {
-        installButton.classList.add('hidden');
-      }
-      
+      installBanner?.classList.add('hidden');
       deferredPrompt = null;
+    });
+    
+    // Dismiss handlers
+    [dismissButton, closeButton].forEach(button => {
+      button?.addEventListener('click', () => {
+        installBanner?.classList.add('hidden');
+        localStorage.setItem('pwa-install-dismissed', 'true');
+      });
     });
   </script>
 </Layout>

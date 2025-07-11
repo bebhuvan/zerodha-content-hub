@@ -11,14 +11,14 @@ const filters = [
 ---
 
 <div class="border-b border-gray-100">
-  <nav class="flex justify-center" role="tablist">
+  <nav class="flex overflow-x-auto scrollbar-hide pb-1" role="tablist">
     {filters.map((filter) => (
       <button
         role="tab"
         aria-selected={filter.id === 'all'}
         data-filter={filter.id}
         class={`
-          relative px-6 py-3 text-sm font-medium transition-all duration-200
+          relative px-4 py-3 text-sm font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0
           hover:text-black focus:outline-none focus:text-black
           ${filter.id === 'all' ? 'text-black' : 'text-gray-500'}
         `}
@@ -43,9 +43,17 @@ const filters = [
     <!-- Archive Link -->
     <a
       href="/archive"
-      class="relative px-6 py-3 text-sm font-medium transition-all duration-200 hover:text-black focus:outline-none focus:text-black text-gray-500"
+      class="relative px-4 py-3 text-sm font-medium transition-all duration-200 hover:text-black focus:outline-none focus:text-black text-gray-500 whitespace-nowrap flex-shrink-0"
     >
       Archive
+    </a>
+    
+    <!-- Sources Link -->
+    <a
+      href="/sources"
+      class="relative px-4 py-3 text-sm font-medium transition-all duration-200 hover:text-black focus:outline-none focus:text-black text-gray-500 whitespace-nowrap flex-shrink-0"
+    >
+      Sources
     </a>
   </nav>
 </div>
