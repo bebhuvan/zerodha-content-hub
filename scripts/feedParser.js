@@ -13,8 +13,16 @@ const __dirname = dirname(__filename);
  */
 class FeedConfig {
   static CONSTANTS = {
+    // Content type specific limits
+    MAX_VIDEO_ITEMS: 15,        // YouTube videos (recent content focus)
+    MAX_PODCAST_ITEMS: 50,      // Podcasts (archive important)
+    MAX_NEWSLETTER_ITEMS: 100,  // Newsletters (archive very important)
+    MAX_BLOG_ITEMS: 50,         // Blog posts (good archive balance)
+    
+    // Fallback for unknown types
     MAX_ITEMS_PER_FEED: 50,
-    YOUTUBE_ITEMS_LIMIT: 15,
+    
+    // Processing constants
     MAX_RETRY_ATTEMPTS: 3,
     RETRY_DELAY_BASE_MS: 2000,
     RATE_LIMIT_DELAY_MS: 1000,
@@ -34,6 +42,24 @@ class FeedConfig {
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15'
   ];
+
+  /**
+   * Get the appropriate item limit for a content type
+   */
+  static getItemLimit(contentType) {
+    switch (contentType) {
+      case 'video':
+        return this.CONSTANTS.MAX_VIDEO_ITEMS;
+      case 'podcast':
+        return this.CONSTANTS.MAX_PODCAST_ITEMS;
+      case 'newsletter':
+        return this.CONSTANTS.MAX_NEWSLETTER_ITEMS;
+      case 'blog':
+        return this.CONSTANTS.MAX_BLOG_ITEMS;
+      default:
+        return this.CONSTANTS.MAX_ITEMS_PER_FEED;
+    }
+  }
 
   static FEED_CONFIGS = [
     { name: 'Zero1', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCUUlw3anBIkbW9W44Y-eURw', type: 'video', category: 'YouTube' },
@@ -275,12 +301,15 @@ class FeedFetcher {
     try {
       const feed = await this.fetchFeedWithRetry(config);
       
+      // Get appropriate item limit for this content type
+      const itemLimit = FeedConfig.getItemLimit(config.type);
+      
       const items = feed.items
-        .slice(0, FeedConfig.CONSTANTS.MAX_ITEMS_PER_FEED)
+        .slice(0, itemLimit)
         .map(item => ContentProcessor.transformFeedItem(item, config))
         .filter(item => item !== null);
       
-      Logger.info(`✓ Processed ${items.length} valid items from ${config.name}`);
+      Logger.info(`✓ Processed ${items.length} valid items from ${config.name} (limit: ${itemLimit})`);
       return { success: true, items, config };
     } catch (error) {
       Logger.error(`✗ Error fetching ${config.name}:`, error.message);
