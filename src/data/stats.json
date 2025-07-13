@@ -7,5 +7,21 @@
     "newsletters": 50,
     "blogs": 65
   },
-  "lastUpdated": "2025-07-13T02:57:36.731Z"
+  "sources": {
+    "Zero1": 15,
+    "Varsity": 15,
+    "Markets": 15,
+    "Zerodha": 15,
+    "The Daily Brief Podcast": 50,
+    "Side Notes by Zerodha Varsity": 50,
+    "Investing in India": 5,
+    "Varsity Newsletter": 4,
+    "The Chatter": 4,
+    "Daily Brief": 20,
+    "After Market Report": 20,
+    "What The Hell Is Happening": 2,
+    "Z-Connect Blog": 50,
+    "Varsity Blog": 15
+  },
+  "lastUpdated": "2025-07-13T03:13:25.121Z"
 }
