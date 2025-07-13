@@ -44,25 +44,44 @@ jobs:
       
       - name: Fetch RSS feeds
         run: |
-          npm run fetch-feeds
-          # Verify we have newsletters
+          node scripts/feedParser.js
+          # Verify we have content with type-specific expectations
           NEWSLETTER_COUNT=$(cat src/data/content.json | jq '[.[] | select(.type == "newsletter")] | length')
-          echo "📧 Newsletter count: $NEWSLETTER_COUNT"
-          if [ "$NEWSLETTER_COUNT" -lt 15 ]; then
-            echo "❌ ERROR: Expected at least 15 newsletters, got $NEWSLETTER_COUNT"
+          VIDEO_COUNT=$(cat src/data/content.json | jq '[.[] | select(.type == "video")] | length')
+          PODCAST_COUNT=$(cat src/data/content.json | jq '[.[] | select(.type == "podcast")] | length')
+          BLOG_COUNT=$(cat src/data/content.json | jq '[.[] | select(.type == "blog")] | length')
+          TOTAL_COUNT=$(cat src/data/content.json | jq 'length')
+          
+          echo "📊 Content Distribution:"
+          echo "📧 Newsletters: $NEWSLETTER_COUNT (target: 50-100)"
+          echo "📺 Videos: $VIDEO_COUNT (target: 60)"
+          echo "🎙️ Podcasts: $PODCAST_COUNT (target: 100+)"
+          echo "📝 Blogs: $BLOG_COUNT (target: 50-65)"
+          echo "📦 Total: $TOTAL_COUNT items"
+          
+          # Check minimum thresholds with type-specific limits
+          if [ "$TOTAL_COUNT" -lt 250 ]; then
+            echo "❌ ERROR: Expected at least 250 total items, got $TOTAL_COUNT"
+            exit 1
+          fi
+          
+          if [ "$NEWSLETTER_COUNT" -lt 20 ]; then
+            echo "❌ ERROR: Expected at least 20 newsletters, got $NEWSLETTER_COUNT"
             exit 1
           elif [ "$NEWSLETTER_COUNT" -lt 50 ]; then
             echo "⚠️  WARNING: Only $NEWSLETTER_COUNT newsletters fetched (expected 50+)"
-            echo "This may be due to Substack blocking GitHub Actions IPs"
+            echo "This may be due to feed blocking or temporary issues"
           fi
       
       - name: Check for changes
         id: check-changes
         run: |
-          if [[ -n $(git status -s src/data/) ]]; then
+          if [[ -n $(git status -s src/data/ public/content.json public/cache-version.json) ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
+            echo "📝 Content changes detected"
           else
             echo "changes=false" >> $GITHUB_OUTPUT
+            echo "📝 No content changes detected"
           fi
       
       - name: Commit updated content
@@ -70,8 +89,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/
-          git commit -m "Update RSS feeds [skip ci]"
+          git add src/data/ public/content.json public/cache-version.json
+          git commit -m "Update RSS feeds with type-specific limits [skip ci]"
           git push
       
       - name: Build Astro site
