@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import contentData from '../../data/content.json';
+import crypto from 'crypto';
 
 export const GET: APIRoute = ({ url }) => {
   const page = parseInt(url.searchParams.get('page') || '1');
@@ -52,11 +53,22 @@ export const GET: APIRoute = ({ url }) => {
     }
   };
 
+  // Generate ETag for this specific response
+  const etag = `"${crypto.createHash('md5').update(JSON.stringify(response)).digest('hex')}"`;
+  
+  // Get latest publish date from filtered content
+  const lastModified = filteredContent.length > 0 
+    ? new Date(Math.max(...filteredContent.map(item => new Date(item.publishDate).getTime()))).toUTCString()
+    : new Date().toUTCString();
+
   return new Response(JSON.stringify(response), {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=300' // Cache for 5 minutes
+      'Cache-Control': 'public, max-age=60, stale-while-revalidate=180, must-revalidate',
+      'ETag': etag,
+      'Last-Modified': lastModified,
+      'Vary': 'Accept-Encoding'
     }
   });
 };

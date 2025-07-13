@@ -1,0 +1,204 @@
+---
+// Client-side cache management component
+---
+
+<script>
+class CacheManager {
+  static CACHE_VERSION_KEY = 'zerodha-cache-version';
+  static CHECK_INTERVAL = 60000; // Check every minute
+
+  static async getCurrentVersion() {
+    try {
+      const response = await fetch('/cache-version.json');
+      if (response.ok) {
+        return await response.json();
+      }
+    } catch (error) {
+      console.warn('Failed to fetch cache version:', error);
+    }
+    return null;
+  }
+
+  static getStoredVersion() {
+    try {
+      const stored = localStorage.getItem(this.CACHE_VERSION_KEY);
+      return stored ? JSON.parse(stored) : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  static storeVersion(version: any) {
+    try {
+      localStorage.setItem(this.CACHE_VERSION_KEY, JSON.stringify(version));
+    } catch (error) {
+      console.warn('Failed to store cache version:', error);
+    }
+  }
+
+  static async checkForUpdates() {
+    const currentVersion = await this.getCurrentVersion();
+    if (!currentVersion) return false;
+
+    const storedVersion = this.getStoredVersion();
+    
+    if (!storedVersion || storedVersion.version !== currentVersion.version) {
+      this.storeVersion(currentVersion);
+      return true; // Update available
+    }
+    
+    return false; // No update needed
+  }
+
+  static async clearCaches() {
+    try {
+      // Clear service worker caches
+      if ('caches' in window) {
+        const cacheNames = await caches.keys();
+        await Promise.all(
+          cacheNames.map(cacheName => caches.delete(cacheName))
+        );
+      }
+
+      // Clear localStorage cache version
+      localStorage.removeItem(this.CACHE_VERSION_KEY);
+      
+      console.log('✅ Caches cleared successfully');
+      return true;
+    } catch (error) {
+      console.error('❌ Failed to clear caches:', error);
+      return false;
+    }
+  }
+
+  static async forceRefresh() {
+    await this.clearCaches();
+    
+    // Skip service worker for next request
+    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
+    }
+    
+    // Reload page
+    window.location.reload();
+  }
+
+  static showUpdateNotification() {
+    // Create update notification
+    const notification = document.createElement('div');
+    notification.id = 'update-notification';
+    notification.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #2563eb;
+        color: white;
+        padding: 16px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        max-width: 320px;
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 14px;
+        line-height: 1.4;
+      ">
+        <div style="margin-bottom: 12px;">
+          <strong>📦 New content available!</strong>
+        </div>
+        <div style="margin-bottom: 16px; opacity: 0.9;">
+          Fresh market insights and updates are ready.
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <button id="refresh-now" style="
+            background: white;
+            color: #2563eb;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 13px;
+          ">Refresh Now</button>
+          <button id="dismiss-update" style="
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+          ">Later</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(notification);
+
+    // Handle refresh button
+    document.getElementById('refresh-now')?.addEventListener('click', () => {
+      this.forceRefresh();
+    });
+
+    // Handle dismiss button
+    document.getElementById('dismiss-update')?.addEventListener('click', () => {
+      notification.remove();
+    });
+
+    // Auto-remove after 30 seconds
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.remove();
+      }
+    }, 30000);
+  }
+
+  static async init() {
+    // Initial version store
+    const currentVersion = await this.getCurrentVersion();
+    if (currentVersion && !this.getStoredVersion()) {
+      this.storeVersion(currentVersion);
+    }
+
+    // Set up periodic checks
+    const checkForUpdates = async () => {
+      const hasUpdate = await this.checkForUpdates();
+      if (hasUpdate) {
+        this.showUpdateNotification();
+      }
+    };
+
+    // Check immediately
+    setTimeout(checkForUpdates, 5000); // Wait 5s after page load
+
+    // Check periodically
+    setInterval(checkForUpdates, this.CHECK_INTERVAL);
+
+    // Listen for visibility change to check when user returns
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        setTimeout(checkForUpdates, 1000);
+      }
+    });
+
+    console.log('🔄 Cache manager initialized');
+  }
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => CacheManager.init());
+} else {
+  CacheManager.init();
+}
+
+// Expose for debugging
+(window as any).CacheManager = CacheManager;
+</script>
+
+<style>
+  /* Ensure notification is always visible */
+  #update-notification {
+    pointer-events: auto !important;
+  }
+</style>

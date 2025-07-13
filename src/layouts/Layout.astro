@@ -1,4 +1,6 @@
 ---
+import CacheManager from '../components/CacheManager.astro';
+
 export interface Props {
   title: string;
   description?: string;
@@ -14,6 +16,20 @@ const { title, description = 'Understand what\'s happening in the markets with e
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
+    <meta name="keywords" content="stock market, investment, trading, zerodha, NIFTY, Bank NIFTY, financial education, market analysis, India" />
+    <meta name="author" content="Zerodha" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="distribution" content="global" />
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.country" content="India" />
+    <meta name="ICBM" content="12.9716,77.5946" />
+    <meta name="geo.position" content="12.9716;77.5946" />
+    <meta name="geo.placename" content="Bangalore, India" />
     
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="/manifest.json" />
@@ -31,6 +47,7 @@ const { title, description = 'Understand what\'s happening in the markets with e
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     
     <!-- SEO Meta Tags -->
@@ -39,11 +56,16 @@ const { title, description = 'Understand what\'s happening in the markets with e
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:site_name" content="Market Insights by Zerodha" />
+    <meta property="og:image" content="https://zerodha-market-insights.pages.dev/icon-512.svg" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@zerodhaonline" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://zerodha-market-insights.pages.dev/icon-512.svg" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={Astro.url} />
@@ -57,14 +79,51 @@ const { title, description = 'Understand what\'s happening in the markets with e
         "description": "Understand what's happening in the markets with expert analysis, market updates, and educational content that breaks down complex financial topics for everyday investors",
         "url": "https://zerodha-market-insights.pages.dev",
         "publisher": {
-          "@type": "Organization",
+          "@type": "FinancialService",
           "name": "Zerodha",
-          "url": "https://zerodha.com"
+          "url": "https://zerodha.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://zerodha-market-insights.pages.dev/icon-512.svg",
+            "width": 512,
+            "height": 512
+          },
+          "sameAs": [
+            "https://twitter.com/zerodhaonline",
+            "https://www.facebook.com/zerodha.social",
+            "https://www.linkedin.com/company/zerodha",
+            "https://www.youtube.com/user/zerodhaonline"
+          ]
         },
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://zerodha-market-insights.pages.dev/?search={search_term_string}",
           "query-input": "required name=search_term_string"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Stock Market Analysis",
+            "description": "Expert analysis of Indian stock markets including NIFTY and Bank NIFTY"
+          },
+          {
+            "@type": "Thing", 
+            "name": "Investment Education",
+            "description": "Educational content for retail investors in India"
+          },
+          {
+            "@type": "Thing",
+            "name": "Market Updates",
+            "description": "Daily market updates and financial news analysis"
+          }
+        ],
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Retail Investors",
+          "geographicArea": {
+            "@type": "Country",
+            "name": "India"
+          }
         }
       }
     </script>
@@ -82,7 +141,9 @@ const { title, description = 'Understand what\'s happening in the markets with e
   </head>
   <body class="min-h-screen bg-white text-black antialiased overflow-x-hidden">
     <slot />
-
+    
+    <!-- Cache Manager Component -->
+    <CacheManager />
   </body>
 </html>
 

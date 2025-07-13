@@ -1,0 +1,75 @@
+# Cloudflare Pages Headers Configuration
+# This file configures caching and headers for Cloudflare Pages
+
+# API endpoints - short cache with revalidation
+/api/*
+  Cache-Control: public, max-age=60, stale-while-revalidate=180, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+
+# Content API - critical data with smart caching
+/content.json
+  Cache-Control: public, max-age=60, stale-while-revalidate=300, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# RSS Feed - medium cache for feed readers
+/feed.xml
+  Cache-Control: public, max-age=300, stale-while-revalidate=600, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# Sitemap - longer cache, less frequently updated
+/sitemap.xml
+  Cache-Control: public, max-age=1800, stale-while-revalidate=3600
+  X-Content-Type-Options: nosniff
+
+# Robots.txt - very long cache
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+# Static assets - long cache with versioning
+*.js
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+*.css
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts
+*.woff
+*.woff2
+*.ttf
+*.eot
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# HTML pages - short cache to ensure freshness
+*.html
+/
+  Cache-Control: public, max-age=300, stale-while-revalidate=600, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';
+
+# Service Worker - no cache to ensure updates
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+# Manifest - medium cache
+/manifest.json
+  Cache-Control: public, max-age=3600, stale-while-revalidate=7200
+  X-Content-Type-Options: nosniff

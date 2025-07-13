@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import contentData from '../data/content.json';
+import crypto from 'crypto';
 
 export const GET: APIRoute = () => {
   const siteUrl = 'https://zerodha-market-insights.pages.dev'; // Update with your actual domain
@@ -48,11 +49,22 @@ export const GET: APIRoute = () => {
   </channel>
 </rss>`;
 
+  // Generate ETag based on content
+  const etag = `"${crypto.createHash('md5').update(rssContent).digest('hex')}"`;
+  
+  // Get latest publish date from sorted content
+  const lastModified = sortedContent.length > 0 
+    ? new Date(sortedContent[0].publishDate).toUTCString()
+    : new Date().toUTCString();
+
   return new Response(rssContent, {
     status: 200,
     headers: {
       'Content-Type': 'application/rss+xml; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600' // Cache for 1 hour
+      'Cache-Control': 'public, max-age=300, stale-while-revalidate=600, must-revalidate',
+      'ETag': etag,
+      'Last-Modified': lastModified,
+      'Vary': 'Accept-Encoding'
     }
   });
 };
