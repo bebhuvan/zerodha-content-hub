@@ -1,5 +1,86 @@
 [
   {
+    "id": "Zero1-https---www-youtube-com-shorts-9NOlJrqBQoU",
+    "title": "Indigo’s Smart Strategy Revealed⚡️",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/9NOlJrqBQoU",
+    "publishDate": "2025-07-14T14:00:21.000Z",
+    "type": "video",
+    "source": "Zero1",
+    "author": "Zero1",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "indigo",
+      "smart",
+      "strategy",
+      "revealed"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "9NOlJrqBQoU",
+    "viewCount": null
+  },
+  {
+    "id": "Varsity-https---www-youtube-com-shorts-F3BDS0XqpHo",
+    "title": "Loan Trick Banks Won’t Tell You! #shorts #varsity #zerodha #debt",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/F3BDS0XqpHo",
+    "publishDate": "2025-07-14T13:30:12.000Z",
+    "type": "video",
+    "source": "Varsity",
+    "author": "Varsity",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "loan",
+      "trick",
+      "banks",
+      "tell",
+      "shorts",
+      "varsity",
+      "zerodha",
+      "debt"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "F3BDS0XqpHo",
+    "viewCount": null
+  },
+  {
+    "id": "Zerodha-https---www-youtube-com-watch-v-ebFzCzbXMPw",
+    "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 15 July 2025, Tuesday",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=ebFzCzbXMPw",
+    "publishDate": "2025-07-14T12:59:56.000Z",
+    "type": "video",
+    "source": "Zerodha",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "nifty",
+      "bank",
+      "analysis",
+      "tomorrow",
+      "stock",
+      "market",
+      "outlook",
+      "july",
+      "2025"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "ebFzCzbXMPw",
+    "viewCount": null
+  },
+  {
     "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-is-this-the-end-of-cheap-chocolate",
     "title": "Is this the End of Cheap Chocolate?",
     "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
@@ -1276,7 +1357,7 @@
       "apps"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "PqHiA2O97OY",
     "viewCount": null
@@ -1300,7 +1381,7 @@
       "reality"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "Z227abyuoQM",
     "viewCount": null
@@ -1327,7 +1408,7 @@
       "save"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "Ls5wgiCBBRs",
     "viewCount": null
@@ -2186,30 +2267,6 @@
     "viewCount": null
   },
   {
-    "id": "Zerodha-https---www-youtube-com-watch-v-tD1z8lR0CDE",
-    "title": "An easy guide on how to set up Kite MCP with AI chatbots",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=tD1z8lR0CDE",
-    "publishDate": "2025-07-02T12:30:21.000Z",
-    "type": "video",
-    "source": "Zerodha",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "easy",
-      "guide",
-      "kite",
-      "chatbots"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "tD1z8lR0CDE",
-    "viewCount": null
-  },
-  {
     "id": "After-Market-Report-https---aftermarketreport-substack-com-p-markets-turn-cautious-as-uncertainty",
     "title": "Markets turn cautious as uncertainty over trade deals caps upside",
     "description": "Welcome to Aftermarket Report, a newsletter where we do a quick daily wrap-up of what happened in the markets, both in India and globally.",
@@ -2512,28 +2569,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Zero1-https---www-youtube-com-shorts-TeLVa3kwSiE",
-    "title": "Don't BUY Pink Razors⚡️",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/TeLVa3kwSiE",
-    "publishDate": "2025-06-30T14:00:48.000Z",
-    "type": "video",
-    "source": "Zero1",
-    "author": "Zero1",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "pink",
-      "razors"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "TeLVa3kwSiE",
     "viewCount": null
   },
   {
@@ -3727,29 +3762,6 @@
     "viewCount": null
   },
   {
-    "id": "What-The-Hell-Is-Happening-https---whatthehellishappening-substack-com-p-its-ais-world-were-just-living-in",
-    "title": "It’s AI’s world; we’re just living in it",
-    "description": "On reasoning machines, debt trains, dumb trade wars, and why even cats are smarter than your chatbot.",
-    "url": "https://whatthehellishappening.substack.com/p/its-ais-world-were-just-living-in",
-    "publishDate": "2025-06-14T12:56:24.000Z",
-    "type": "newsletter",
-    "source": "What The Hell Is Happening",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!tYeK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F03c6780e-5e26-48b5-b2fe-2cdc5aebcc1c_1536x1024.png",
-    "keywords": [
-      "world",
-      "just",
-      "living"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
     "id": "Varsity-https---www-youtube-com-watch-v-xJKpI88SQVM",
     "title": "How to get Rich with 60k Salary?",
     "description": "",
@@ -4154,33 +4166,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Varsity-https---www-youtube-com-watch-v-9SaoyDmCejs",
-    "title": "Is Your Salary Stuck Paying EMIs? Break Free Now!",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=9SaoyDmCejs",
-    "publishDate": "2025-06-06T13:30:15.000Z",
-    "type": "video",
-    "source": "Varsity",
-    "author": "Varsity",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "your",
-      "salary",
-      "stuck",
-      "paying",
-      "emis",
-      "break",
-      "free"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "9SaoyDmCejs",
     "viewCount": null
   },
   {
