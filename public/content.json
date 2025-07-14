@@ -1,7 +1,78 @@
 [
   {
+    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-is-this-the-end-of-cheap-chocolate",
+    "title": "Is this the End of Cheap Chocolate?",
+    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
+    "url": "https://thedailybrief.zerodha.com/p/is-this-the-end-of-cheap-chocolate",
+    "publishDate": "2025-07-14T01:47:49.000Z",
+    "type": "newsletter",
+    "source": "Daily Brief",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": "1 min read",
+    "thumbnail": "https://substackcdn.com/image/fetch/$s_!s4tA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c5a0923-d4e4-44e7-95b3-f13f7ab70b85_1536x1024.png",
+    "keywords": [
+      "this",
+      "cheap",
+      "chocolate"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-is-this-the-end-of-cheap-",
+    "title": "Is this the End of Cheap Chocolate?",
+    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:45 Chocolate vs Climate change 11:26 Unravelling a stock market scam 18:11 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
+    "url": "https://markets-by-zerodha.simplecast.com/episodes/is-this-the-end-of-cheap-chocolate-kMtJ7vji",
+    "publishDate": "2025-07-14T01:39:33.000Z",
+    "type": "podcast",
+    "source": "The Daily Brief Podcast",
+    "author": "social@zerodha.com (Zerodha)",
+    "duration": "00:20:24",
+    "readingTime": null,
+    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/437c0b2c-642f-434d-97c9-2c4bbc5a79ef/audio/0b3ddb9d-0602-4d1e-be42-ba7ac7076eb9/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
+    "keywords": [
+      "this",
+      "cheap",
+      "chocolate"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-watch-v-OZnpn09jMpc",
+    "title": "Is this the End of Cheap Chocolate? | The Daily Brief #267",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=OZnpn09jMpc",
+    "publishDate": "2025-07-14T01:30:15.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "this",
+      "cheap",
+      "chocolate",
+      "daily",
+      "brief"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "OZnpn09jMpc",
+    "viewCount": null
+  },
+  {
     "id": "Zero1-https---www-youtube-com-shorts-RFWgWW5n8VI",
-    "title": "Is COPPER the New Oil?⚡",
+    "title": "Is COPPER the New GOLD?⚡",
     "description": "",
     "url": "https://www.youtube.com/shorts/RFWgWW5n8VI",
     "publishDate": "2025-07-13T14:00:40.000Z",
@@ -12,7 +83,8 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "copper"
+      "copper",
+      "gold"
     ],
     "categories": [],
     "isNew": true,
@@ -1307,7 +1379,7 @@
       "street"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1332,7 +1404,7 @@
       "street"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1359,7 +1431,7 @@
       "brief"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "V6j4nlwVqM0",
     "viewCount": null
@@ -1388,7 +1460,7 @@
       "2025"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "hkysUyJ-AmA",
     "viewCount": null
@@ -2262,31 +2334,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Markets-https---www-youtube-com-watch-v-hN4ktuniiQk",
-    "title": "We’re entering a New Era of Global Finance | The Daily Brief #259",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=hN4ktuniiQk",
-    "publishDate": "2025-07-02T01:34:48.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "entering",
-      "global",
-      "finance",
-      "daily",
-      "brief"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "hN4ktuniiQk",
     "viewCount": null
   },
   {
@@ -3291,30 +3338,6 @@
     "viewCount": null
   },
   {
-    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-why-the-us-and-china-are-watching",
-    "title": "Why the US and China are watching Panama closely",
-    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
-    "url": "https://thedailybrief.zerodha.com/p/why-the-us-and-china-are-watching",
-    "publishDate": "2025-06-20T01:45:50.000Z",
-    "type": "newsletter",
-    "source": "Daily Brief",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!qGf6!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6d3104dd-07fe-492a-a750-a8c1fb59cc83_1536x1024.png",
-    "keywords": [
-      "china",
-      "watching",
-      "panama",
-      "closely"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
     "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-why-the-us-and-china-are-",
     "title": "Why the US and China are watching Panama closely",
     "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:41 Panama Ports in the Crossfire 08:24 India's New Port Strategy 20:09 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
@@ -3719,57 +3742,6 @@
       "world",
       "just",
       "living"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Varsity-Newsletter-https---zerodhavarsity-substack-com-p-dhirubai-ambani-and-friends-of-reliance",
-    "title": "Dhirubai Ambani & friends of Reliance",
-    "description": "The day the Bears came for Reliance",
-    "url": "https://zerodhavarsity.substack.com/p/dhirubai-ambani-and-friends-of-reliance",
-    "publishDate": "2025-06-14T02:53:12.000Z",
-    "type": "newsletter",
-    "source": "Varsity Newsletter",
-    "author": "Zerodha Varsity",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38d19e35-3a7a-4d32-aca5-5164a094cdc8_747x513.jpeg",
-    "keywords": [
-      "dhirubai",
-      "ambani",
-      "friends",
-      "reliance"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "After-Market-Report-https---aftermarketreport-substack-com-p-geopolitical-tensions-rattle-markets",
-    "title": "Geopolitical tensions rattle markets as crude spikes over 10%",
-    "description": "Welcome to Aftermarket Report, a newsletter where we do a quick daily wrap-up of what happened in the markets, both in India and globally.",
-    "url": "https://aftermarketreport.substack.com/p/geopolitical-tensions-rattle-markets",
-    "publishDate": "2025-06-13T14:49:33.000Z",
-    "type": "newsletter",
-    "source": "After Market Report",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!fJzY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd6c92348-9f5a-403e-b734-ded75438530e_1456x832.webp",
-    "keywords": [
-      "geopolitical",
-      "tensions",
-      "rattle",
-      "markets",
-      "crude",
-      "spikes",
-      "over"
     ],
     "categories": [],
     "isNew": false,
@@ -5532,29 +5504,6 @@
     "categories": [
       "Rainmatter"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-ai-is-changing-againand-i",
-    "title": "AI Is Changing Again—And It Matters",
-    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:25 The Daily Brief AI round-up 11:50 Is the power of OPEC+ eroding? 21:10 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
-    "url": "https://markets-by-zerodha.simplecast.com/episodes/ai-is-changing-againand-it-matters-kFgXpmsX",
-    "publishDate": "2025-05-05T01:46:58.000Z",
-    "type": "podcast",
-    "source": "The Daily Brief Podcast",
-    "author": "social@zerodha.com (Zerodha)",
-    "duration": "00:24:26",
-    "readingTime": null,
-    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/8e067530-90ef-4a7e-8895-f19a5398f469/audio/aec064c6-539c-41b2-a7f0-670b1317a6ba/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
-    "keywords": [
-      "changing",
-      "again",
-      "matters"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
