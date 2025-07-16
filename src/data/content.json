@@ -1,26 +1,73 @@
 [
   {
-    "id": "Zero1-https---www-youtube-com-shorts-KlRiJvVQRy4",
-    "title": "Is INDIA Ready For Musk’s Tesla?⚡️",
+    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-how-zee-lost-trust-in-its-founders",
+    "title": "How Zee lost trust in its founders",
+    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
+    "url": "https://thedailybrief.zerodha.com/p/how-zee-lost-trust-in-its-founders",
+    "publishDate": "2025-07-16T01:43:50.000Z",
+    "type": "newsletter",
+    "source": "Daily Brief",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": "1 min read",
+    "thumbnail": "https://substackcdn.com/image/fetch/$s_!yWpH!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F476a0a68-d653-4bcb-a913-ba672ddd23c5_1536x1024.png",
+    "keywords": [
+      "lost",
+      "trust",
+      "founders"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-how-zee-lost-trust-in-its",
+    "title": "How Zee lost trust in its founders",
+    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:44 The Goenkas lose Zee 09:45 ONDC’s tough road 19:43 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
+    "url": "https://markets-by-zerodha.simplecast.com/episodes/how-zee-lost-trust-in-its-founders-3mYEH5Sa",
+    "publishDate": "2025-07-16T01:35:05.000Z",
+    "type": "podcast",
+    "source": "The Daily Brief Podcast",
+    "author": "social@zerodha.com (Zerodha)",
+    "duration": "00:21:52",
+    "readingTime": null,
+    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/0ce71ddf-06cb-4c0d-ac02-169a691b8b4b/audio/1efacaba-2d37-478b-b412-11d6c4283f25/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
+    "keywords": [
+      "lost",
+      "trust",
+      "founders"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-watch-v-enqu084PQMk",
+    "title": "What went wrong at Zee? | The Daily Brief #269",
     "description": "",
-    "url": "https://www.youtube.com/shorts/KlRiJvVQRy4",
-    "publishDate": "2025-07-15T14:00:27.000Z",
+    "url": "https://www.youtube.com/watch?v=enqu084PQMk",
+    "publishDate": "2025-07-16T01:30:27.000Z",
     "type": "video",
-    "source": "Zero1",
-    "author": "Zero1",
+    "source": "Markets",
+    "author": "Markets",
     "duration": null,
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "india",
-      "ready",
-      "musk",
-      "tesla"
+      "what",
+      "went",
+      "wrong",
+      "daily",
+      "brief"
     ],
     "categories": [],
     "isNew": true,
-    "isShort": true,
-    "embedId": "KlRiJvVQRy4",
+    "isShort": false,
+    "embedId": "enqu084PQMk",
     "viewCount": null
   },
   {
@@ -28,7 +75,7 @@
     "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 16 July 2025, Wednesday",
     "description": "",
     "url": "https://www.youtube.com/watch?v=r9HGLlZrE0w",
-    "publishDate": "2025-07-15T13:13:08.000Z",
+    "publishDate": "2025-07-15T16:15:56.000Z",
     "type": "video",
     "source": "Zerodha",
     "author": "Zerodha",
@@ -50,6 +97,55 @@
     "isNew": true,
     "isShort": false,
     "embedId": "r9HGLlZrE0w",
+    "viewCount": null
+  },
+  {
+    "id": "Zero1-https---www-youtube-com-watch-v-ahQibGuPIeE",
+    "title": "Is Bitcoin really the BEST investment of 2025",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=ahQibGuPIeE",
+    "publishDate": "2025-07-15T14:45:01.000Z",
+    "type": "video",
+    "source": "Zero1",
+    "author": "Zero1",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "bitcoin",
+      "really",
+      "best",
+      "investment",
+      "2025"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "ahQibGuPIeE",
+    "viewCount": null
+  },
+  {
+    "id": "Zero1-https---www-youtube-com-shorts-KlRiJvVQRy4",
+    "title": "Is INDIA Ready For Musk’s Tesla?⚡️",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/KlRiJvVQRy4",
+    "publishDate": "2025-07-15T14:00:27.000Z",
+    "type": "video",
+    "source": "Zero1",
+    "author": "Zero1",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "india",
+      "ready",
+      "musk",
+      "tesla"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "KlRiJvVQRy4",
     "viewCount": null
   },
   {
@@ -1225,7 +1321,7 @@
       "policy"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1253,7 +1349,7 @@
       "brief"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "v5N5itkNC64",
     "viewCount": null
@@ -1276,7 +1372,7 @@
       "policy"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1305,7 +1401,7 @@
       "2025"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "bPXsQbu-3KQ",
     "viewCount": null
@@ -2135,32 +2231,6 @@
     "viewCount": null
   },
   {
-    "id": "Markets-https---www-youtube-com-watch-v---qjMKPK6WA",
-    "title": "Airport Lounge access is changing | The Daily Brief #261",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=__qjMKPK6WA",
-    "publishDate": "2025-07-04T01:30:33.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "airport",
-      "lounge",
-      "access",
-      "changing",
-      "daily",
-      "brief"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "__qjMKPK6WA",
-    "viewCount": null
-  },
-  {
     "id": "Zerodha-https---www-youtube-com-watch-v--7kbN0D6aSA",
     "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 04 July 2025, Friday",
     "description": "",
@@ -2364,32 +2434,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Zero1-https---www-youtube-com-shorts-oU2mNtzl4Zw",
-    "title": "Real Truth Behind Prada’s Kohlapuri Chappal⚡️",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/oU2mNtzl4Zw",
-    "publishDate": "2025-07-02T14:15:07.000Z",
-    "type": "video",
-    "source": "Zero1",
-    "author": "Zero1",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "real",
-      "truth",
-      "behind",
-      "prada",
-      "kohlapuri",
-      "chappal"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "oU2mNtzl4Zw",
     "viewCount": null
   },
   {
@@ -3210,31 +3254,6 @@
       "travels",
       "countries",
       "reach"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-the-hidden-costs-of-protecting-indian",
-    "title": "The hidden costs of protecting Indian steel",
-    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
-    "url": "https://thedailybrief.zerodha.com/p/the-hidden-costs-of-protecting-indian",
-    "publishDate": "2025-06-24T02:12:06.000Z",
-    "type": "newsletter",
-    "source": "Daily Brief",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!Sz3T!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6aeb0b81-dabf-42e4-9348-4e89569062be_1420x1024.png",
-    "keywords": [
-      "hidden",
-      "costs",
-      "protecting",
-      "indian",
-      "steel"
     ],
     "categories": [],
     "isNew": false,
@@ -5412,30 +5431,6 @@
       "Featured",
       "Kite"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-whats-powering-the-cement",
-    "title": "What’s Powering the Cement Boom?",
-    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:40 Cement sees a resilient quarter 12:18 Global Prices Cool Off 22:34 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
-    "url": "https://markets-by-zerodha.simplecast.com/episodes/whats-powering-the-cement-boom-3QlOoco8",
-    "publishDate": "2025-05-07T01:58:59.000Z",
-    "type": "podcast",
-    "source": "The Daily Brief Podcast",
-    "author": "social@zerodha.com (Zerodha)",
-    "duration": "00:24:04",
-    "readingTime": null,
-    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/26b6967b-589c-492b-a158-c51a5a4ca3bc/audio/e0dad6e3-4de0-4166-a495-bc24358772de/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
-    "keywords": [
-      "what",
-      "powering",
-      "cement",
-      "boom"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
