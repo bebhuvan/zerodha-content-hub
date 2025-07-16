@@ -1,5 +1,33 @@
 [
   {
+    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-news-wework-india-gets-sebi-approval-for-ipo",
+    "title": "WeWork India gets SEBI approval for IPO",
+    "description": "WeWork India has received SEBI’s approval to launch its IPO, consisting of a 100% Offer for Sale (OFS) of up to 4.37 crores equity shares. The market regulator had temporarily suspended the IPO in March 2025, but it got the green light last week after the suspension was lifted. US-based shared workspace global brand WeWork’s […] The post WeWork India gets SEBI approval for IPO appeared first on Z-Connect by Zerodha.",
+    "url": "https://zerodha.com/z-connect/news/wework-india-gets-sebi-approval-for-ipo",
+    "publishDate": "2025-07-16T09:31:10.000Z",
+    "type": "blog",
+    "source": "Z-Connect Blog",
+    "author": "Team Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "wework",
+      "india",
+      "gets",
+      "sebi",
+      "approval"
+    ],
+    "categories": [
+      "News",
+      "IPO"
+    ],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
     "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-how-zee-lost-trust-in-its-founders",
     "title": "How Zee lost trust in its founders",
     "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
@@ -427,7 +455,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-RFWgWW5n8VI",
-    "title": "Is COPPER the New GOLD?⚡",
+    "title": "What's Behind Trump's COPPER Tariffs?⚡",
     "description": "",
     "url": "https://www.youtube.com/shorts/RFWgWW5n8VI",
     "publishDate": "2025-07-13T14:00:40.000Z",
@@ -438,8 +466,11 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
+      "what",
+      "behind",
+      "trump",
       "copper",
-      "gold"
+      "tariffs"
     ],
     "categories": [],
     "isNew": true,
@@ -553,7 +584,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-R7E9MYawi-o",
-    "title": "India’s Population CRISIS Exposed!⚡️",
+    "title": "Real Truth Behind India’s Population Decline Exposed!⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/R7E9MYawi_o",
     "publishDate": "2025-07-12T14:00:41.000Z",
@@ -564,9 +595,12 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
+      "real",
+      "truth",
+      "behind",
       "india",
       "population",
-      "crisis",
+      "decline",
       "exposed"
     ],
     "categories": [],
@@ -660,7 +694,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-XfE-EDHsEJo",
-    "title": "Honest Truth Behind INVESTING For Beginners⚡️",
+    "title": "INVESTING Guide For Beginners⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/XfE_EDHsEJo",
     "publishDate": "2025-07-11T14:00:55.000Z",
@@ -671,10 +705,8 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "honest",
-      "truth",
-      "behind",
       "investing",
+      "guide",
       "beginners"
     ],
     "categories": [],
@@ -1219,7 +1251,7 @@
       "succession planning",
       "Will"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1246,7 +1278,7 @@
       "News",
       "IPO"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1274,7 +1306,7 @@
     "categories": [
       "Rainmatter"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1298,7 +1330,7 @@
       "limited"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "lHvi7s8LzJE",
     "viewCount": null
@@ -1640,7 +1672,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-Z227abyuoQM",
-    "title": "Delhi Fuel Ban’s Dark Reality⚡",
+    "title": "Dark Reality Behind Delhi's Fuel Ban⚡",
     "description": "",
     "url": "https://www.youtube.com/shorts/Z227abyuoQM",
     "publishDate": "2025-07-07T14:00:55.000Z",
@@ -1651,10 +1683,11 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "delhi",
-      "fuel",
       "dark",
-      "reality"
+      "reality",
+      "behind",
+      "delhi",
+      "fuel"
     ],
     "categories": [],
     "isNew": false,
@@ -1872,7 +1905,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-aIyDvEEAiFA",
-    "title": "Nithin Kamath's Decodes CIBIL Score⚡",
+    "title": "Nithin Kamath Reveals CIBIL Score Hack⚡",
     "description": "",
     "url": "https://www.youtube.com/shorts/aIyDvEEAiFA",
     "publishDate": "2025-07-05T14:00:02.000Z",
@@ -1885,9 +1918,10 @@
     "keywords": [
       "nithin",
       "kamath",
-      "decodes",
+      "reveals",
       "cibil",
-      "score"
+      "score",
+      "hack"
     ],
     "categories": [],
     "isNew": false,
@@ -2007,7 +2041,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-rfD1rwRDwqA",
-    "title": "What's REALLY Pushing Up Housing Prices in India?⚡️",
+    "title": "Dark Truth About Housing Prices in India!⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/rfD1rwRDwqA",
     "publishDate": "2025-07-04T14:01:33.000Z",
@@ -2018,9 +2052,9 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "what",
-      "really",
-      "pushing",
+      "dark",
+      "truth",
+      "about",
       "housing",
       "prices",
       "india"
@@ -5919,33 +5953,6 @@
     ],
     "categories": [
       "General"
-    ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-rainmatter-ossus-green-hydrogen-from-first-principles",
-    "title": "Ossus: Green hydrogen from first principles",
-    "description": "Hydrogen has been hailed as a possible solution to the world’s energy needs for a hundred years. While its role as a fuel is still being debated, hydrogen is also a key ingredient in a range of industrial processes such as petroleum refining, manufacturing ammonia for fertilisers, methanol production, treatment and production of metals. India’s […] The post Ossus: Green hydrogen from first principles appeared first on Z-Connect by Zerodha.",
-    "url": "https://zerodha.com/z-connect/rainmatter/ossus-green-hydrogen-from-first-principles",
-    "publishDate": "2025-03-21T10:59:44.000Z",
-    "type": "blog",
-    "source": "Z-Connect Blog",
-    "author": "Hansi Mehrotra",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "ossus",
-      "green",
-      "hydrogen",
-      "first",
-      "principles"
-    ],
-    "categories": [
-      "Rainmatter"
     ],
     "isNew": false,
     "isShort": false,
