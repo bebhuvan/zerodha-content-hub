@@ -1,5 +1,32 @@
 [
   {
+    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-business-updates-whats-new-at-zerodha-june-2025",
+    "title": "What’s new at Zerodha: June 2025",
+    "description": "From the redesigned marketwatch to trading from charts and AI integration, in the past quarter, we’ve rolled out a series of updates to improve your trading and investing experience. Whether you’re tracking markets, researching stocks, or placing orders, these updates give you more control and insight. In case you missed our updates, here’s a quick […] The post What’s new at Zerodha: June 2025 appeared first on Z-Connect by Zerodha.",
+    "url": "https://zerodha.com/z-connect/business-updates/whats-new-at-zerodha-june-2025",
+    "publishDate": "2025-07-18T04:53:19.000Z",
+    "type": "blog",
+    "source": "Z-Connect Blog",
+    "author": "Team Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "what",
+      "zerodha",
+      "june",
+      "2025"
+    ],
+    "categories": [
+      "Business Updates",
+      "Featured"
+    ],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
     "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-to-build-factories-build-homes",
     "title": "To build factories, build homes",
     "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
@@ -493,7 +520,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-KlRiJvVQRy4",
-    "title": "Musk’s TESLA in INDIA?!⚡️",
+    "title": "TESLA's India Strategy Exposed!⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/KlRiJvVQRy4",
     "publishDate": "2025-07-15T14:00:27.000Z",
@@ -504,9 +531,10 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "musk",
       "tesla",
-      "india"
+      "india",
+      "strategy",
+      "exposed"
     ],
     "categories": [],
     "isNew": true,
@@ -793,7 +821,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-RFWgWW5n8VI",
-    "title": "What's Behind Trump's COPPER Tariffs?⚡",
+    "title": "Why COPPER is the next Gold⚡",
     "description": "",
     "url": "https://www.youtube.com/shorts/RFWgWW5n8VI",
     "publishDate": "2025-07-13T14:00:40.000Z",
@@ -804,11 +832,9 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "what",
-      "behind",
-      "trump",
       "copper",
-      "tariffs"
+      "next",
+      "gold"
     ],
     "categories": [],
     "isNew": true,
@@ -922,7 +948,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-R7E9MYawi-o",
-    "title": "Real Truth Behind India’s Population Decline Exposed!⚡️",
+    "title": "Why is India’s Population Falling?!⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/R7E9MYawi_o",
     "publishDate": "2025-07-12T14:00:41.000Z",
@@ -933,13 +959,9 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "real",
-      "truth",
-      "behind",
       "india",
       "population",
-      "decline",
-      "exposed"
+      "falling"
     ],
     "categories": [],
     "isNew": true,
@@ -1032,7 +1054,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-XfE-EDHsEJo",
-    "title": "INVESTING Guide For Beginners⚡️",
+    "title": "#1 INVESTING Guide For Beginners⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/XfE_EDHsEJo",
     "publishDate": "2025-07-11T14:00:55.000Z",
@@ -1151,7 +1173,7 @@
       "News",
       "IPO"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1286,7 +1308,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-YGRmjYgN48s",
-    "title": "India’s Big Saving Problem Revealed⚡",
+    "title": "Behind India’s Biggest Saving Problem⚡",
     "description": "",
     "url": "https://www.youtube.com/shorts/YGRmjYgN48s",
     "publishDate": "2025-07-10T14:00:54.000Z",
@@ -1297,10 +1319,11 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
+      "behind",
       "india",
+      "biggest",
       "saving",
-      "problem",
-      "revealed"
+      "problem"
     ],
     "categories": [],
     "isNew": false,
@@ -1487,7 +1510,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-kfoOjEYNB7E",
-    "title": "Will Jane Street's Again Trade in Indian Markets?⚡️",
+    "title": "How Jane Street Manipulated India's Stock Exchange!⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/kfoOjEYNB7E",
     "publishDate": "2025-07-09T14:01:21.000Z",
@@ -1498,13 +1521,12 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "will",
       "jane",
       "street",
-      "again",
-      "trade",
-      "indian",
-      "markets"
+      "manipulated",
+      "india",
+      "stock",
+      "exchange"
     ],
     "categories": [],
     "isNew": false,
@@ -2010,7 +2032,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-Z227abyuoQM",
-    "title": "Dark Reality Behind Delhi's Fuel Ban⚡",
+    "title": "Real Truth About Delhi's Temporary Fuel Ban⚡",
     "description": "",
     "url": "https://www.youtube.com/shorts/Z227abyuoQM",
     "publishDate": "2025-07-07T14:00:55.000Z",
@@ -2021,10 +2043,11 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "dark",
-      "reality",
-      "behind",
+      "real",
+      "truth",
+      "about",
       "delhi",
+      "temporary",
       "fuel"
     ],
     "categories": [],
@@ -2243,7 +2266,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-aIyDvEEAiFA",
-    "title": "Nithin Kamath Reveals CIBIL Score Hack⚡",
+    "title": "Nithin Kamath #1 CIBIL Score Hack⚡",
     "description": "",
     "url": "https://www.youtube.com/shorts/aIyDvEEAiFA",
     "publishDate": "2025-07-05T14:00:02.000Z",
@@ -2256,7 +2279,6 @@
     "keywords": [
       "nithin",
       "kamath",
-      "reveals",
       "cibil",
       "score",
       "hack"
@@ -5849,34 +5871,6 @@
       "bank"
     ],
     "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-business-updates-introducing-the-2024-capital-markets-y",
-    "title": "Introducing the 2024 Capital Markets Yearbook",
-    "description": "The Indian markets have grown more in the last five years than in the preceding decade and a half. Before 2020, it took roughly a decade for the unique investor count to double from 1.5 crores to 3 crores. After the pandemic, it only took a couple of years for the investor count to keep […] The post Introducing the 2024 Capital Markets Yearbook appeared first on Z-Connect by Zerodha.",
-    "url": "https://zerodha.com/z-connect/business-updates/introducing-the-2024-capital-markets-yearbook",
-    "publishDate": "2025-03-27T07:04:13.000Z",
-    "type": "blog",
-    "source": "Z-Connect Blog",
-    "author": "Team Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "introducing",
-      "2024",
-      "capital",
-      "markets",
-      "yearbook"
-    ],
-    "categories": [
-      "Business Updates",
-      "General"
-    ],
     "isNew": false,
     "isShort": false,
     "embedId": null,
