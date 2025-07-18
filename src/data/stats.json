@@ -1,10 +1,10 @@
 {
-  "totalContent": 275,
-  "thisWeek": 45,
+  "totalContent": 274,
+  "thisWeek": 47,
   "contentTypes": {
     "videos": 60,
     "podcasts": 105,
-    "newsletters": 45,
+    "newsletters": 44,
     "blogs": 65
   },
   "sources": {
@@ -18,10 +18,10 @@
     "Varsity Newsletter": 3,
     "The Chatter": 4,
     "Daily Brief": 20,
-    "After Market Report": 17,
+    "After Market Report": 16,
     "What The Hell Is Happening": 1,
     "Z-Connect Blog": 50,
     "Varsity Blog": 15
   },
-  "lastUpdated": "2025-07-18T09:44:32.704Z"
+  "lastUpdated": "2025-07-18T14:43:26.360Z"
 }
