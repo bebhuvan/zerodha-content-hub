@@ -1,5 +1,108 @@
 [
   {
+    "id": "Zero1-https---www-youtube-com-shorts-mX7GHobQG-A",
+    "title": "What if India had 0 Tax?⚡️",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/mX7GHobQG-A",
+    "publishDate": "2025-07-21T14:01:16.000Z",
+    "type": "video",
+    "source": "Zero1",
+    "author": "Zero1",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "what",
+      "india"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "mX7GHobQG-A",
+    "viewCount": null
+  },
+  {
+    "id": "Varsity-https---www-youtube-com-shorts-vyRXNMerVMs",
+    "title": "Forget the 400 Pages — DRHP Simplified in 5 Quick Checks #shorts #varsity #zerodha #ipo",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/vyRXNMerVMs",
+    "publishDate": "2025-07-21T13:30:48.000Z",
+    "type": "video",
+    "source": "Varsity",
+    "author": "Varsity",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "forget",
+      "pages",
+      "drhp",
+      "simplified",
+      "quick",
+      "checks",
+      "shorts",
+      "varsity",
+      "zerodha"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "vyRXNMerVMs",
+    "viewCount": null
+  },
+  {
+    "id": "Zerodha-https---www-youtube-com-watch-v-Ep62yZ766ow",
+    "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 22 July 2025, Tuesday",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=Ep62yZ766ow",
+    "publishDate": "2025-07-21T12:16:34.000Z",
+    "type": "video",
+    "source": "Zerodha",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "nifty",
+      "bank",
+      "analysis",
+      "tomorrow",
+      "stock",
+      "market",
+      "outlook",
+      "july",
+      "2025"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "Ep62yZ766ow",
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-shorts-4oyMlfaQO-Y",
+    "title": "Spectrum War: Satellite vs Mobile",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/4oyMlfaQO_Y",
+    "publishDate": "2025-07-21T10:05:43.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "spectrum",
+      "satellite",
+      "mobile"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "4oyMlfaQO_Y",
+    "viewCount": null
+  },
+  {
     "id": "Zerodha-https---www-youtube-com-watch-v-hRgiHOqQ1XE",
     "title": "How to use Zerodha's new Option Chain feature on Kite app",
     "description": "",
@@ -1111,7 +1214,7 @@
       "revealed"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "9NOlJrqBQoU",
     "viewCount": null
@@ -1139,7 +1242,7 @@
       "debt"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "F3BDS0XqpHo",
     "viewCount": null
@@ -1905,32 +2008,6 @@
     "viewCount": null
   },
   {
-    "id": "Zero1-https---www-youtube-com-shorts-kfoOjEYNB7E",
-    "title": "How Jane Street Manipulated India's Stock Exchange!⚡️",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/kfoOjEYNB7E",
-    "publishDate": "2025-07-09T14:01:21.000Z",
-    "type": "video",
-    "source": "Zero1",
-    "author": "Zero1",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "jane",
-      "street",
-      "manipulated",
-      "india",
-      "stock",
-      "exchange"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "kfoOjEYNB7E",
-    "viewCount": null
-  },
-  {
     "id": "After-Market-Report-https---aftermarketreport-substack-com-p-nifty-ends-near-days-low-amid-tariff",
     "title": "Nifty ends near day’s low amid tariff worries and Reliance drag",
     "description": "Welcome to Aftermarket Report, a newsletter where we do a quick daily wrap-up of what happened in the markets, both in India and globally.",
@@ -1956,31 +2033,6 @@
     "isNew": true,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Markets-https---www-youtube-com-shorts-SWr--482T28",
-    "title": "When Trading Turns Into Manipulation",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/SWr_-482T28",
-    "publishDate": "2025-07-09T13:02:41.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "when",
-      "trading",
-      "turns",
-      "into",
-      "manipulation"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "SWr_-482T28",
     "viewCount": null
   },
   {
@@ -2292,35 +2344,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Zerodha-https---www-youtube-com-watch-v-MFVKi3SUHlw",
-    "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 08 July 2025, Tuesday",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=MFVKi3SUHlw",
-    "publishDate": "2025-07-07T16:06:49.000Z",
-    "type": "video",
-    "source": "Zerodha",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "nifty",
-      "bank",
-      "analysis",
-      "tomorrow",
-      "stock",
-      "market",
-      "outlook",
-      "july",
-      "2025"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "MFVKi3SUHlw",
     "viewCount": null
   },
   {
@@ -3956,28 +3979,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Varsity-https---www-youtube-com-watch-v-xJKpI88SQVM",
-    "title": "How to get Rich with 60k Salary?",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=xJKpI88SQVM",
-    "publishDate": "2025-06-13T13:30:46.000Z",
-    "type": "video",
-    "source": "Varsity",
-    "author": "Varsity",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "rich",
-      "salary"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "xJKpI88SQVM",
     "viewCount": null
   },
   {
