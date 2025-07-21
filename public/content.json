@@ -1,5 +1,30 @@
 [
   {
+    "id": "Zerodha-https---www-youtube-com-watch-v-hRgiHOqQ1XE",
+    "title": "How to use Zerodha's new Option Chain feature on Kite app",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=hRgiHOqQ1XE",
+    "publishDate": "2025-07-21T09:37:31.000Z",
+    "type": "video",
+    "source": "Zerodha",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "zerodha",
+      "option",
+      "chain",
+      "feature",
+      "kite"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "hRgiHOqQ1XE",
+    "viewCount": null
+  },
+  {
     "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-of-repo-rates-black-boxes-and-balance",
     "title": "Of repo rates, black boxes and balance sheets",
     "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
@@ -2299,31 +2324,6 @@
     "viewCount": null
   },
   {
-    "id": "Zerodha-https---www-youtube-com-watch-v-PqHiA2O97OY",
-    "title": "Exposing Dark Patterns in Financial Apps",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=PqHiA2O97OY",
-    "publishDate": "2025-07-07T14:31:09.000Z",
-    "type": "video",
-    "source": "Zerodha",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "exposing",
-      "dark",
-      "patterns",
-      "financial",
-      "apps"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "PqHiA2O97OY",
-    "viewCount": null
-  },
-  {
     "id": "Varsity-https---www-youtube-com-shorts-Ls5wgiCBBRs",
     "title": "Earn ₹60K? Here's how to Budget it! #shorts #zerodha #varsity #save",
     "description": "",
@@ -3667,30 +3667,6 @@
       "sanjiv",
       "bhasin",
       "case"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Varsity-Newsletter-https---zerodhavarsity-substack-com-p-i-dont-have-enough-money-to-invest",
-    "title": "“I don’t have enough money to invest”",
-    "description": "But self-control in future becomes mentally exhausting",
-    "url": "https://zerodhavarsity.substack.com/p/i-dont-have-enough-money-to-invest",
-    "publishDate": "2025-06-21T07:21:40.000Z",
-    "type": "newsletter",
-    "source": "Varsity Newsletter",
-    "author": "Zerodha Varsity",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substack-post-media.s3.amazonaws.com/public/images/343a40a5-c7aa-4acf-9303-79ddf52fe099_1280x841.jpeg",
-    "keywords": [
-      "have",
-      "enough",
-      "money",
-      "invest"
     ],
     "categories": [],
     "isNew": false,
