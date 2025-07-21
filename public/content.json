@@ -1,5 +1,83 @@
 [
   {
+    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-of-repo-rates-black-boxes-and-balance",
+    "title": "Of repo rates, black boxes and balance sheets",
+    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
+    "url": "https://thedailybrief.zerodha.com/p/of-repo-rates-black-boxes-and-balance",
+    "publishDate": "2025-07-21T02:16:43.000Z",
+    "type": "newsletter",
+    "source": "Daily Brief",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": "1 min read",
+    "thumbnail": "https://substackcdn.com/image/fetch/$s_!Kknu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc70f9037-d9b2-4276-9846-b22e5e30f06d_1536x1024.png",
+    "keywords": [
+      "repo",
+      "rates",
+      "black",
+      "boxes",
+      "balance",
+      "sheets"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-why-businesses-react-to-e",
+    "title": "Why Businesses react to every Rate Hike",
+    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:39 Why Repo Rate matters 09:27 The Economics of Air Pollution 19:43 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
+    "url": "https://markets-by-zerodha.simplecast.com/episodes/why-businesses-react-to-every-rate-hike-X1zn3Pe6",
+    "publishDate": "2025-07-21T02:06:36.000Z",
+    "type": "podcast",
+    "source": "The Daily Brief Podcast",
+    "author": "social@zerodha.com (Zerodha)",
+    "duration": "00:21:47",
+    "readingTime": null,
+    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/227e9851-593b-4eb2-bee3-11a3bce9e5a2/audio/0fdbed9c-18a8-4f60-adab-5a8c2580835f/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
+    "keywords": [
+      "businesses",
+      "react",
+      "every",
+      "rate",
+      "hike"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-watch-v-Jh7m6PO6iDY",
+    "title": "Why Businesses react to every Rate Hike | The Daily Brief #272",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=Jh7m6PO6iDY",
+    "publishDate": "2025-07-21T01:30:12.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "businesses",
+      "react",
+      "every",
+      "rate",
+      "hike",
+      "daily",
+      "brief"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "Jh7m6PO6iDY",
+    "viewCount": null
+  },
+  {
     "id": "Zero1-https---www-youtube-com-shorts-RWVDisr5yDM",
     "title": "Hocco SMASHES Amul in epic face off",
     "description": "",
@@ -55,7 +133,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-J41H2iOeif4",
-    "title": "Dark Truth Behind Ola Uber Rides!⚡️",
+    "title": "Uber Ola Scam in India Exposed!⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/J41H2iOeif4",
     "publishDate": "2025-07-19T14:00:27.000Z",
@@ -66,11 +144,10 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "dark",
-      "truth",
-      "behind",
       "uber",
-      "rides"
+      "scam",
+      "india",
+      "exposed"
     ],
     "categories": [],
     "isNew": true,
@@ -1060,7 +1137,7 @@
       "chocolate"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1083,7 +1160,7 @@
       "chocolate"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1108,7 +1185,7 @@
       "brief"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "OZnpn09jMpc",
     "viewCount": null
@@ -2010,34 +2087,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Markets-https---www-youtube-com-watch-v-v5N5itkNC64",
-    "title": "India’s Bike Taxi puzzle - Finally solved? | The Daily Brief #264",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=v5N5itkNC64",
-    "publishDate": "2025-07-09T02:06:17.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "india",
-      "bike",
-      "taxi",
-      "puzzle",
-      "finally",
-      "solved",
-      "daily",
-      "brief"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "v5N5itkNC64",
     "viewCount": null
   },
   {
@@ -3121,28 +3170,6 @@
     "categories": [
       "Rainmatter"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-the-story-of-trash",
-    "title": "The story of trash",
-    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
-    "url": "https://thedailybrief.zerodha.com/p/the-story-of-trash",
-    "publishDate": "2025-06-30T01:47:09.000Z",
-    "type": "newsletter",
-    "source": "Daily Brief",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!rgOC!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcd6b8c5b-a875-4468-8e20-ad94e19a8005_1536x1024.png",
-    "keywords": [
-      "story",
-      "trash"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
@@ -5366,29 +5393,6 @@
     "keywords": [
       "bank",
       "comeback"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-affordable-housing-the-ne",
-    "title": "Affordable Housing: The New Goldmine?",
-    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:39 HFCs have a strong quarter 11:51 The rare earth dependency 22:49 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
-    "url": "https://markets-by-zerodha.simplecast.com/episodes/affordable-housing-the-new-goldmine-hQSBhnd1",
-    "publishDate": "2025-05-12T02:01:01.000Z",
-    "type": "podcast",
-    "source": "The Daily Brief Podcast",
-    "author": "social@zerodha.com (Zerodha)",
-    "duration": "00:24:20",
-    "readingTime": null,
-    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/43855387-5449-45b4-95f2-7b00543d2cac/audio/74bb2523-09aa-41d9-bea7-fc1d0636be45/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
-    "keywords": [
-      "affordable",
-      "housing",
-      "goldmine"
     ],
     "categories": [],
     "isNew": false,
