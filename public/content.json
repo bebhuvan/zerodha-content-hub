@@ -1,5 +1,62 @@
 [
   {
+    "id": "Zerodha-https---www-youtube-com-watch-v-vKQs6m-CRmo",
+    "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 23 July 2025, Wednesday",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=vKQs6m_CRmo",
+    "publishDate": "2025-07-22T12:22:25.000Z",
+    "type": "video",
+    "source": "Zerodha",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "nifty",
+      "bank",
+      "analysis",
+      "tomorrow",
+      "stock",
+      "market",
+      "outlook",
+      "july",
+      "2025"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "vKQs6m_CRmo",
+    "viewCount": null
+  },
+  {
+    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-news-oswal-energies-files-ipo-papers-with-sebi",
+    "title": "Oswal Energies files IPO papers with SEBI",
+    "description": "Oswal Energies has submitted the Draft Red Herring Prospectus(DRHP) to the SEBI for its upcoming Initial Public Offering(IPO). The IPO will consist of a fresh issuance of equity shares amounting to Rs 250 crore, along with an offer-for-sale of 46 lakh shares by the Bokadia family. Oswal Energies is an Engineering, Procurement, and Construction (EPC) […] The post Oswal Energies files IPO papers with SEBI appeared first on Z-Connect by Zerodha.",
+    "url": "https://zerodha.com/z-connect/news/oswal-energies-files-ipo-papers-with-sebi",
+    "publishDate": "2025-07-22T10:48:22.000Z",
+    "type": "blog",
+    "source": "Z-Connect Blog",
+    "author": "Team Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "oswal",
+      "energies",
+      "files",
+      "papers",
+      "sebi"
+    ],
+    "categories": [
+      "News",
+      "IPO"
+    ],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
     "id": "Z-Connect-Blog-https---zerodha-com-z-connect-kite-introducing-the-all-new-option-chain-on-kite-app",
     "title": "Introducing the all new option chain on Kite app",
     "description": "When trading options, one of the most important tools you can use is the option chain. It provides a complete view of all available option contracts for a stock or an index, showing key details like strike prices, premiums, open interest, option greeks, and more. The option chain helps traders determine market sentiment, identify trading […] The post Introducing the all new option chain on Kite app appeared first on Z-Connect by Zerodha.",
@@ -1187,7 +1244,7 @@
       "this"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "KlRiJvVQRy4",
     "viewCount": null
@@ -1212,7 +1269,7 @@
       "battlefield"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "neSH-XBjQU8",
     "viewCount": null
@@ -2370,30 +2427,6 @@
     "isNew": true,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Zerodha-https---www-youtube-com-shorts-Zs1of-0ijKY",
-    "title": "Travel Food Services Limited IPO",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/Zs1of-0ijKY",
-    "publishDate": "2025-07-08T08:14:24.000Z",
-    "type": "video",
-    "source": "Zerodha",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "travel",
-      "food",
-      "services",
-      "limited"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "Zs1of-0ijKY",
     "viewCount": null
   },
   {
@@ -5558,33 +5591,6 @@
       "code"
     ],
     "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-rainmatter-amwoodo-harvesting-indias-green-gold",
-    "title": "Amwoodo: Harvesting India’s green gold",
-    "description": "Bamboo is green gold Bamboo is a sustainable and versatile plant. After putting down roots for the first three to five years, the bamboo forms a colony that can then be harvested for up to 15 years, some varieties up to 40 years. While growing, bamboo sequesters more carbon and produces more oxygen than equivalent […] The post Amwoodo: Harvesting India’s green gold appeared first on Z-Connect by Zerodha.",
-    "url": "https://zerodha.com/z-connect/rainmatter/amwoodo-harvesting-indias-green-gold",
-    "publishDate": "2025-05-05T09:59:32.000Z",
-    "type": "blog",
-    "source": "Z-Connect Blog",
-    "author": "Hansi Mehrotra",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "amwoodo",
-      "harvesting",
-      "india",
-      "green",
-      "gold"
-    ],
-    "categories": [
-      "Rainmatter"
-    ],
     "isNew": false,
     "isShort": false,
     "embedId": null,
