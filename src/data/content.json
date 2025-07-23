@@ -1,10 +1,87 @@
 [
   {
+    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-the-off-shore-casinos-that-want-your",
+    "title": "The off-shore casinos that want your life’s savings",
+    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
+    "url": "https://thedailybrief.zerodha.com/p/the-off-shore-casinos-that-want-your",
+    "publishDate": "2025-07-23T02:13:28.000Z",
+    "type": "newsletter",
+    "source": "Daily Brief",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": "1 min read",
+    "thumbnail": "https://substackcdn.com/image/fetch/$s_!DWq5!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F249b569a-5d0b-4111-81f0-19a8a5e723ff_1536x1024.png",
+    "keywords": [
+      "shore",
+      "casinos",
+      "that",
+      "want",
+      "your",
+      "life",
+      "savings"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-trading-apps-or-online-ca",
+    "title": "Trading Apps or Online Casinos?",
+    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:27 SEBI shuts down OctaFX India 08:22 Is Tesla too late for India? 18:21 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
+    "url": "https://markets-by-zerodha.simplecast.com/episodes/trading-apps-or-online-casinos-cuyraGZJ",
+    "publishDate": "2025-07-23T02:00:18.000Z",
+    "type": "podcast",
+    "source": "The Daily Brief Podcast",
+    "author": "social@zerodha.com (Zerodha)",
+    "duration": "00:20:25",
+    "readingTime": null,
+    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/1c4fd7db-c284-4282-bc42-566966e9c4b0/audio/cd45e607-2714-41f7-a8e1-a5d99a71e03e/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
+    "keywords": [
+      "trading",
+      "apps",
+      "online",
+      "casinos"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-watch-v-bueb2etQ3sI",
+    "title": "Trading Apps or Online Casinos? | The Daily Brief #274",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=bueb2etQ3sI",
+    "publishDate": "2025-07-23T01:35:23.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "trading",
+      "apps",
+      "online",
+      "casinos",
+      "daily",
+      "brief"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "bueb2etQ3sI",
+    "viewCount": null
+  },
+  {
     "id": "Zerodha-https---www-youtube-com-watch-v-vKQs6m-CRmo",
     "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 23 July 2025, Wednesday",
     "description": "",
     "url": "https://www.youtube.com/watch?v=vKQs6m_CRmo",
-    "publishDate": "2025-07-22T12:22:25.000Z",
+    "publishDate": "2025-07-22T15:52:07.000Z",
     "type": "video",
     "source": "Zerodha",
     "author": "Zerodha",
@@ -26,6 +103,31 @@
     "isNew": true,
     "isShort": false,
     "embedId": "vKQs6m_CRmo",
+    "viewCount": null
+  },
+  {
+    "id": "Zero1-https---www-youtube-com-shorts-jKApbYBVleo",
+    "title": "India’s Real Estate Scam Exposed⚡️",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/jKApbYBVleo",
+    "publishDate": "2025-07-22T15:01:27.000Z",
+    "type": "video",
+    "source": "Zero1",
+    "author": "Zero1",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "india",
+      "real",
+      "estate",
+      "scam",
+      "exposed"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "jKApbYBVleo",
     "viewCount": null
   },
   {
@@ -839,7 +941,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-JUC4LCgjpwg",
-    "title": "Dark Truth Behind Matcha Craze!⚡️",
+    "title": "Dark Truth Behind Matcha!⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/JUC4LCgjpwg",
     "publishDate": "2025-07-17T14:00:25.000Z",
@@ -853,8 +955,7 @@
       "dark",
       "truth",
       "behind",
-      "matcha",
-      "craze"
+      "matcha"
     ],
     "categories": [],
     "isNew": true,
@@ -1119,7 +1220,7 @@
       "founders"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1142,7 +1243,7 @@
       "founders"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1167,7 +1268,7 @@
       "brief"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "enqu084PQMk",
     "viewCount": null
@@ -1196,7 +1297,7 @@
       "2025"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "r9HGLlZrE0w",
     "viewCount": null
@@ -1220,7 +1321,7 @@
       "rich"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "ahQibGuPIeE",
     "viewCount": null
@@ -1989,53 +2090,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": "QbWnML-208I",
-    "viewCount": null
-  },
-  {
-    "id": "Markets-https---www-youtube-com-shorts-IWoEMW7mHuw",
-    "title": "Capgemini Bets on AI and Ops",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/IWoEMW7mHuw",
-    "publishDate": "2025-07-10T14:25:26.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "capgemini",
-      "bets"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "IWoEMW7mHuw",
-    "viewCount": null
-  },
-  {
-    "id": "Zero1-https---www-youtube-com-shorts-YGRmjYgN48s",
-    "title": "Behind India’s Biggest Saving Problem⚡",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/YGRmjYgN48s",
-    "publishDate": "2025-07-10T14:00:54.000Z",
-    "type": "video",
-    "source": "Zero1",
-    "author": "Zero1",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "behind",
-      "india",
-      "biggest",
-      "saving",
-      "problem"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "YGRmjYgN48s",
     "viewCount": null
   },
   {
@@ -3070,29 +3124,6 @@
       "News",
       "IPO"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-were-entering-a-new-era-of-global",
-    "title": "We’re entering a New Era of Global Finance",
-    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
-    "url": "https://thedailybrief.zerodha.com/p/were-entering-a-new-era-of-global",
-    "publishDate": "2025-07-02T02:02:37.000Z",
-    "type": "newsletter",
-    "source": "Daily Brief",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!uiOu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F881a06f2-90bd-4d2a-93ff-25c04aa04f27_1536x1024.png",
-    "keywords": [
-      "entering",
-      "global",
-      "finance"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
@@ -5407,29 +5438,6 @@
       "cybersecurity",
       "wars"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-food-wars-are-far-from-ov",
-    "title": "Food Wars are Far from Over",
-    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:39 Is Zomato beating Swiggy? 12:09 India: The New Data Hub? 22:34 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
-    "url": "https://markets-by-zerodha.simplecast.com/episodes/food-wars-are-far-from-over-7IY3kQei",
-    "publishDate": "2025-05-14T02:03:36.000Z",
-    "type": "podcast",
-    "source": "The Daily Brief Podcast",
-    "author": "social@zerodha.com (Zerodha)",
-    "duration": "00:24:03",
-    "readingTime": null,
-    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/da0f7a25-4eff-4f2e-a95c-228ec11fd64f/audio/aaa89790-6a72-4652-9f03-1e9e25d5dbcc/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
-    "keywords": [
-      "food",
-      "wars",
-      "over"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
