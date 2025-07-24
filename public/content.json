@@ -1,10 +1,96 @@
 [
   {
+    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-milky-mist-is-going-public-heres",
+    "title": "Milky Mist is going Public - Here’s what you should know",
+    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
+    "url": "https://thedailybrief.zerodha.com/p/milky-mist-is-going-public-heres",
+    "publishDate": "2025-07-24T02:10:39.000Z",
+    "type": "newsletter",
+    "source": "Daily Brief",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": "1 min read",
+    "thumbnail": "https://substackcdn.com/image/fetch/$s_!UVEY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F679f0eaf-dfaf-433a-ae0b-02efaabd00a2_1536x1024.jpeg",
+    "keywords": [
+      "milky",
+      "mist",
+      "going",
+      "public",
+      "here",
+      "what",
+      "should",
+      "know"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-milky-mist-is-going-publi",
+    "title": "Milky Mist is going Public - Here’s what you should know",
+    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:27 Milky Mist’s ₹2000 Cr IPO bid 10:47 Mutual Funds get a makeover 22:08 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
+    "url": "https://markets-by-zerodha.simplecast.com/episodes/milky-mist-is-going-public-heres-what-you-should-know-ia_S2ODI",
+    "publishDate": "2025-07-24T02:10:08.000Z",
+    "type": "podcast",
+    "source": "The Daily Brief Podcast",
+    "author": "social@zerodha.com (Zerodha)",
+    "duration": "00:23:35",
+    "readingTime": null,
+    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/4a86a1ff-f0bc-4d14-b4b2-3894ee977f4b/audio/1afd2565-a04e-4679-9754-a7a675bb3583/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
+    "keywords": [
+      "milky",
+      "mist",
+      "going",
+      "public",
+      "here",
+      "what",
+      "should",
+      "know"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-watch-v-2GCAGg4GG-0",
+    "title": "Milky Mist is going Public - Here’s what you should know | The Daily Brief #275",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=2GCAGg4GG_0",
+    "publishDate": "2025-07-24T01:30:01.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "milky",
+      "mist",
+      "going",
+      "public",
+      "here",
+      "what",
+      "should",
+      "know",
+      "daily",
+      "brief"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "2GCAGg4GG_0",
+    "viewCount": null
+  },
+  {
     "id": "Zerodha-https---www-youtube-com-watch-v-AABhSqRPfoI",
     "title": "NIFTY Expiry & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 24 July 2025, Thursday",
     "description": "",
     "url": "https://www.youtube.com/watch?v=AABhSqRPfoI",
-    "publishDate": "2025-07-23T12:20:00.000Z",
+    "publishDate": "2025-07-23T15:55:26.000Z",
     "type": "video",
     "source": "Zerodha",
     "author": "Zerodha",
@@ -1170,7 +1256,7 @@
       "century"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1195,7 +1281,7 @@
       "century"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1221,7 +1307,7 @@
       "brief"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "LaaLrLa1Sq8",
     "viewCount": null
@@ -1250,7 +1336,7 @@
       "july"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "9sNVbD6prXk",
     "viewCount": null
@@ -2112,33 +2198,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Markets-https---www-youtube-com-watch-v-FWGSwMv0y80",
-    "title": "Is India’s phone factory Dream in danger? | The Daily Brief #266",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=FWGSwMv0y80",
-    "publishDate": "2025-07-11T01:30:20.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "india",
-      "phone",
-      "factory",
-      "dream",
-      "danger",
-      "daily",
-      "brief"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "FWGSwMv0y80",
     "viewCount": null
   },
   {
@@ -3041,31 +3100,6 @@
       "News",
       "IPO"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-another-fintech-giant-is-going-public",
-    "title": "Another fintech giant is going public",
-    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
-    "url": "https://thedailybrief.zerodha.com/p/another-fintech-giant-is-going-public",
-    "publishDate": "2025-07-03T02:09:59.000Z",
-    "type": "newsletter",
-    "source": "Daily Brief",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!bH_x!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F90028edc-ba61-4a57-a5e7-10954fbea8f5_1536x1024.png",
-    "keywords": [
-      "another",
-      "fintech",
-      "giant",
-      "going",
-      "public"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
@@ -5328,30 +5362,6 @@
       "retirement",
       "UK deal"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-why-indias-lpg-system-is-",
-    "title": "Why India’s LPG System Is Under Pressure",
-    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:42 Will Cooking Gas Get Costlier? 09:48 Maruti, Tata, M&M: FY25 Wrap 18:10 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
-    "url": "https://markets-by-zerodha.simplecast.com/episodes/why-indias-lpg-system-is-under-pressure-CPDiopNU",
-    "publishDate": "2025-05-15T01:51:29.000Z",
-    "type": "podcast",
-    "source": "The Daily Brief Podcast",
-    "author": "social@zerodha.com (Zerodha)",
-    "duration": "00:19:23",
-    "readingTime": null,
-    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/3f124888-dc80-4623-a6ec-0169cb1576e0/audio/cd81e377-26d9-43a1-9a0a-9b43005e6363/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
-    "keywords": [
-      "india",
-      "system",
-      "under",
-      "pressure"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
