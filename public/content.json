@@ -1,5 +1,35 @@
 [
   {
+    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-news-executive-centre-india-files-drhp-with-sebi-for-rs",
+    "title": "Executive Centre India files DRHP with SEBI for Rs 2,600 crore IPO",
+    "description": "Executive Centre India has submitted the Draft Red Herring Prospectus (DRHP) for its upcoming Initial Public Offering(IPO). The IPO will consist of a fresh issue of equity shares amounting to Rs 2600 crore. Since 2008, Executive Centre India has been offering premium flexible workspaces across India, Singapore, the Middle East, and other parts of Asia. […] The post Executive Centre India files DRHP with SEBI for Rs 2,600 crore IPO appeared first on Z-Connect by Zerodha.",
+    "url": "https://zerodha.com/z-connect/news/executive-centre-india-files-drhp-with-sebi-for-rs-2600-crore-ipo",
+    "publishDate": "2025-07-25T06:30:15.000Z",
+    "type": "blog",
+    "source": "Z-Connect Blog",
+    "author": "Team Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "executive",
+      "centre",
+      "india",
+      "files",
+      "drhp",
+      "sebi",
+      "crore"
+    ],
+    "categories": [
+      "News",
+      "IPO"
+    ],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
     "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-a-new-pillar-for-indian-insurance",
     "title": "A new pillar for Indian insurance",
     "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
@@ -127,7 +157,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts--6g2vQDCi-I",
-    "title": "Western Luxury Brands Obsessed With India?!⚡️",
+    "title": "Luxury Brands Can’t Stop Copying India!?⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/_6g2vQDCi_I",
     "publishDate": "2025-07-24T14:00:44.000Z",
@@ -138,10 +168,10 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "western",
       "luxury",
       "brands",
-      "obsessed",
+      "stop",
+      "copying",
       "india"
     ],
     "categories": [],
@@ -181,7 +211,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-QI5K00ek2pQ",
-    "title": "Idli Man of India",
+    "title": "iD Fresh case study",
     "description": "",
     "url": "https://www.youtube.com/shorts/QI5K00ek2pQ",
     "publishDate": "2025-07-24T07:00:31.000Z",
@@ -192,8 +222,9 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "idli",
-      "india"
+      "fresh",
+      "case",
+      "study"
     ],
     "categories": [],
     "isNew": true,
@@ -965,7 +996,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-J41H2iOeif4",
-    "title": "How Uber & Ola Apps Are Fooling You Every Day⚡️",
+    "title": "Uber & Ola SCAM Exposed⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/J41H2iOeif4",
     "publishDate": "2025-07-19T14:00:27.000Z",
@@ -977,9 +1008,8 @@
     "thumbnail": null,
     "keywords": [
       "uber",
-      "apps",
-      "fooling",
-      "every"
+      "scam",
+      "exposed"
     ],
     "categories": [],
     "isNew": true,
@@ -1223,7 +1253,7 @@
       "Business Updates",
       "Featured"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -5491,33 +5521,6 @@
       "realities"
     ],
     "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-featured-introducing-trade-from-charts-tfc-at-zerodha",
-    "title": "Introducing Trade From Charts (TFC) at Zerodha",
-    "description": "Trading is all about making quick decisions when you spot opportunities. When you see a promising pattern on your charts or when your technical indicators signal a potential trade, you need to act fast. Until now, this meant moving between chart analysis and order placement screens, which required extra steps during important market moments. Trade […] The post Introducing Trade From Charts (TFC) at Zerodha appeared first on Z-Connect by Zerodha.",
-    "url": "https://zerodha.com/z-connect/featured/introducing-trade-from-charts-tfc-at-zerodha",
-    "publishDate": "2025-05-07T03:56:53.000Z",
-    "type": "blog",
-    "source": "Z-Connect Blog",
-    "author": "Team Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "introducing",
-      "trade",
-      "charts",
-      "zerodha"
-    ],
-    "categories": [
-      "Featured",
-      "Kite"
-    ],
     "isNew": false,
     "isShort": false,
     "embedId": null,
