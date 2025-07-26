@@ -1,5 +1,30 @@
 [
   {
+    "id": "Zero1-https---www-youtube-com-shorts-V5M46X18gOo",
+    "title": "China Slowed Down Earth's Rotation",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/V5M46X18gOo",
+    "publishDate": "2025-07-26T12:30:37.000Z",
+    "type": "video",
+    "source": "Zero1",
+    "author": "Zero1",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "china",
+      "slowed",
+      "down",
+      "earth",
+      "rotation"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "V5M46X18gOo",
+    "viewCount": null
+  },
+  {
     "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-reliance-vs-blinkit-heats-up-its",
     "title": "Reliance vs Blinkit heats up, IT’s future in danger?, Trump on NVIDIA | Who said What?S2E4",
     "description": "Hi folks, welcome to another episode of Who Said What?",
@@ -464,7 +489,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-1AUNLoiZ5MY",
-    "title": "India vs China Who will Become the NEXT Superpower",
+    "title": "India Overtakes China as GLOBAL SUPERPOWER by 2030",
     "description": "",
     "url": "https://www.youtube.com/shorts/1AUNLoiZ5MY",
     "publishDate": "2025-07-23T11:10:16.000Z",
@@ -476,11 +501,11 @@
     "thumbnail": null,
     "keywords": [
       "india",
+      "overtakes",
       "china",
-      "will",
-      "become",
-      "next",
-      "superpower"
+      "global",
+      "superpower",
+      "2030"
     ],
     "categories": [],
     "isNew": true,
@@ -1128,7 +1153,7 @@
       "exposed"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "J41H2iOeif4",
     "viewCount": null
@@ -2039,29 +2064,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": "ebFzCzbXMPw",
-    "viewCount": null
-  },
-  {
-    "id": "Zero1-https---www-youtube-com-shorts-9NOlJrqBQoU",
-    "title": "Why Indigo is #1 Indian Airline!⚡",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/9NOlJrqBQoU",
-    "publishDate": "2025-07-14T14:00:21.000Z",
-    "type": "video",
-    "source": "Zero1",
-    "author": "Zero1",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "indigo",
-      "indian",
-      "airline"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "9NOlJrqBQoU",
     "viewCount": null
   },
   {
@@ -3631,58 +3633,6 @@
     "isNew": false,
     "isShort": true,
     "embedId": "PfNwDoxz9pQ",
-    "viewCount": null
-  },
-  {
-    "id": "After-Market-Report-https---aftermarketreport-substack-com-p-nifty-surges-past-25500-bank-nifty",
-    "title": "Nifty surges past 25,500; Bank Nifty hits record high on expiry day rally",
-    "description": "Welcome to Aftermarket Report, a newsletter where we do a quick daily wrap-up of what happened in the markets, both in India and globally.",
-    "url": "https://aftermarketreport.substack.com/p/nifty-surges-past-25500-bank-nifty",
-    "publishDate": "2025-06-26T12:51:41.000Z",
-    "type": "newsletter",
-    "source": "After Market Report",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!cYIv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0ef8d80c-6eb6-4020-b278-23d13f5d0270_1456x832.webp",
-    "keywords": [
-      "nifty",
-      "surges",
-      "past",
-      "bank",
-      "hits",
-      "record",
-      "high",
-      "expiry",
-      "rally"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "The-Chatter-https---thechatterbyzerodha-substack-com-p-the-chatter-the-mood-in-the-room",
-    "title": "The Chatter: The Mood in the Room",
-    "description": "Edition #14",
-    "url": "https://thechatterbyzerodha.substack.com/p/the-chatter-the-mood-in-the-room",
-    "publishDate": "2025-06-26T09:48:21.000Z",
-    "type": "newsletter",
-    "source": "The Chatter",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!5bem!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F200c0dc4-c14b-4c54-ada3-83f3fb7c69dc_1536x1024.png",
-    "keywords": [
-      "chatter",
-      "mood",
-      "room"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
     "viewCount": null
   },
   {
