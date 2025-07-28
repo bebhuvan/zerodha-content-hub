@@ -1,7 +1,109 @@
 [
   {
+    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-from-men-will-be-men-to-money-will",
+    "title": "From ‘Men Will Be Men’ to ‘Money Will Be Made'",
+    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
+    "url": "https://thedailybrief.zerodha.com/p/from-men-will-be-men-to-money-will",
+    "publishDate": "2025-07-28T02:06:17.000Z",
+    "type": "newsletter",
+    "source": "Daily Brief",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": "1 min read",
+    "thumbnail": "https://substackcdn.com/image/fetch/$s_!rwVL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1e0131a0-a0f6-449e-b379-4ef089193584_1536x1024.png",
+    "keywords": [
+      "will",
+      "money",
+      "made"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-from-men-will-be-men-to-m",
+    "title": "From ‘Men Will Be Men’ to ‘Money Will Be Made'",
+    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:25 More blues for Pernod Ricard 09:30 Behind Reliance's record profit 20:58 An update on Jio-Allianz story 22:39 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
+    "url": "https://markets-by-zerodha.simplecast.com/episodes/from-men-will-be-men-to-money-will-be-made-ehDa1KWo",
+    "publishDate": "2025-07-28T01:45:37.000Z",
+    "type": "podcast",
+    "source": "The Daily Brief Podcast",
+    "author": "social@zerodha.com (Zerodha)",
+    "duration": "00:24:18",
+    "readingTime": null,
+    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/ff8826d8-64f3-4ef1-a87f-35684ea99aa2/audio/b8fcde73-aa4e-4f41-976b-0ad6b2e4d9bf/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
+    "keywords": [
+      "will",
+      "money",
+      "made"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-watch-v-idjhYC7vYyQ",
+    "title": "Why did Pernod Ricard sell Imperial Blue? | The Daily Brief #277",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=idjhYC7vYyQ",
+    "publishDate": "2025-07-28T01:30:28.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "pernod",
+      "ricard",
+      "sell",
+      "imperial",
+      "blue",
+      "daily",
+      "brief"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "idjhYC7vYyQ",
+    "viewCount": null
+  },
+  {
+    "id": "Zerodha-https---www-youtube-com-watch-v-CFPgfocRUtc",
+    "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 28 July 2025, Monday",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=CFPgfocRUtc",
+    "publishDate": "2025-07-27T19:50:59.000Z",
+    "type": "video",
+    "source": "Zerodha",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "nifty",
+      "bank",
+      "analysis",
+      "tomorrow",
+      "stock",
+      "market",
+      "outlook",
+      "july",
+      "2025"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "CFPgfocRUtc",
+    "viewCount": null
+  },
+  {
     "id": "Zero1-https---www-youtube-com-shorts-tOUaNu4tdyY",
-    "title": "Why My Friend Can’t Get His Money Back 💸",
+    "title": "Dark Truth Behind Unlisted Shares⚡️",
     "description": "",
     "url": "https://www.youtube.com/shorts/tOUaNu4tdyY",
     "publishDate": "2025-07-27T10:30:29.000Z",
@@ -12,9 +114,11 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "friend",
-      "money",
-      "back"
+      "dark",
+      "truth",
+      "behind",
+      "unlisted",
+      "shares"
     ],
     "categories": [],
     "isNew": true,
@@ -83,7 +187,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-V5M46X18gOo",
-    "title": "China Slowed Down Earth's Rotation",
+    "title": "CHINA Slowed Down Earth's Rotation",
     "description": "",
     "url": "https://www.youtube.com/shorts/V5M46X18gOo",
     "publishDate": "2025-07-26T12:30:37.000Z",
@@ -187,35 +291,6 @@
     "isNew": true,
     "isShort": true,
     "embedId": "mqJeqRID-Pg",
-    "viewCount": null
-  },
-  {
-    "id": "Zerodha-https---www-youtube-com-watch-v-CFPgfocRUtc",
-    "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 28 July 2025, Monday",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=CFPgfocRUtc",
-    "publishDate": "2025-07-25T12:02:00.000Z",
-    "type": "video",
-    "source": "Zerodha",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "nifty",
-      "bank",
-      "analysis",
-      "tomorrow",
-      "stock",
-      "market",
-      "outlook",
-      "july",
-      "2025"
-    ],
-    "categories": [],
-    "isNew": true,
-    "isShort": false,
-    "embedId": "CFPgfocRUtc",
     "viewCount": null
   },
   {
@@ -569,7 +644,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-1AUNLoiZ5MY",
-    "title": "Why India Can Never Grow Like China?",
+    "title": "Why INDIA Can Never Grow Like China?",
     "description": "",
     "url": "https://www.youtube.com/shorts/1AUNLoiZ5MY",
     "publishDate": "2025-07-23T11:10:16.000Z",
@@ -1104,7 +1179,7 @@
       "sheets"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1129,7 +1204,7 @@
       "hike"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1156,7 +1231,7 @@
       "brief"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "Jh7m6PO6iDY",
     "viewCount": null
@@ -1301,7 +1376,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-u-pL4aLiERQ",
-    "title": "Shocking Truth Behind Great Wall Of India!",
+    "title": "DARK TRUTH Behind Great Wall Of India!",
     "description": "",
     "url": "https://www.youtube.com/shorts/u_pL4aLiERQ",
     "publishDate": "2025-07-18T14:01:32.000Z",
@@ -1312,7 +1387,7 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "shocking",
+      "dark",
       "truth",
       "behind",
       "great",
@@ -1967,31 +2042,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": "ahQibGuPIeE",
-    "viewCount": null
-  },
-  {
-    "id": "Markets-https---www-youtube-com-shorts-neSH-XBjQU8",
-    "title": "Paint Market Turns Into a Battlefield",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/neSH-XBjQU8",
-    "publishDate": "2025-07-15T10:30:41.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "paint",
-      "market",
-      "turns",
-      "into",
-      "battlefield"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "neSH-XBjQU8",
     "viewCount": null
   },
   {
@@ -2862,31 +2912,6 @@
     ],
     "categories": [],
     "isNew": true,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-inside-sebis-crackdown-on-jane-street",
-    "title": "Inside SEBI’s crackdown on Jane Street",
-    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
-    "url": "https://thedailybrief.zerodha.com/p/inside-sebis-crackdown-on-jane-street",
-    "publishDate": "2025-07-07T01:44:09.000Z",
-    "type": "newsletter",
-    "source": "Daily Brief",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!oUVx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5bb96c9-f142-4320-9557-dd8d1e5a9d2a_1536x1024.png",
-    "keywords": [
-      "inside",
-      "sebi",
-      "crackdown",
-      "jane",
-      "street"
-    ],
-    "categories": [],
-    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -5217,27 +5242,6 @@
     "categories": [
       "Rainmatter"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-batteries-are-the-new-oil",
-    "title": "Batteries are the New Oil?",
-    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:40 Why Batteries Matter Now 11:31 The RBI intends to tread lightly 18:30 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
-    "url": "https://markets-by-zerodha.simplecast.com/episodes/batteries-are-the-new-oil-uEK_RgPw",
-    "publishDate": "2025-05-19T02:06:04.000Z",
-    "type": "podcast",
-    "source": "The Daily Brief Podcast",
-    "author": "social@zerodha.com (Zerodha)",
-    "duration": "00:20:09",
-    "readingTime": null,
-    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/ad4e5dea-531c-4bbd-89ea-0576d507b5f6/audio/39352f59-f3ef-463d-90a1-447520b264b2/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
-    "keywords": [
-      "batteries"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
