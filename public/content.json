@@ -1,5 +1,78 @@
 [
   {
+    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-news-krt-gets-sebi-nod-for--e2-82-b94800-crores-reit-ip",
+    "title": "KRT gets SEBI nod for ₹4,800 crores REIT IPO",
+    "description": "Knowledge Realty Trust (KRT), a joint venture between Sattva Group and global investment giant Blackstone, has received approval from SEBI to launch a ₹4,800 crores REIT IPO, expected in early August 2025. KRT has already raised ₹1,400 crore from institutional investors ahead of the IPO. Its portfolio spans over 46 million sq. ft. across 29 […] The post KRT gets SEBI nod for ₹4,800 crores REIT IPO appeared first on Z-Connect by Zerodha.",
+    "url": "https://zerodha.com/z-connect/news/krt-gets-sebi-nod-for-%e2%82%b94800-crores-reit-ipo",
+    "publishDate": "2025-07-28T08:57:35.000Z",
+    "type": "blog",
+    "source": "Z-Connect Blog",
+    "author": "Team Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "gets",
+      "sebi",
+      "crores",
+      "reit"
+    ],
+    "categories": [
+      "News",
+      "IPO"
+    ],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Zerodha-https---www-youtube-com-shorts--VcMgbP7VzY",
+    "title": "Brigade Hotel Ventures Ltd IPO",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/-VcMgbP7VzY",
+    "publishDate": "2025-07-28T07:20:13.000Z",
+    "type": "video",
+    "source": "Zerodha",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "brigade",
+      "hotel",
+      "ventures"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "-VcMgbP7VzY",
+    "viewCount": null
+  },
+  {
+    "id": "Zerodha-https---www-youtube-com-shorts-kG8PJGbVwk4",
+    "title": "Shanti Gold International Ltd IPO",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/kG8PJGbVwk4",
+    "publishDate": "2025-07-28T07:18:31.000Z",
+    "type": "video",
+    "source": "Zerodha",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "shanti",
+      "gold",
+      "international"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "kG8PJGbVwk4",
+    "viewCount": null
+  },
+  {
     "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-from-men-will-be-men-to-money-will",
     "title": "From ‘Men Will Be Men’ to ‘Money Will Be Made'",
     "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
@@ -272,7 +345,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-mqJeqRID-Pg",
-    "title": "India UK trade deal",
+    "title": "These 5 things will now become cheap",
     "description": "",
     "url": "https://www.youtube.com/shorts/mqJeqRID-Pg",
     "publishDate": "2025-07-25T14:01:18.000Z",
@@ -283,9 +356,11 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "india",
-      "trade",
-      "deal"
+      "these",
+      "things",
+      "will",
+      "become",
+      "cheap"
     ],
     "categories": [],
     "isNew": true,
@@ -1153,7 +1228,7 @@
       "kite"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "hRgiHOqQ1XE",
     "viewCount": null
@@ -2273,52 +2348,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": "p_XH2tjZaEY",
-    "viewCount": null
-  },
-  {
-    "id": "Zerodha-https---www-youtube-com-watch-v-oO5how2fk1U",
-    "title": "Can AI Make You A Better Investor?!",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=oO5how2fk1U",
-    "publishDate": "2025-07-12T14:37:23.000Z",
-    "type": "video",
-    "source": "Zerodha",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "make",
-      "better",
-      "investor"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "oO5how2fk1U",
-    "viewCount": null
-  },
-  {
-    "id": "Zerodha-https---www-youtube-com-shorts-aPfWi2rOzJ0",
-    "title": "3 key updates for ITR filing 2025",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/aPfWi2rOzJ0",
-    "publishDate": "2025-07-12T04:47:50.000Z",
-    "type": "video",
-    "source": "Zerodha",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "updates",
-      "filing",
-      "2025"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "aPfWi2rOzJ0",
     "viewCount": null
   },
   {
@@ -3556,56 +3585,6 @@
     "keywords": [
       "story",
       "trash"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "What-The-Hell-Is-Happening-https---whatthehellishappening-substack-com-p-chinas-shrinking-exports-to-the-us",
-    "title": "China’s shrinking exports to the US are flooding the rest of the world",
-    "description": "China’s exports are showing up everywhere, biotech’s booming, AI’s taking some jobs, and tech is making banking riskier",
-    "url": "https://whatthehellishappening.substack.com/p/chinas-shrinking-exports-to-the-us",
-    "publishDate": "2025-06-28T09:22:06.000Z",
-    "type": "newsletter",
-    "source": "What The Hell Is Happening",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!5aZU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb9ee7fd5-572c-441f-b622-dfc8e6da7754_1536x1024.png",
-    "keywords": [
-      "china",
-      "shrinking",
-      "exports",
-      "flooding",
-      "rest",
-      "world"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Varsity-Newsletter-https---zerodhavarsity-substack-com-p-beauty-with-brains",
-    "title": "The Zara Playbook - Stitched for Speed",
-    "description": "Zara's Three Business Pillars",
-    "url": "https://zerodhavarsity.substack.com/p/beauty-with-brains",
-    "publishDate": "2025-06-28T04:30:28.000Z",
-    "type": "newsletter",
-    "source": "Varsity Newsletter",
-    "author": "Zerodha Varsity",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substack-post-media.s3.amazonaws.com/public/images/5eaf07e5-ee86-4681-a016-1718111e9516_5472x3648.jpeg",
-    "keywords": [
-      "zara",
-      "playbook",
-      "stitched",
-      "speed"
     ],
     "categories": [],
     "isNew": false,
@@ -5384,34 +5363,6 @@
       "Varsity",
       "cybersecurity",
       "wars"
-    ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-rainmatter-engineering-a-cleaner-future-how-apratima-is",
-    "title": "Engineering a Cleaner Future: How Apratima is Transforming PET Waste",
-    "description": "Back in the 70’s, PET burst onto the scene as a miracle material. It was light, clear, strong, and perfect for packaging drinks and food. It quickly became part of everyday life, making bottles easy to carry and grocery packagng lighter, eventually weaving itself into the very fabric of our civilization. But as the years […] The post Engineering a Cleaner Future: How Apratima is Transforming PET Waste appeared first on Z-Connect by Zerodha.",
-    "url": "https://zerodha.com/z-connect/rainmatter/engineering-a-cleaner-future-how-apratima-is-transforming-pet-waste",
-    "publishDate": "2025-05-13T10:01:16.000Z",
-    "type": "blog",
-    "source": "Z-Connect Blog",
-    "author": "Gowri Bhat",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "engineering",
-      "cleaner",
-      "future",
-      "apratima",
-      "transforming",
-      "waste"
-    ],
-    "categories": [
-      "Rainmatter"
     ],
     "isNew": false,
     "isShort": false,
