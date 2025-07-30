@@ -1,5 +1,107 @@
 [
   {
+    "id": "Zero1-https---www-youtube-com-shorts-x-KEJfD3fBo",
+    "title": "UPI Banned Forever?",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/x_KEJfD3fBo",
+    "publishDate": "2025-07-30T13:30:53.000Z",
+    "type": "video",
+    "source": "Zero1",
+    "author": "Zero1",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "banned",
+      "forever"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "x_KEJfD3fBo",
+    "viewCount": null
+  },
+  {
+    "id": "Zerodha-https---www-youtube-com-watch-v-ilJB-JXiql4",
+    "title": "NIFTY Expiry & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 31 July 2025, Thursday",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=ilJB-JXiql4",
+    "publishDate": "2025-07-30T12:49:16.000Z",
+    "type": "video",
+    "source": "Zerodha",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "nifty",
+      "expiry",
+      "bank",
+      "analysis",
+      "tomorrow",
+      "stock",
+      "market",
+      "outlook",
+      "july"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "ilJB-JXiql4",
+    "viewCount": null
+  },
+  {
+    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-business-updates-easier-account-opening-and-lower-broke",
+    "title": "Easier account opening and lower brokerage for NRI clients",
+    "description": "The Securities and Exchange Board of India (SEBI) has released new guidelines that make it easier for Non-Resident Indians (NRIs) to trade derivatives in Indian markets. These new guidelines remove barriers that made it hard for NRIs to participate in India’s capital markets. The existing processes to open an NRI account and trade are extremely […] The post Easier account opening and lower brokerage for NRI clients appeared first on Z-Connect by Zerodha.",
+    "url": "https://zerodha.com/z-connect/business-updates/easier-account-opening-and-lower-brokerage-for-nri-clients",
+    "publishDate": "2025-07-30T12:22:35.000Z",
+    "type": "blog",
+    "source": "Z-Connect Blog",
+    "author": "Team Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "easier",
+      "account",
+      "opening",
+      "lower",
+      "brokerage",
+      "clients"
+    ],
+    "categories": [
+      "Business Updates"
+    ],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-shorts-ICYip5-diI8",
+    "title": "UPI Is Now Bigger Than Visa!",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/ICYip5-diI8",
+    "publishDate": "2025-07-30T10:50:37.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "bigger",
+      "than",
+      "visa"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "ICYip5-diI8",
+    "viewCount": null
+  },
+  {
     "id": "Zero1-https---www-youtube-com-shorts-DRfSyJd55uM",
     "title": "Zero Civic Sense - The Biggest Problem in Indian Delhi Metro",
     "description": "",
@@ -274,7 +376,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-0WVHPgzc2xw",
-    "title": "Indian McDonald's vs USA McDonald's",
+    "title": "MacDonald Big Mac Burger Index : Purchasing Power Parity Explained #shorts",
     "description": "",
     "url": "https://www.youtube.com/shorts/0WVHPgzc2xw",
     "publishDate": "2025-07-29T08:34:35.000Z",
@@ -285,8 +387,14 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "indian",
-      "mcdonald"
+      "macdonald",
+      "burger",
+      "index",
+      "purchasing",
+      "power",
+      "parity",
+      "explained",
+      "shorts"
     ],
     "categories": [],
     "isNew": true,
@@ -763,7 +871,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-V5M46X18gOo",
-    "title": "China Is Changing How Earth Spins !",
+    "title": "India Finally BEATS China",
     "description": "",
     "url": "https://www.youtube.com/shorts/V5M46X18gOo",
     "publishDate": "2025-07-26T12:30:37.000Z",
@@ -774,10 +882,10 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "china",
-      "changing",
-      "earth",
-      "spins"
+      "india",
+      "finally",
+      "beats",
+      "china"
     ],
     "categories": [],
     "isNew": true,
@@ -1222,7 +1330,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-1AUNLoiZ5MY",
-    "title": "This Factory Makes 1 iPhone Every 2 Seconds!",
+    "title": "IPhone Is Making China Richer",
     "description": "",
     "url": "https://www.youtube.com/shorts/1AUNLoiZ5MY",
     "publishDate": "2025-07-23T11:10:16.000Z",
@@ -1233,15 +1341,13 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "this",
-      "factory",
-      "makes",
       "iphone",
-      "every",
-      "seconds"
+      "making",
+      "china",
+      "richer"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "1AUNLoiZ5MY",
     "viewCount": null
@@ -1263,7 +1369,7 @@
       "spaces"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "Nf9DTdoo1JU",
     "viewCount": null
@@ -1291,7 +1397,7 @@
       "News",
       "IPO"
     ],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1607,35 +1713,6 @@
     "viewCount": null
   },
   {
-    "id": "Zerodha-https---www-youtube-com-watch-v-Ep62yZ766ow",
-    "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 22 July 2025, Tuesday",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=Ep62yZ766ow",
-    "publishDate": "2025-07-21T18:41:45.000Z",
-    "type": "video",
-    "source": "Zerodha",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "nifty",
-      "bank",
-      "analysis",
-      "tomorrow",
-      "stock",
-      "market",
-      "outlook",
-      "july",
-      "2025"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "Ep62yZ766ow",
-    "viewCount": null
-  },
-  {
     "id": "Zero1-https---www-youtube-com-shorts-mX7GHobQG-A",
     "title": "What if INDIA had ZERO Tax Forever⚡️",
     "description": "",
@@ -1897,32 +1974,6 @@
     "viewCount": null
   },
   {
-    "id": "Zero1-https---www-youtube-com-shorts-u-pL4aLiERQ",
-    "title": "DARK TRUTH Behind Great Wall Of India!",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/u_pL4aLiERQ",
-    "publishDate": "2025-07-18T14:01:32.000Z",
-    "type": "video",
-    "source": "Zero1",
-    "author": "Zero1",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "dark",
-      "truth",
-      "behind",
-      "great",
-      "wall",
-      "india"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "u_pL4aLiERQ",
-    "viewCount": null
-  },
-  {
     "id": "Varsity-https---www-youtube-com-watch-v-xBPv5Rkb94M",
     "title": "5 Passive Incomes You Can Start Now",
     "description": "",
@@ -2096,35 +2147,6 @@
     "isNew": false,
     "isShort": false,
     "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Markets-https---www-youtube-com-watch-v-eVceru-MlOM",
-    "title": "India wants Factories. But where will the Workers Live? | The Daily Brief #271",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=eVceru-MlOM",
-    "publishDate": "2025-07-18T01:39:17.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "india",
-      "wants",
-      "factories",
-      "where",
-      "will",
-      "workers",
-      "live",
-      "daily",
-      "brief"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "eVceru-MlOM",
     "viewCount": null
   },
   {
@@ -3626,34 +3648,6 @@
     "isNew": false,
     "isShort": true,
     "embedId": "y42W5o4CEr0",
-    "viewCount": null
-  },
-  {
-    "id": "After-Market-Report-https---aftermarketreport-substack-com-p-markets-pause-after-4-day-surge-nifty",
-    "title": "Markets pause after 4-day surge; Nifty ends just above 25,500",
-    "description": "Welcome to Aftermarket Report, a newsletter where we do a quick daily wrap-up of what happened in the markets, both in India and globally.",
-    "url": "https://aftermarketreport.substack.com/p/markets-pause-after-4-day-surge-nifty",
-    "publishDate": "2025-06-30T13:30:52.000Z",
-    "type": "newsletter",
-    "source": "After Market Report",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!5mMW!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc73b8bf8-bdd2-4499-8f5c-8880ad5435e3_1456x832.webp",
-    "keywords": [
-      "markets",
-      "pause",
-      "after",
-      "surge",
-      "nifty",
-      "ends",
-      "just",
-      "above"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
     "viewCount": null
   },
   {
@@ -5338,34 +5332,6 @@
     ],
     "categories": [
       "Rainmatter"
-    ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Z-Connect-Blog-https---zerodha-com-z-connect-featured-introducing-stock-pages-powered-by-tijori",
-    "title": "Introducing Stock pages powered by Tijori",
-    "description": "Before investing in any company, it’s important to do your own research. The problem is, fundamental data like what the company does, the financials, peer comparisons, news, and other parameters and data points are often scattered across different websites. To make your stock research easier, we’ve built Stock Pages powered by Tijori, bringing together all […] The post Introducing Stock pages powered by Tijori appeared first on Z-Connect by Zerodha.",
-    "url": "https://zerodha.com/z-connect/featured/introducing-stock-pages-powered-by-tijori",
-    "publishDate": "2025-05-14T07:07:24.000Z",
-    "type": "blog",
-    "source": "Z-Connect Blog",
-    "author": "Team Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "introducing",
-      "stock",
-      "pages",
-      "powered",
-      "tijori"
-    ],
-    "categories": [
-      "Featured",
-      "Kite"
     ],
     "isNew": false,
     "isShort": false,
