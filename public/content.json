@@ -1,5 +1,77 @@
 [
   {
+    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-a-report-card-for-indian-it-companies",
+    "title": "A report card for Indian IT companies",
+    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
+    "url": "https://thedailybrief.zerodha.com/p/a-report-card-for-indian-it-companies",
+    "publishDate": "2025-07-31T01:47:34.000Z",
+    "type": "newsletter",
+    "source": "Daily Brief",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": "1 min read",
+    "thumbnail": "https://substackcdn.com/image/fetch/$s_!uSq8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe015677b-b914-4ffa-8a67-bba21630daa7_1536x1024.png",
+    "keywords": [
+      "report",
+      "card",
+      "indian",
+      "companies"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-a-report-card-for-indian-",
+    "title": "A report card for Indian IT companies",
+    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:28 What’s ailing Indian IT? 11:07 Hyatt now has to pay tax in India 19:46 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
+    "url": "https://markets-by-zerodha.simplecast.com/episodes/a-report-card-for-indian-it-companies-_vfH772O",
+    "publishDate": "2025-07-31T01:36:46.000Z",
+    "type": "podcast",
+    "source": "The Daily Brief Podcast",
+    "author": "social@zerodha.com (Zerodha)",
+    "duration": "00:21:33",
+    "readingTime": null,
+    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/b3b40455-57c0-4a2f-a1fe-06b9c2f85da0/audio/c12c92b0-e494-4613-a649-cc98af4e5d40/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
+    "keywords": [
+      "report",
+      "card",
+      "indian",
+      "companies"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-watch-v-9Fn4QusIEig",
+    "title": "Can Indian IT survive the AI era? | The Daily Brief #280",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=9Fn4QusIEig",
+    "publishDate": "2025-07-31T01:30:08.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "indian",
+      "survive",
+      "daily",
+      "brief"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "9Fn4QusIEig",
+    "viewCount": null
+  },
+  {
     "id": "Zerodha-https---www-youtube-com-watch-v-ilJB-JXiql4",
     "title": "NIFTY Expiry & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 31 July 2025, Thursday",
     "description": "",
@@ -871,7 +943,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-V5M46X18gOo",
-    "title": "5 Things India Did to SURPASS China",
+    "title": "CHINA is Slowing Down Earth's Rotation",
     "description": "",
     "url": "https://www.youtube.com/shorts/V5M46X18gOo",
     "publishDate": "2025-07-26T12:30:37.000Z",
@@ -882,10 +954,11 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "things",
-      "india",
-      "surpass",
-      "china"
+      "china",
+      "slowing",
+      "down",
+      "earth",
+      "rotation"
     ],
     "categories": [],
     "isNew": true,
@@ -1236,7 +1309,7 @@
       "know"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1264,7 +1337,7 @@
       "know"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -2055,28 +2128,6 @@
     "viewCount": null
   },
   {
-    "id": "Markets-https---www-youtube-com-shorts-ejokii9FzHA",
-    "title": "Mixed News for Ola",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/ejokii9FzHA",
-    "publishDate": "2025-07-18T09:46:36.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "mixed",
-      "news"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": true,
-    "embedId": "ejokii9FzHA",
-    "viewCount": null
-  },
-  {
     "id": "Z-Connect-Blog-https---zerodha-com-z-connect-business-updates-whats-new-at-zerodha-june-2025",
     "title": "What’s new at Zerodha: June 2025",
     "description": "From the redesigned marketwatch to trading from charts and AI integration, in the past quarter, we’ve rolled out a series of updates to improve your trading and investing experience. Whether you’re tracking markets, researching stocks, or placing orders, these updates give you more control and insight. In case you missed our updates, here’s a quick […] The post What’s new at Zerodha: June 2025 appeared first on Z-Connect by Zerodha.",
@@ -2760,28 +2811,6 @@
     ],
     "categories": [],
     "isNew": true,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-a-greek-tragedy",
-    "title": "A Greek tragedy",
-    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
-    "url": "https://thedailybrief.zerodha.com/p/a-greek-tragedy",
-    "publishDate": "2025-07-10T02:06:47.000Z",
-    "type": "newsletter",
-    "source": "Daily Brief",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!qAfq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7982f414-a9c7-4ee5-b892-8ce3f633808a_1536x1024.png",
-    "keywords": [
-      "greek",
-      "tragedy"
-    ],
-    "categories": [],
-    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -5109,31 +5138,6 @@
       "Banking",
       "IndusInd"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-behind-indias-changing-de",
-    "title": "Behind India’s changing Defence priorities",
-    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:38 How India buys weapons 09:48 The big critical mineral mega-trends 20:38 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
-    "url": "https://markets-by-zerodha.simplecast.com/episodes/behind-indias-changing-defence-priorities-uS2prRyF",
-    "publishDate": "2025-05-22T01:55:01.000Z",
-    "type": "podcast",
-    "source": "The Daily Brief Podcast",
-    "author": "social@zerodha.com (Zerodha)",
-    "duration": "00:22:04",
-    "readingTime": null,
-    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/d006ae1f-98d0-427b-8d8c-0468f7ac89f2/audio/3f71912d-93f2-4f5b-876b-a73d4541755d/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
-    "keywords": [
-      "behind",
-      "india",
-      "changing",
-      "defence",
-      "priorities"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
