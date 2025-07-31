@@ -1,32 +1,10 @@
 [
   {
-    "id": "Zero1-https---www-youtube-com-shorts-x-KEJfD3fBo",
-    "title": "UPI Banned Forever?",
-    "description": "",
-    "url": "https://www.youtube.com/shorts/x_KEJfD3fBo",
-    "publishDate": "2025-07-30T13:30:53.000Z",
-    "type": "video",
-    "source": "Zero1",
-    "author": "Zero1",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "banned",
-      "forever"
-    ],
-    "categories": [],
-    "isNew": true,
-    "isShort": true,
-    "embedId": "x_KEJfD3fBo",
-    "viewCount": null
-  },
-  {
     "id": "Zerodha-https---www-youtube-com-watch-v-ilJB-JXiql4",
     "title": "NIFTY Expiry & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 31 July 2025, Thursday",
     "description": "",
     "url": "https://www.youtube.com/watch?v=ilJB-JXiql4",
-    "publishDate": "2025-07-30T12:49:16.000Z",
+    "publishDate": "2025-07-30T16:02:42.000Z",
     "type": "video",
     "source": "Zerodha",
     "author": "Zerodha",
@@ -48,6 +26,28 @@
     "isNew": true,
     "isShort": false,
     "embedId": "ilJB-JXiql4",
+    "viewCount": null
+  },
+  {
+    "id": "Zero1-https---www-youtube-com-shorts-x-KEJfD3fBo",
+    "title": "UPI Banned Forever?",
+    "description": "",
+    "url": "https://www.youtube.com/shorts/x_KEJfD3fBo",
+    "publishDate": "2025-07-30T13:30:53.000Z",
+    "type": "video",
+    "source": "Zero1",
+    "author": "Zero1",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "banned",
+      "forever"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": true,
+    "embedId": "x_KEJfD3fBo",
     "viewCount": null
   },
   {
@@ -376,7 +376,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-0WVHPgzc2xw",
-    "title": "MacDonald Big Mac Burger Index : Purchasing Power Parity Explained #shorts",
+    "title": "McDonald Big Mac Burger Index : Purchasing Power Parity Explained #shorts",
     "description": "",
     "url": "https://www.youtube.com/shorts/0WVHPgzc2xw",
     "publishDate": "2025-07-29T08:34:35.000Z",
@@ -387,7 +387,7 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
-      "macdonald",
+      "mcdonald",
       "burger",
       "index",
       "purchasing",
@@ -871,7 +871,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-V5M46X18gOo",
-    "title": "India Finally BEATS China",
+    "title": "5 Things India Did to SURPASS China",
     "description": "",
     "url": "https://www.youtube.com/shorts/V5M46X18gOo",
     "publishDate": "2025-07-26T12:30:37.000Z",
@@ -882,9 +882,9 @@
     "readingTime": null,
     "thumbnail": null,
     "keywords": [
+      "things",
       "india",
-      "finally",
-      "beats",
+      "surpass",
       "china"
     ],
     "categories": [],
@@ -1294,7 +1294,7 @@
       "brief"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "2GCAGg4GG_0",
     "viewCount": null
@@ -1323,7 +1323,7 @@
       "july"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "AABhSqRPfoI",
     "viewCount": null
