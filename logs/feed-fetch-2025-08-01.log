@@ -1,0 +1,17 @@
+{"timestamp":"2025-08-01T02:58:10.515Z","level":"INFO","message":"Starting feed fetch process"}
+{"timestamp":"2025-08-01T02:58:10.519Z","level":"INFO","message":"Loaded existing content for fallback","data":{"count":261}}
+{"timestamp":"2025-08-01T02:58:11.252Z","level":"INFO","message":"Successfully fetched items from Zero1","data":{"count":15}}
+{"timestamp":"2025-08-01T02:58:12.433Z","level":"INFO","message":"Successfully fetched items from Varsity","data":{"count":15}}
+{"timestamp":"2025-08-01T02:58:13.682Z","level":"INFO","message":"Successfully fetched items from Markets","data":{"count":15}}
+{"timestamp":"2025-08-01T02:58:14.887Z","level":"INFO","message":"Successfully fetched items from Zerodha","data":{"count":15}}
+{"timestamp":"2025-08-01T02:58:17.588Z","level":"INFO","message":"Successfully fetched items from The Daily Brief Podcast","data":{"count":50}}
+{"timestamp":"2025-08-01T02:58:18.781Z","level":"INFO","message":"Successfully fetched items from Side Notes by Zerodha Varsity","data":{"count":50}}
+{"timestamp":"2025-08-01T02:58:19.940Z","level":"INFO","message":"Successfully fetched items from Investing in India","data":{"count":5}}
+{"timestamp":"2025-08-01T02:58:22.238Z","level":"INFO","message":"Successfully fetched items from Varsity Newsletter","data":{"count":20}}
+{"timestamp":"2025-08-01T02:58:24.389Z","level":"INFO","message":"Successfully fetched items from The Chatter","data":{"count":19}}
+{"timestamp":"2025-08-01T02:58:26.792Z","level":"INFO","message":"Successfully fetched items from Daily Brief","data":{"count":20}}
+{"timestamp":"2025-08-01T02:58:28.894Z","level":"INFO","message":"Successfully fetched items from After Market Report","data":{"count":20}}
+{"timestamp":"2025-08-01T02:58:31.248Z","level":"INFO","message":"Successfully fetched items from What The Hell Is Happening","data":{"count":5}}
+{"timestamp":"2025-08-01T02:58:32.781Z","level":"INFO","message":"Successfully fetched items from Z-Connect Blog","data":{"count":50}}
+{"timestamp":"2025-08-01T02:58:34.143Z","level":"INFO","message":"Successfully fetched items from Varsity Blog","data":{"count":15}}
+{"timestamp":"2025-08-01T02:58:35.157Z","level":"INFO","message":"Feed fetch completed","data":{"totalItems":314,"fetchedSources":["Zero1","Varsity","Markets","Zerodha","The Daily Brief Podcast","Side Notes by Zerodha Varsity","Investing in India","Varsity Newsletter","The Chatter","Daily Brief","After Market Report","What The Hell Is Happening","Z-Connect Blog","Varsity Blog"],"unfetchedSources":[],"outputPath":"/home/bhuvanesh/zerodha-content-hub/src/data/content.json","publicPath":"/home/bhuvanesh/zerodha-content-hub/public/content.json"}}

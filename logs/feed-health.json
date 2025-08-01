@@ -1,0 +1,128 @@
+{
+  "Zero1": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:11.253Z",
+    "lastFailure": null,
+    "averageItemCount": 15,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "Varsity": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:12.433Z",
+    "lastFailure": null,
+    "averageItemCount": 15,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "Markets": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:13.682Z",
+    "lastFailure": null,
+    "averageItemCount": 15,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "Zerodha": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:14.887Z",
+    "lastFailure": null,
+    "averageItemCount": 15,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "The Daily Brief Podcast": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:17.588Z",
+    "lastFailure": null,
+    "averageItemCount": 50,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "Side Notes by Zerodha Varsity": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:18.781Z",
+    "lastFailure": null,
+    "averageItemCount": 50,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "Investing in India": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:19.940Z",
+    "lastFailure": null,
+    "averageItemCount": 5,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "Varsity Newsletter": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:22.238Z",
+    "lastFailure": null,
+    "averageItemCount": 20,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "The Chatter": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:24.390Z",
+    "lastFailure": null,
+    "averageItemCount": 19,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "Daily Brief": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:26.792Z",
+    "lastFailure": null,
+    "averageItemCount": 20,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "After Market Report": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:28.894Z",
+    "lastFailure": null,
+    "averageItemCount": 20,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "What The Hell Is Happening": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:31.248Z",
+    "lastFailure": null,
+    "averageItemCount": 5,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "Z-Connect Blog": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:32.781Z",
+    "lastFailure": null,
+    "averageItemCount": 50,
+    "totalFetches": 1,
+    "errors": []
+  },
+  "Varsity Blog": {
+    "successCount": 1,
+    "failureCount": 0,
+    "lastSuccess": "2025-08-01T02:58:34.143Z",
+    "lastFailure": null,
+    "averageItemCount": 15,
+    "totalFetches": 1,
+    "errors": []
+  }
+}

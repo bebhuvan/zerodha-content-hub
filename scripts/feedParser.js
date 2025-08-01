@@ -24,8 +24,8 @@ class FeedConfig {
     
     // Processing constants
     MAX_RETRY_ATTEMPTS: 3,
-    RETRY_DELAY_BASE_MS: 2000,
-    RATE_LIMIT_DELAY_MS: 1000,
+    RETRY_DELAY_BASE_MS: 3000, // Longer delays between retries
+    RATE_LIMIT_DELAY_MS: 2000, // Increased delay to avoid rate limiting
     REQUEST_TIMEOUT_MS: 30000,
     FALLBACK_DAYS: 90, // Extended for better content preservation
     NEWSLETTER_RETENTION_DAYS: 365, // Keep newsletters for 1 year
@@ -37,11 +37,13 @@ class FeedConfig {
   };
 
   static USER_AGENTS = [
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15'
+    // More diverse and recent user agents to avoid detection
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Safari/605.1.15',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0'
   ];
 
   /**
@@ -253,7 +255,12 @@ class FeedFetcher {
       },
       headers: {
         'User-Agent': userAgent,
-        'Accept': 'application/rss+xml, application/xml, text/xml'
+        'Accept': 'application/rss+xml, application/xml, text/xml',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1'
       },
       timeout: FeedConfig.CONSTANTS.REQUEST_TIMEOUT_MS
     });
