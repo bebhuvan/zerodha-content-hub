@@ -72,11 +72,11 @@ class FeedConfig {
     { name: 'The Daily Brief Podcast', url: 'https://feeds.simplecast.com/1H1JSMd0', type: 'podcast', category: 'Podcast' },
     { name: 'Side Notes by Zerodha Varsity', url: 'https://feeds.simplecast.com/HusrooqN', type: 'podcast', category: 'Podcast' },
     { name: 'Investing in India', url: 'https://feeds.simplecast.com/1ANGOSmm', type: 'podcast', category: 'Podcast' },
-    { name: 'Varsity Newsletter', url: 'https://zerodhavarsity.substack.com/feed', type: 'newsletter', category: 'Newsletter' },
-    { name: 'The Chatter', url: 'https://thechatterbyzerodha.substack.com/feed', type: 'newsletter', category: 'Newsletter' },
+    { name: 'Varsity Newsletter', url: 'https://zerodhavarsity.substack.com/feed', type: 'newsletter', category: 'Newsletter', proxyUrl: 'https://api.rss2json.com/v1/api.json?rss_url=' },
+    { name: 'The Chatter', url: 'https://thechatterbyzerodha.substack.com/feed', type: 'newsletter', category: 'Newsletter', proxyUrl: 'https://api.rss2json.com/v1/api.json?rss_url=' },
     { name: 'Daily Brief', url: 'https://thedailybrief.zerodha.com/feed', type: 'newsletter', category: 'Newsletter' },
-    { name: 'After Market Report', url: 'https://aftermarketreport.substack.com/feed', type: 'newsletter', category: 'Newsletter' },
-    { name: 'What The Hell Is Happening', url: 'https://whatthehellishappening.substack.com/feed', type: 'newsletter', category: 'Newsletter' },
+    { name: 'After Market Report', url: 'https://aftermarketreport.substack.com/feed', type: 'newsletter', category: 'Newsletter', proxyUrl: 'https://api.rss2json.com/v1/api.json?rss_url=' },
+    { name: 'What The Hell Is Happening', url: 'https://whatthehellishappening.substack.com/feed', type: 'newsletter', category: 'Newsletter', proxyUrl: 'https://api.rss2json.com/v1/api.json?rss_url=' },
     { name: 'Z-Connect Blog', url: 'https://zerodha.com/z-connect/feed', type: 'blog', category: 'Blog' },
     { name: 'Varsity Blog', url: 'https://zerodha.com/varsity/feed/', type: 'blog', category: 'Blog' }
   ];
@@ -307,7 +307,14 @@ class FeedFetcher {
 
   async fetchSingleFeed(config) {
     try {
-      const feed = await this.fetchFeedWithRetry(config);
+      let feed;
+      
+      // Use proxy for feeds that have proxyUrl configured
+      if (config.proxyUrl) {
+        feed = await this.fetchFeedViaProxy(config);
+      } else {
+        feed = await this.fetchFeedWithRetry(config);
+      }
       
       // Get appropriate item limit for this content type
       const itemLimit = FeedConfig.getItemLimit(config.type);
@@ -400,6 +407,56 @@ class FeedFetcher {
     }
     
     return results;
+  }
+  
+  async fetchFeedViaProxy(config) {
+    const proxyUrl = config.proxyUrl + encodeURIComponent(config.url);
+    
+    try {
+      Logger.info(`Fetching ${config.name} via proxy...`);
+      
+      const response = await fetch(proxyUrl, {
+        headers: {
+          'User-Agent': 'RSS Reader/1.0',
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Proxy returned ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.status !== 'ok') {
+        throw new Error(`Proxy error: ${data.message || 'Unknown error'}`);
+      }
+      
+      // Convert RSS2JSON format to RSS parser format
+      const feed = {
+        title: data.feed.title,
+        description: data.feed.description,
+        link: data.feed.link,
+        items: data.items.map(item => ({
+          title: item.title,
+          link: item.link,
+          pubDate: item.pubDate,
+          description: item.description,
+          content: item.content,
+          contentSnippet: item.description?.replace(/<[^>]*>/g, '').substring(0, 200) + '...',
+          guid: item.guid,
+          categories: item.categories || []
+        }))
+      };
+      
+      Logger.info(`Successfully fetched ${feed.items.length} items from ${config.name} via proxy`);
+      return feed;
+      
+    } catch (error) {
+      Logger.warn(`Proxy fetch failed for ${config.name}, falling back to direct fetch`);
+      // Fallback to direct fetch if proxy fails
+      return await this.fetchFeedWithRetry(config);
+    }
   }
 
   generateStats(allContent) {
