@@ -1,5 +1,108 @@
 [
   {
+    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-nayara-is-under-the-pump",
+    "title": "Nayara is under the pump",
+    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
+    "url": "https://thedailybrief.zerodha.com/p/nayara-is-under-the-pump",
+    "publishDate": "2025-08-01T01:48:19.000Z",
+    "type": "newsletter",
+    "source": "Daily Brief",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": "1 min read",
+    "thumbnail": "https://substackcdn.com/image/fetch/$s_!N1-Y!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F480d5fc2-af4d-49f9-ae32-901d419ee237_1536x1024.png",
+    "keywords": [
+      "nayara",
+      "under",
+      "pump"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-nayara-is-under-the-pump-",
+    "title": "Nayara is under the pump",
+    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:26 Sanctions hit Nayara 09:19 Headwinds for Indigo 17:59 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
+    "url": "https://markets-by-zerodha.simplecast.com/episodes/nayara-is-under-the-pump-J_QKzojb",
+    "publishDate": "2025-08-01T01:36:09.000Z",
+    "type": "podcast",
+    "source": "The Daily Brief Podcast",
+    "author": "social@zerodha.com (Zerodha)",
+    "duration": "00:19:19",
+    "readingTime": null,
+    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/6857f452-2d1a-47cd-ba1a-484a529cdabb/audio/d5feec7c-6720-4bde-b145-e8382f000ae0/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
+    "keywords": [
+      "nayara",
+      "under",
+      "pump"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": null,
+    "viewCount": null
+  },
+  {
+    "id": "Markets-https---www-youtube-com-watch-v-krBiiPUMM9E",
+    "title": "Nayara Energy Hit by EU Sanctions – What It Means for India | The Daily Brief #281",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=krBiiPUMM9E",
+    "publishDate": "2025-08-01T01:30:36.000Z",
+    "type": "video",
+    "source": "Markets",
+    "author": "Markets",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "nayara",
+      "energy",
+      "sanctions",
+      "what",
+      "means",
+      "india",
+      "daily",
+      "brief"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "krBiiPUMM9E",
+    "viewCount": null
+  },
+  {
+    "id": "Zerodha-https---www-youtube-com-watch-v-TVuN2-WMmJI",
+    "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 01 August 2025, Friday",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=TVuN2-WMmJI",
+    "publishDate": "2025-07-31T18:40:08.000Z",
+    "type": "video",
+    "source": "Zerodha",
+    "author": "Zerodha",
+    "duration": null,
+    "readingTime": null,
+    "thumbnail": null,
+    "keywords": [
+      "nifty",
+      "bank",
+      "analysis",
+      "tomorrow",
+      "stock",
+      "market",
+      "outlook",
+      "august",
+      "2025"
+    ],
+    "categories": [],
+    "isNew": true,
+    "isShort": false,
+    "embedId": "TVuN2-WMmJI",
+    "viewCount": null
+  },
+  {
     "id": "Zero1-https---www-youtube-com-shorts-xOlthdLcP9o",
     "title": "Petrol is getting EXPENSIVE | Trump's Tariff 25%",
     "description": "",
@@ -51,35 +154,6 @@
     "isNew": true,
     "isShort": true,
     "embedId": "ls-wPjtMDt8",
-    "viewCount": null
-  },
-  {
-    "id": "Zerodha-https---www-youtube-com-watch-v-TVuN2-WMmJI",
-    "title": "NIFTY & BANK NIFTY Analysis for Tomorrow | Stock Market Outlook | 01 August 2025, Friday",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=TVuN2-WMmJI",
-    "publishDate": "2025-07-31T12:28:53.000Z",
-    "type": "video",
-    "source": "Zerodha",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "nifty",
-      "bank",
-      "analysis",
-      "tomorrow",
-      "stock",
-      "market",
-      "outlook",
-      "august",
-      "2025"
-    ],
-    "categories": [],
-    "isNew": true,
-    "isShort": false,
-    "embedId": "TVuN2-WMmJI",
     "viewCount": null
   },
   {
@@ -140,7 +214,7 @@
   },
   {
     "id": "Zero1-https---www-youtube-com-shorts-a4wc5Lr75B8",
-    "title": "The SHOCKING Truth About HP Printers Nobody Tells You",
+    "title": "Shocking TRUTH About HP Printers Nobody Tells You",
     "description": "",
     "url": "https://www.youtube.com/shorts/a4wc5Lr75B8",
     "publishDate": "2025-07-31T08:32:37.000Z",
@@ -1258,7 +1332,7 @@
       "insurance"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1285,7 +1359,7 @@
       "brief"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "5KFpyg5IueU",
     "viewCount": null
@@ -1308,7 +1382,7 @@
       "insurance"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": null,
     "viewCount": null
@@ -1337,7 +1411,7 @@
       "2025"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": false,
     "embedId": "W6HgqkVQ2rk",
     "viewCount": null
@@ -1361,7 +1435,7 @@
       "octafx"
     ],
     "categories": [],
-    "isNew": true,
+    "isNew": false,
     "isShort": true,
     "embedId": "VLFk4TjEvzY",
     "viewCount": null
@@ -2104,36 +2178,6 @@
     "viewCount": null
   },
   {
-    "id": "Markets-https---www-youtube-com-watch-v-KOiLKYC6jCA",
-    "title": "India’s Manufacturing debate, VIP’s crisis & shrinking Insurance market | Who said What?S2E3",
-    "description": "",
-    "url": "https://www.youtube.com/watch?v=KOiLKYC6jCA",
-    "publishDate": "2025-07-19T04:39:06.000Z",
-    "type": "video",
-    "source": "Markets",
-    "author": "Markets",
-    "duration": null,
-    "readingTime": null,
-    "thumbnail": null,
-    "keywords": [
-      "india",
-      "manufacturing",
-      "debate",
-      "crisis",
-      "shrinking",
-      "insurance",
-      "market",
-      "said",
-      "what",
-      "s2e3"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": "KOiLKYC6jCA",
-    "viewCount": null
-  },
-  {
     "id": "Varsity-https---www-youtube-com-watch-v-xBPv5Rkb94M",
     "title": "5 Passive Incomes You Can Start Now",
     "description": "",
@@ -2769,31 +2813,6 @@
       "News",
       "IPO"
     ],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "Daily-Brief-https---thedailybrief-zerodha-com-p-can-india-build-iphones-without-china",
-    "title": "Can India build iPhones without China?",
-    "description": "Our goal with The Daily Brief is to simplify the biggest stories in the Indian markets and help you understand what they mean.",
-    "url": "https://thedailybrief.zerodha.com/p/can-india-build-iphones-without-china",
-    "publishDate": "2025-07-11T02:17:12.000Z",
-    "type": "newsletter",
-    "source": "Daily Brief",
-    "author": "Zerodha",
-    "duration": null,
-    "readingTime": "1 min read",
-    "thumbnail": "https://substackcdn.com/image/fetch/$s_!9SIt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F52dacb03-0654-4086-b25b-e03d9f0e2779_1536x1024.png",
-    "keywords": [
-      "india",
-      "build",
-      "iphones",
-      "without",
-      "china"
-    ],
-    "categories": [],
     "isNew": false,
     "isShort": false,
     "embedId": null,
@@ -5122,29 +5141,6 @@
       "system",
       "getting",
       "better"
-    ],
-    "categories": [],
-    "isNew": false,
-    "isShort": false,
-    "embedId": null,
-    "viewCount": null
-  },
-  {
-    "id": "The-Daily-Brief-Podcast-https---markets-by-zerodha-simplecast-com-episodes-nuclear-from-dangerous-to",
-    "title": "Nuclear: From Dangerous to Desirable? |",
-    "description": "In today's episode of The Daily Brief, we cover 2 major stories shaping the Indian economy and global markets: 00:04 Intro 00:39 Nuclear is Back! 12:13 India’s Military Makeover 21:35 Tidbits We also send out a crisp and short daily newsletter for The Daily Brief. Put your email here and we'll make you smart every day: https://thedailybriefing.substack.com/ Note: This content is for informational purposes only. None of the stocks, brands, or products mentioned are recommendations or endorsements.",
-    "url": "https://markets-by-zerodha.simplecast.com/episodes/nuclear-from-dangerous-to-desirable-N5UuoxeS",
-    "publishDate": "2025-05-23T01:59:50.000Z",
-    "type": "podcast",
-    "source": "The Daily Brief Podcast",
-    "author": "social@zerodha.com (Zerodha)",
-    "duration": "00:22:57",
-    "readingTime": null,
-    "thumbnail": "https://cdn.simplecast.com/audio/fb83b18a-c9c9-470b-b18b-b8c695c054d9/episodes/66f21362-4128-47e1-83ea-116a4a1fbd75/audio/667da3df-cfd9-4ca6-8a08-a06c2d2c1939/default_tc.mp3?aid=rss_feed&feed=1H1JSMd0",
-    "keywords": [
-      "nuclear",
-      "dangerous",
-      "desirable"
     ],
     "categories": [],
     "isNew": false,
