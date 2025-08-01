@@ -1,8 +1,9 @@
 import Parser from 'rss-parser';
-import { writeFileSync, readFileSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync, mkdirSync, readdirSync, unlinkSync } from 'fs';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { setupLogging, createFeedHealthMonitor } from './fetchFeedsWithLogging.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -20,13 +21,18 @@ const CONSTANTS = {
   REQUEST_TIMEOUT_MS: 30000,
   
   // Content freshness
-  FALLBACK_DAYS: 30,
+  FALLBACK_DAYS: 90, // Keep 3 months of content for fallback
   NEW_CONTENT_DAYS: 7,
+  NEWSLETTER_RETENTION_DAYS: 365, // Keep newsletters for 1 year
   
   // Reading time calculation
   READING_WPM: 200,
   MAX_KEYWORDS: 10,
-  MIN_KEYWORD_LENGTH: 3
+  MIN_KEYWORD_LENGTH: 3,
+  
+  // Backup configuration
+  ENABLE_BACKUP: true,
+  MAX_BACKUP_FILES: 5
 };
 
 // Modern User-Agent strings (updated for 2025)
@@ -230,16 +236,22 @@ async function fetchFeedWithRetry(config, maxRetries = CONSTANTS.MAX_RETRY_ATTEM
 }
 
 async function fetchAllFeeds() {
+  const logger = setupLogging();
+  const healthMonitor = createFeedHealthMonitor();
+  
+  logger.info('Starting feed fetch process');
+  
   const allContent = [];
+  const fetchedSources = new Set();
   
   // Try to load existing content for fallback
   let existingContent = [];
   try {
     const existingData = JSON.parse(readFileSync(join(__dirname, '..', 'src', 'data', 'content.json'), 'utf8'));
     existingContent = existingData;
-    console.log(`📁 Loaded ${existingContent.length} existing content items for fallback`);
+    logger.info(`Loaded existing content for fallback`, { count: existingContent.length });
   } catch (error) {
-    console.log('📁 No existing content found for fallback');
+    logger.warn('No existing content found for fallback', { error: error.message });
   }
   
   for (const config of feedConfigs) {
@@ -276,17 +288,23 @@ async function fetchAllFeeds() {
       });
       
       allContent.push(...items);
-      console.log(`✓ Fetched ${items.length} items from ${config.name}`);
+      fetchedSources.add(config.name);
+      logger.info(`Successfully fetched items from ${config.name}`, { count: items.length });
+      healthMonitor.recordFetch(config.name, true, items.length);
     } catch (error) {
-      console.error(`✗ Error fetching ${config.name}:`, error.message);
+      logger.error(`Failed to fetch ${config.name}`, { error: error.message });
+      healthMonitor.recordFetch(config.name, false, 0, error);
       
-      // Try to use existing content as fallback (only recent items)
+      // Try to use existing content as fallback
       const existingItems = existingContent.filter(item => {
         if (item.source !== config.name) return false;
         
-        // Only use items from the last X days as fallback
+        // Use different retention periods based on content type
         const itemDate = new Date(item.publishDate);
-        const cutoffDate = new Date(Date.now() - CONSTANTS.FALLBACK_DAYS * 24 * 60 * 60 * 1000);
+        const retentionDays = config.type === 'newsletter' 
+          ? CONSTANTS.NEWSLETTER_RETENTION_DAYS 
+          : CONSTANTS.FALLBACK_DAYS;
+        const cutoffDate = new Date(Date.now() - retentionDays * 24 * 60 * 60 * 1000);
         return itemDate > cutoffDate;
       });
       
@@ -302,8 +320,55 @@ async function fetchAllFeeds() {
     await new Promise(resolve => setTimeout(resolve, CONSTANTS.RATE_LIMIT_DELAY_MS));
   }
   
+  // Add all existing content from sources that weren't successfully fetched
+  const unfetchedSources = feedConfigs
+    .filter(config => !fetchedSources.has(config.name))
+    .map(config => config.name);
+  
+  if (unfetchedSources.length > 0) {
+    console.log(`\n📥 Preserving existing content from unfetched sources: ${unfetchedSources.join(', ')}`);
+    
+    // Add ALL existing content from unfetched sources (not just recent)
+    const preservedContent = existingContent.filter(item => 
+      unfetchedSources.includes(item.source)
+    );
+    
+    if (preservedContent.length > 0) {
+      console.log(`  📄 Preserving ${preservedContent.length} items from unfetched sources`);
+      allContent.push(...preservedContent);
+    }
+  }
+  
   // Sort by publish date (newest first)
   allContent.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+  
+  // Create backup before saving
+  if (CONSTANTS.ENABLE_BACKUP && existingContent.length > 0) {
+    const backupDir = join(__dirname, '..', 'backups');
+    if (!existsSync(backupDir)) {
+      mkdirSync(backupDir, { recursive: true });
+    }
+    
+    // Create timestamped backup
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const backupPath = join(backupDir, `content-${timestamp}.json`);
+    writeFileSync(backupPath, JSON.stringify(existingContent, null, 2));
+    console.log(`💾 Created backup: ${backupPath}`);
+    
+    // Clean up old backups
+    const backupFiles = readdirSync(backupDir)
+      .filter(f => f.startsWith('content-') && f.endsWith('.json'))
+      .sort()
+      .reverse();
+    
+    if (backupFiles.length > CONSTANTS.MAX_BACKUP_FILES) {
+      const filesToDelete = backupFiles.slice(CONSTANTS.MAX_BACKUP_FILES);
+      filesToDelete.forEach(file => {
+        unlinkSync(join(backupDir, file));
+        console.log(`  🗑️  Deleted old backup: ${file}`);
+      });
+    }
+  }
   
   // Save to JSON file
   const outputPath = join(__dirname, '..', 'src', 'data', 'content.json');
@@ -313,9 +378,19 @@ async function fetchAllFeeds() {
   const publicPath = join(__dirname, '..', 'public', 'content.json');
   writeFileSync(publicPath, JSON.stringify(allContent, null, 2));
   
-  console.log(`\n✓ Total content items: ${allContent.length}`);
-  console.log(`✓ Saved to: ${outputPath}`);
-  console.log(`✓ Also saved to: ${publicPath}`);
+  logger.info('Feed fetch completed', {
+    totalItems: allContent.length,
+    fetchedSources: Array.from(fetchedSources),
+    unfetchedSources: unfetchedSources,
+    outputPath,
+    publicPath
+  });
+  
+  // Check feed health
+  const unhealthyFeeds = healthMonitor.getUnhealthyFeeds();
+  if (unhealthyFeeds.length > 0) {
+    logger.warn('Unhealthy feeds detected', { feeds: unhealthyFeeds });
+  }
   
   // Generate stats
   const stats = {
