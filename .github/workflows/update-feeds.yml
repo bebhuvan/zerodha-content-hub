@@ -44,7 +44,7 @@ jobs:
       
       - name: Fetch RSS feeds
         run: |
-          node scripts/fetchFeeds.js
+          node scripts/feedParser.js
           # Verify we have content with type-specific expectations
           NEWSLETTER_COUNT=$(cat src/data/content.json | jq '[.[] | select(.type == "newsletter")] | length')
           VIDEO_COUNT=$(cat src/data/content.json | jq '[.[] | select(.type == "video")] | length')

@@ -27,7 +27,8 @@ class FeedConfig {
     RETRY_DELAY_BASE_MS: 2000,
     RATE_LIMIT_DELAY_MS: 1000,
     REQUEST_TIMEOUT_MS: 30000,
-    FALLBACK_DAYS: 30,
+    FALLBACK_DAYS: 90, // Extended for better content preservation
+    NEWSLETTER_RETENTION_DAYS: 365, // Keep newsletters for 1 year
     NEW_CONTENT_DAYS: 7,
     READING_WPM: 200,
     MAX_KEYWORDS: 10,
@@ -330,7 +331,11 @@ class FeedFetcher {
       if (item.source !== config.name) return false;
       
       const itemDate = new Date(item.publishDate);
-      const cutoffDate = new Date(Date.now() - FeedConfig.CONSTANTS.FALLBACK_DAYS * 24 * 60 * 60 * 1000);
+      // Use longer retention for newsletters
+      const retentionDays = config.type === 'newsletter' 
+        ? FeedConfig.CONSTANTS.NEWSLETTER_RETENTION_DAYS 
+        : FeedConfig.CONSTANTS.FALLBACK_DAYS;
+      const cutoffDate = new Date(Date.now() - retentionDays * 24 * 60 * 60 * 1000);
       return itemDate > cutoffDate;
     });
   }
@@ -340,6 +345,7 @@ class FeedFetcher {
     
     const results = [];
     const feedConfigs = [...FeedConfig.FEED_CONFIGS];
+    const fetchedSources = new Set();
     
     // Process feeds in batches to avoid overwhelming servers
     for (let i = 0; i < feedConfigs.length; i += FeedConfig.CONSTANTS.PARALLEL_FETCH_LIMIT) {
@@ -353,6 +359,9 @@ class FeedFetcher {
       batchResults.forEach((result, index) => {
         if (result.status === 'fulfilled') {
           results.push(result.value);
+          if (result.value.success) {
+            fetchedSources.add(result.value.config.name);
+          }
         } else {
           const config = batch[index];
           Logger.error(`Batch fetch failed for ${config.name}:`, result.reason);
@@ -366,6 +375,21 @@ class FeedFetcher {
           setTimeout(resolve, FeedConfig.CONSTANTS.RATE_LIMIT_DELAY_MS)
         );
       }
+    }
+    
+    // Add preservation logic for unfetched sources
+    const unfetchedSources = feedConfigs.filter(config => !fetchedSources.has(config.name));
+    
+    if (unfetchedSources.length > 0) {
+      Logger.warn(`Preserving existing content from ${unfetchedSources.length} unfetched sources`);
+      
+      unfetchedSources.forEach(config => {
+        const preservedItems = this.existingContent.filter(item => item.source === config.name);
+        if (preservedItems.length > 0) {
+          Logger.info(`📄 Preserving ${preservedItems.length} items from ${config.name}`);
+          results.push({ success: false, items: preservedItems, config, preserved: true });
+        }
+      });
     }
     
     return results;
