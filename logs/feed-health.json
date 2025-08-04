@@ -2,7 +2,7 @@
   "Zero1": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:11.253Z",
+    "lastSuccess": "2025-08-04T08:32:36.879Z",
     "lastFailure": null,
     "averageItemCount": 15,
     "totalFetches": 1,
@@ -11,7 +11,7 @@
   "Varsity": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:12.433Z",
+    "lastSuccess": "2025-08-04T08:32:38.201Z",
     "lastFailure": null,
     "averageItemCount": 15,
     "totalFetches": 1,
@@ -20,7 +20,7 @@
   "Markets": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:13.682Z",
+    "lastSuccess": "2025-08-04T08:32:39.400Z",
     "lastFailure": null,
     "averageItemCount": 15,
     "totalFetches": 1,
@@ -29,7 +29,7 @@
   "Zerodha": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:14.887Z",
+    "lastSuccess": "2025-08-04T08:32:40.655Z",
     "lastFailure": null,
     "averageItemCount": 15,
     "totalFetches": 1,
@@ -38,7 +38,7 @@
   "The Daily Brief Podcast": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:17.588Z",
+    "lastSuccess": "2025-08-04T08:32:43.667Z",
     "lastFailure": null,
     "averageItemCount": 50,
     "totalFetches": 1,
@@ -47,7 +47,7 @@
   "Side Notes by Zerodha Varsity": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:18.781Z",
+    "lastSuccess": "2025-08-04T08:32:45.293Z",
     "lastFailure": null,
     "averageItemCount": 50,
     "totalFetches": 1,
@@ -56,7 +56,7 @@
   "Investing in India": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:19.940Z",
+    "lastSuccess": "2025-08-04T08:32:46.690Z",
     "lastFailure": null,
     "averageItemCount": 5,
     "totalFetches": 1,
@@ -65,7 +65,7 @@
   "Varsity Newsletter": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:22.238Z",
+    "lastSuccess": "2025-08-04T08:32:48.413Z",
     "lastFailure": null,
     "averageItemCount": 20,
     "totalFetches": 1,
@@ -74,7 +74,7 @@
   "The Chatter": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:24.390Z",
+    "lastSuccess": "2025-08-04T08:32:50.855Z",
     "lastFailure": null,
     "averageItemCount": 19,
     "totalFetches": 1,
@@ -83,7 +83,7 @@
   "Daily Brief": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:26.792Z",
+    "lastSuccess": "2025-08-04T08:32:52.814Z",
     "lastFailure": null,
     "averageItemCount": 20,
     "totalFetches": 1,
@@ -92,7 +92,7 @@
   "After Market Report": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:28.894Z",
+    "lastSuccess": "2025-08-04T08:32:54.699Z",
     "lastFailure": null,
     "averageItemCount": 20,
     "totalFetches": 1,
@@ -101,7 +101,7 @@
   "What The Hell Is Happening": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:31.248Z",
+    "lastSuccess": "2025-08-04T08:32:57.010Z",
     "lastFailure": null,
     "averageItemCount": 5,
     "totalFetches": 1,
@@ -110,7 +110,7 @@
   "Z-Connect Blog": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:32.781Z",
+    "lastSuccess": "2025-08-04T08:32:58.756Z",
     "lastFailure": null,
     "averageItemCount": 50,
     "totalFetches": 1,
@@ -119,7 +119,7 @@
   "Varsity Blog": {
     "successCount": 1,
     "failureCount": 0,
-    "lastSuccess": "2025-08-01T02:58:34.143Z",
+    "lastSuccess": "2025-08-04T08:33:00.027Z",
     "lastFailure": null,
     "averageItemCount": 15,
     "totalFetches": 1,
