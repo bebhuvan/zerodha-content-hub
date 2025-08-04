@@ -16,20 +16,6 @@
   // Initialize search
   async function initializeSearch() {
     try {
-      // Check if we're on a source-specific page
-      if (window.sourcePageContent && window.sourcePageName) {
-        contentData = window.sourcePageContent;
-        
-        // Hide loading state and render source content
-        const loadingState = document.getElementById('loading-state');
-        if (loadingState) {
-          loadingState.style.display = 'none';
-        }
-        
-        renderContent(contentData);
-        return;
-      }
-      
       const response = await fetch(`/content.json?t=${Date.now()}`);
       
       if (!response.ok) {
@@ -45,17 +31,7 @@
         loadingState.style.display = 'none';
       }
       
-      // Check URL parameters for filtering
-      const urlParams = new URLSearchParams(window.location.search);
-      const sourceParam = urlParams.get('source');
-      if (sourceParam) {
-        const filteredContent = contentData.filter(item => 
-          item.source.toLowerCase() === sourceParam.toLowerCase()
-        );
-        renderContent(filteredContent);
-      } else {
-        renderContent(contentData);
-      }
+      renderContent(contentData);
     } catch (error) {
       // Error loading content
       
@@ -400,16 +376,6 @@
   window.addEventListener('filter-change', (e) => {
     currentFilter = e.detail.filter;
     filterAndSearch();
-  });
-  
-  // Listen for source page loaded event
-  window.addEventListener('source-page-loaded', (e) => {
-    contentData = e.detail.content;
-    const loadingState = document.getElementById('loading-state');
-    if (loadingState) {
-      loadingState.style.display = 'none';
-    }
-    renderContent(contentData);
   });
   
   }); // Close DOMContentLoaded function
