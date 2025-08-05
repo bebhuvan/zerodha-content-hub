@@ -1,27 +1,27 @@
 {
-  "totalContent": 6330,
-  "thisWeek": 1321,
+  "totalContent": 12570,
+  "thisWeek": 2569,
   "contentTypes": {
-    "videos": 1920,
-    "podcasts": 2120,
-    "newsletters": 675,
-    "blogs": 1615
+    "videos": 3840,
+    "podcasts": 4200,
+    "newsletters": 1315,
+    "blogs": 3215
   },
   "sources": {
-    "Zero1": 480,
-    "Varsity": 480,
-    "Markets": 480,
-    "Zerodha": 480,
-    "The Daily Brief Podcast": 1600,
-    "Side Notes by Zerodha Varsity": 422,
-    "Investing in India": 98,
+    "Zero1": 960,
+    "Varsity": 960,
+    "Markets": 960,
+    "Zerodha": 960,
+    "The Daily Brief Podcast": 3200,
+    "Side Notes by Zerodha Varsity": 806,
+    "Investing in India": 194,
     "Varsity Newsletter": 10,
     "The Chatter": 10,
-    "Daily Brief": 640,
+    "Daily Brief": 1280,
     "After Market Report": 10,
     "What The Hell Is Happening": 5,
-    "Z-Connect Blog": 1600,
+    "Z-Connect Blog": 3200,
     "Varsity Blog": 15
   },
-  "lastUpdated": "2025-08-05T09:47:49.956Z"
+  "lastUpdated": "2025-08-05T14:49:08.938Z"
 }
