@@ -13,27 +13,31 @@ const __dirname = dirname(__filename);
  */
 class FeedConfig {
   static CONSTANTS = {
-    // Content type specific limits
+    // Content type specific limits (reduced to prevent file size issues)
     MAX_VIDEO_ITEMS: 15,        // YouTube videos (recent content focus)
-    MAX_PODCAST_ITEMS: 50,      // Podcasts (archive important)
-    MAX_NEWSLETTER_ITEMS: 100,  // Newsletters (archive very important)
-    MAX_BLOG_ITEMS: 50,         // Blog posts (good archive balance)
+    MAX_PODCAST_ITEMS: 25,      // Podcasts (reduced from 50)
+    MAX_NEWSLETTER_ITEMS: 30,   // Newsletters (reduced from 100 to prevent 100MB+ files)
+    MAX_BLOG_ITEMS: 25,         // Blog posts (reduced from 50)
     
     // Fallback for unknown types
-    MAX_ITEMS_PER_FEED: 50,
+    MAX_ITEMS_PER_FEED: 25,     // Reduced from 50
     
     // Processing constants
     MAX_RETRY_ATTEMPTS: 3,
     RETRY_DELAY_BASE_MS: 3000, // Longer delays between retries
     RATE_LIMIT_DELAY_MS: 2000, // Increased delay to avoid rate limiting
     REQUEST_TIMEOUT_MS: 30000,
-    FALLBACK_DAYS: 90, // Extended for better content preservation
-    NEWSLETTER_RETENTION_DAYS: 365, // Keep newsletters for 1 year
+    FALLBACK_DAYS: 30, // Reduced from 90 to prevent accumulation
+    NEWSLETTER_RETENTION_DAYS: 90, // Reduced from 365 to 90 days
     NEW_CONTENT_DAYS: 7,
     READING_WPM: 200,
     MAX_KEYWORDS: 10,
     MIN_KEYWORD_LENGTH: 3,
-    PARALLEL_FETCH_LIMIT: 5
+    PARALLEL_FETCH_LIMIT: 5,
+    
+    // File size safety limits
+    MAX_TOTAL_ITEMS: 500,       // Global limit to prevent massive files
+    MAX_FILE_SIZE_MB: 10        // Target max file size in MB
   };
 
   static USER_AGENTS = [
@@ -542,10 +546,26 @@ class FeedFetcher {
       const results = await this.fetchAllFeedsParallel();
       
       // Collect all content
-      const allContent = results.flatMap(result => result.items);
+      let allContent = results.flatMap(result => result.items);
       
       // Sort by publish date (newest first)
       allContent.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+      
+      // Apply global content limits to prevent file size issues
+      const originalCount = allContent.length;
+      if (allContent.length > FeedConfig.CONSTANTS.MAX_TOTAL_ITEMS) {
+        allContent = allContent.slice(0, FeedConfig.CONSTANTS.MAX_TOTAL_ITEMS);
+        Logger.warn(`⚠️  Content limited from ${originalCount} to ${allContent.length} items to prevent file size issues`);
+      }
+      
+      // Check estimated file size and further reduce if needed
+      const estimatedSize = JSON.stringify(allContent).length / (1024 * 1024); // Size in MB
+      if (estimatedSize > FeedConfig.CONSTANTS.MAX_FILE_SIZE_MB) {
+        const reductionFactor = FeedConfig.CONSTANTS.MAX_FILE_SIZE_MB / estimatedSize;
+        const newCount = Math.floor(allContent.length * reductionFactor * 0.9); // 10% buffer
+        allContent = allContent.slice(0, newCount);
+        Logger.warn(`⚠️  Content reduced to ${newCount} items to keep file size under ${FeedConfig.CONSTANTS.MAX_FILE_SIZE_MB}MB`);
+      }
       
       // Generate stats
       const stats = this.generateStats(allContent);

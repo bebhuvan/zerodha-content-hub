@@ -74,6 +74,19 @@ jobs:
             echo "⚠️  WARNING: Only $NEWSLETTER_COUNT newsletters fetched (expected 50+)"
             echo "This may be due to feed blocking or temporary issues"
           fi
+          
+          # Check file sizes to prevent GitHub's 100MB limit
+          CONTENT_SIZE=$(stat -f%z src/data/content.json 2>/dev/null || stat -c%s src/data/content.json)
+          CONTENT_SIZE_MB=$(echo "scale=2; $CONTENT_SIZE / 1024 / 1024" | bc)
+          echo "📏 Content file size: ${CONTENT_SIZE_MB}MB"
+          
+          if (( $(echo "$CONTENT_SIZE_MB > 50" | bc -l) )); then
+            echo "❌ ERROR: Content file is ${CONTENT_SIZE_MB}MB, too large for GitHub (>50MB)"
+            echo "The feed parser should have limited content to prevent this."
+            exit 1
+          elif (( $(echo "$CONTENT_SIZE_MB > 20" | bc -l) )); then
+            echo "⚠️  WARNING: Content file is ${CONTENT_SIZE_MB}MB, getting large"
+          fi
       
       - name: Check for changes
         id: check-changes
