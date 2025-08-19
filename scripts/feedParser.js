@@ -22,11 +22,11 @@ class FeedConfig {
     // Fallback for unknown types
     MAX_ITEMS_PER_FEED: 25,     // Reduced from 50
     
-    // Processing constants
+    // Processing constants  
     MAX_RETRY_ATTEMPTS: 3,
-    RETRY_DELAY_BASE_MS: 3000, // Longer delays between retries
-    RATE_LIMIT_DELAY_MS: 2000, // Increased delay to avoid rate limiting
-    REQUEST_TIMEOUT_MS: 30000,
+    RETRY_DELAY_BASE_MS: 5000, // Increased from 3s to 5s
+    RATE_LIMIT_DELAY_MS: 4000, // Increased from 2s to 4s  
+    REQUEST_TIMEOUT_MS: 45000, // Increased from 30s to 45s
     FALLBACK_DAYS: 30, // Reduced from 90 to prevent accumulation
     NEWSLETTER_RETENTION_DAYS: 90, // Reduced from 365 to 90 days
     NEW_CONTENT_DAYS: 7,
@@ -42,12 +42,17 @@ class FeedConfig {
 
   static USER_AGENTS = [
     // More diverse and recent user agents to avoid detection
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Safari/605.1.15',
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0'
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0',
+    // RSS reader user agents
+    'Feedly/1.0 (+https://feedly.com)',
+    'feedbot/1.0 (+https://feedbot.org)',
+    'Mozilla/5.0 (compatible; RSS Bot/1.0)',
+    'FeedValidator/1.3'
   ];
 
   /**
@@ -291,6 +296,7 @@ class FeedFetcher {
         }
         
         const urlWithCacheBust = this.generateCacheBustUrl(config.url);
+        
         const feed = await parser.parseURL(urlWithCacheBust);
         
         Logger.info(`Successfully fetched ${feed.items.length} items from ${config.name}`);
@@ -299,9 +305,12 @@ class FeedFetcher {
         lastError = error;
         if (attempt < maxRetries - 1) {
           Logger.warn(`Attempt ${attempt + 1} failed for ${config.name}: ${error.message}`);
-          await new Promise(resolve => 
-            setTimeout(resolve, FeedConfig.CONSTANTS.RETRY_DELAY_BASE_MS * (attempt + 1))
-          );
+          
+          // Add randomization to retry delays to avoid patterns
+          const baseDelay = FeedConfig.CONSTANTS.RETRY_DELAY_BASE_MS * (attempt + 1);
+          const randomDelay = baseDelay + (Math.random() * 2000); // Add 0-2s randomization
+          
+          await new Promise(resolve => setTimeout(resolve, randomDelay));
         }
       }
     }
@@ -387,11 +396,12 @@ class FeedFetcher {
         }
       });
       
-      // Rate limiting between batches
+      // Rate limiting between batches with randomization  
       if (i + FeedConfig.CONSTANTS.PARALLEL_FETCH_LIMIT < feedConfigs.length) {
-        await new Promise(resolve => 
-          setTimeout(resolve, FeedConfig.CONSTANTS.RATE_LIMIT_DELAY_MS)
-        );
+        const baseDelay = FeedConfig.CONSTANTS.RATE_LIMIT_DELAY_MS;
+        const randomDelay = baseDelay + (Math.random() * 2000); // Add 0-2s randomization
+        
+        await new Promise(resolve => setTimeout(resolve, randomDelay));
       }
     }
     
